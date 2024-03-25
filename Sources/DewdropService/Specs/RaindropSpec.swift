@@ -3,7 +3,7 @@
 import struct Dewdrop.Raindrop
 
 public protocol RaindropSpec {
-	associatedtype RaindropResult
+	associatedtype RaindropDetailsResult
 
-	func fetchRaindrop(with id: Raindrop.ID) async -> RaindropResult
+	func fetchRaindropDetails(with id: Raindrop.ID) async -> RaindropDetailsResult
 }
