@@ -2,6 +2,6 @@
 
 import InitMacro
 
-@Init public struct RaindropCollectionFields {
-	public let id: Int
+@Init public struct TagNameFields {
+	public let name: String
 }
