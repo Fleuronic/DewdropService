@@ -1,13 +1,9 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
+import InitMacro
+
 import protocol Identity.Identifiable
 
-public struct IDFields<Model: Identifiable> where Model.ID: Decodable {
+@Init public struct IDFields<Model: Identifiable> {
 	public let id: Model.ID
-}
-
-extension IDFields: Decodable {
-	enum CodingKeys: String, CodingKey {
-		case id = "$id"
-	}
 }

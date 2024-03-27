@@ -4,25 +4,16 @@ import struct Dewdrop.Collection
 
 @dynamicMemberLookup
 public struct CollectionListFields {
-	public let id: Collection.ID
-	public let parent: IDFields<Collection.Identified>?
+	private let detailsFields: CollectionDetailsFields
 
-	private let collection: Collection
-
-	public init(
-		id: Collection.ID,
-		parent: IDFields<Collection.Identified>?,
-		collection: Collection
-	) {
-		self.id = id
-		self.parent = parent
-		self.collection = collection
+	public init(_ detailsFields: CollectionDetailsFields) {
+		self.detailsFields = detailsFields
 	}
 }
 
 // MARK -
 public extension CollectionListFields {
-	subscript<T>(dynamicMember keyPath: KeyPath<Collection, T>) -> T {
-		collection[keyPath: keyPath]
+	subscript<T>(dynamicMember keyPath: KeyPath<CollectionDetailsFields, T>) -> T {
+		detailsFields[keyPath: keyPath]
 	}
 }
