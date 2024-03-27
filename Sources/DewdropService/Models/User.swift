@@ -1,22 +1,22 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-import struct Dewdrop.Raindrop
+import struct Dewdrop.User
 import protocol Identity.Identifiable
 
-public struct IdentifiedRaindrop {
+public struct IdentifiedUser {
 	public let id: ID
-
-	let value: Raindrop
+	
+	let value: User
 }
 
 // MARK: -
-public extension Raindrop {
+public extension User {
 	typealias ID = Identified.ID
-	typealias Identified = IdentifiedRaindrop
+	typealias Identified = IdentifiedUser
 }
 
 // MARK: -
-extension Raindrop.Identified: Identifiable {
+extension User.Identified: Identifiable {
 	// MARK: Identifiable
 	public typealias RawIdentifier = Int
 }
