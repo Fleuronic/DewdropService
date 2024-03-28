@@ -3,4 +3,4 @@
 import struct Dewdrop.Collaborator
 import struct Dewdrop.User
 
-public typealias CollaboratorListFields = ModelFields<Collaborator, User.ID>
+public typealias CollaboratorFields = ModelFields<Collaborator, User.ID>

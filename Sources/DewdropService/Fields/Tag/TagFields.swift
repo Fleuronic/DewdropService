@@ -2,4 +2,4 @@
 
 import struct Dewdrop.Tag
 
-public typealias TagListFields = ModelFields<Tag, Tag.ID>
+public typealias TagFields = ModelFields<Tag, Tag.ID>

@@ -2,4 +2,4 @@
 
 import struct Dewdrop.Highlight
 
-public typealias HighlightListFields = ModelFields<Highlight, Highlight.ID>
+public typealias HighlightFields = ModelFields<Highlight, Highlight.ID>

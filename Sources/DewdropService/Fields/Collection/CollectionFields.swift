@@ -3,7 +3,7 @@
 import struct Dewdrop.Collection
 
 @dynamicMemberLookup
-public struct CollectionListFields {
+public struct CollectionFields {
 	private let detailsFields: CollectionDetailsFields
 
 	public init(_ detailsFields: CollectionDetailsFields) {
@@ -12,7 +12,7 @@ public struct CollectionListFields {
 }
 
 // MARK -
-public extension CollectionListFields {
+public extension CollectionFields {
 	subscript<T>(dynamicMember keyPath: KeyPath<CollectionDetailsFields, T>) -> T {
 		detailsFields[keyPath: keyPath]
 	}

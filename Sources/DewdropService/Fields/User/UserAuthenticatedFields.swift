@@ -6,17 +6,20 @@ import struct Dewdrop.Account
 @dynamicMemberLookup
 public struct UserAuthenticatedFields {
 	public let id: User.ID
+	public let config: ConfigFields
+	public let groups: [GroupFields]
 
-	private let user: User
 	private let account: Account
 
 	public init(
 		id: User.ID,
-		user: User,
+		config: ConfigFields,
+		groups: [GroupFields],
 		account: Account
 	) {
 		self.id = id
-		self.user = user
+		self.config = config
+		self.groups = groups
 		self.account = account
 	}
 }
@@ -24,7 +27,7 @@ public struct UserAuthenticatedFields {
 // MARK -
 public extension UserAuthenticatedFields {
 	subscript<T>(dynamicMember keyPath: KeyPath<User, T>) -> T {
-		user[keyPath: keyPath]
+		account.user[keyPath: keyPath]
 	}
 	
 	subscript<T>(dynamicMember keyPath: KeyPath<Account, T>) -> T {
