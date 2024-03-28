@@ -4,7 +4,7 @@ import struct Dewdrop.Raindrop
 
 public protocol RaindropSpec {
 	associatedtype RaindropDetailsResult
-	associatedtype RaindropRemovalResult
+//	associatedtype RaindropRemovalResult
 	associatedtype RaindropHighlightsResult
 	associatedtype RaindropSuggestionsResult
 
