@@ -2,7 +2,7 @@
 
 import struct Dewdrop.Raindrop
 
-public struct RaindropHighlightFields {
+public struct RaindropHighlightsFields {
 	public let id: Raindrop.ID
 	public let highlights: [HighlightInRaindropFields]
 
