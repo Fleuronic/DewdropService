@@ -6,5 +6,6 @@ import struct Dewdrop.Collection
 public protocol HighlightSpec {
 	associatedtype HighlightListResult
 
-	func listHighlights(inCollectionWith id: Collection.ID?) async -> HighlightListResult
+	func listHighlights() async -> HighlightListResult
+	func listHighlights(inCollectionWith id: Collection.ID) async -> HighlightListResult
 }
