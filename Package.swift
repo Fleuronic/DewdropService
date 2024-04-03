@@ -16,7 +16,7 @@ let package = Package(
 		),
 	],
 	dependencies: [
-		.package(url: "https://github.com/Fleuronic/Dewdrop", branch: "main"),
+		.package(path: "../.."),
 		.package(url: "https://github.com/JohnSundell/Identity", from: "0.1.0"),
 		.package(url: "https://github.com/Fleuronic/Catenary", branch: "main"),
 		.package(url: "https://github.com/Fleuronic/Catenoid", branch: "main"),

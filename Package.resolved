@@ -1,4 +1,5 @@
 {
+  "originHash" : "c45f8dbea62938039f202a023384c00c8f59ab1430b61c23877ab2a8e9b9f61f",
   "pins" : [
     {
       "identity" : "catena",
@@ -34,15 +35,6 @@
       "state" : {
         "revision" : "b4f23e24b5a1bff301efc5e70871083ca029ff95",
         "version" : "0.2.0"
-      }
-    },
-    {
-      "identity" : "dewdrop",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/Fleuronic/Dewdrop",
-      "state" : {
-        "branch" : "main",
-        "revision" : "2cd86de9f6b6b15fee8074d047c35e53ac6f735f"
       }
     },
     {
@@ -118,5 +110,5 @@
       }
     }
   ],
-  "version" : 2
+  "version" : 3
 }
