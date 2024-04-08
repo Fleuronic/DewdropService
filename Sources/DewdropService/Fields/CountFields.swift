@@ -2,8 +2,6 @@
 
 import InitMacro
 
-import struct Dewdrop.Filter
-
-@Init public struct FilterCountFields {
+@Init public struct CountFields {
 	public let count: Int
 }
