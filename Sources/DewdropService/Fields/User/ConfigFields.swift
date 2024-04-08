@@ -1,26 +1,26 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-import struct Dewdrop.Group
+import struct Dewdrop.User
 import struct Dewdrop.Collection
 
 @dynamicMemberLookup
-public struct GroupFields {
-	public let collections: [IDFields<Collection.Identified>]
+public struct ConfigFields {
+	public let lastViewedCollection: IDFields<Collection.Identified>
 
-	private let group: Group
+	private let config: User.Config
 
 	public init(
-		group: Group,
-		collectionIDs: [Collection.ID]
+		config: User.Config,
+		lastViewedCollectionID: Collection.ID
 	) {
-		self.group = group
-		self.collections = collectionIDs.map(IDFields.init)
+		self.config = config
+		self.lastViewedCollection = IDFields(id: lastViewedCollectionID)
 	}
 }
 
 // MARK -
-public extension GroupFields {
-	subscript<T>(dynamicMember keyPath: KeyPath<Group, T>) -> T {
-		group[keyPath: keyPath]
+public extension ConfigFields {
+	subscript<T>(dynamicMember keyPath: KeyPath<User.Config, T>) -> T {
+		config[keyPath: keyPath]
 	}
 }
