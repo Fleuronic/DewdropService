@@ -7,6 +7,7 @@ public protocol CollectionSpec {
 	associatedtype CollectionListResult
 	associatedtype CollectionDetailsResult
 	associatedtype CollectionRemovalResult
+	associatedtype EmptyCollectionsRemovalResult
 	associatedtype CoverListResult
 	associatedtype SystemCollectionListResult
 
@@ -16,6 +17,8 @@ public protocol CollectionSpec {
 	func fetchCollectionDetails(with id: Collection.ID) async -> CollectionDetailsResult
 	func listCollaborators(ofCollectionWith id: Collection.ID) async -> CollaboratorListResult
 	func removeCollection(with id: Collection.ID) async -> CollectionRemovalResult
+	func removeEmptyCollections() async -> EmptyCollectionsRemovalResult
+	func emptyTrash() async -> CollectionRemovalResult
 	func searchForCovers(with text: String) async -> CoverListResult
 	func listFeaturedCovers() async -> CoverListResult
 }
