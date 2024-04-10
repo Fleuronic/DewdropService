@@ -18,6 +18,7 @@ public extension Collection {
 
 // MARK: -
 public extension Identifier<Collection.Identified> {
+	static let all: Self = 0
 	static let trash: Self = -99
 }
 
