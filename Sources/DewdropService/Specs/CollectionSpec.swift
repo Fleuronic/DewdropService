@@ -8,9 +8,10 @@ public protocol CollectionSpec {
 	associatedtype CollectionDetailsResult
 	associatedtype CollectionExpansionCollapseResult
 	associatedtype CollectionRemovalResult
+	associatedtype CollectionUnshareLeaveResult
+	associatedtype SystemCollectionListResult
 	associatedtype EmptyCollectionsRemovalResult
 	associatedtype CoverListResult
-	associatedtype SystemCollectionListResult
 
 	func listRootCollections() async -> CollectionListResult
 	func listChildCollections() async -> CollectionListResult
@@ -18,6 +19,7 @@ public protocol CollectionSpec {
 	func fetchCollectionDetails(with id: Collection.ID) async -> CollectionDetailsResult
 	func listCollaborators(ofCollectionWith id: Collection.ID) async -> CollaboratorListResult
 	func expandCollections(_ expanded: Bool) async -> CollectionExpansionCollapseResult
+	func unshareLeaveCollection() async -> CollectionUnshareLeaveResult
 	func removeCollection(with id: Collection.ID) async -> CollectionRemovalResult
 	func removeEmptyCollections() async -> EmptyCollectionsRemovalResult
 	func emptyTrash() async -> CollectionRemovalResult
