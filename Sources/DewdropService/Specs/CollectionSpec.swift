@@ -1,9 +1,9 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
 import struct Dewdrop.Collection
+import struct Dewdrop.User
 
 public protocol CollectionSpec {
-	associatedtype CollaboratorListResult
 	associatedtype CollectionListResult
 	associatedtype CollectionDetailsResult
 	associatedtype CollectionExpansionCollapseResult
@@ -11,6 +11,8 @@ public protocol CollectionSpec {
 	associatedtype CollectionUnshareLeaveResult
 	associatedtype SystemCollectionListResult
 	associatedtype EmptyCollectionsRemovalResult
+	associatedtype CollaboratorListResult
+	associatedtype CollaboratorDeletionResult
 	associatedtype CoverListResult
 
 	func listRootCollections() async -> CollectionListResult
@@ -18,8 +20,9 @@ public protocol CollectionSpec {
 	func listSystemCollections() async -> SystemCollectionListResult
 	func fetchCollectionDetails(with id: Collection.ID) async -> CollectionDetailsResult
 	func listCollaborators(ofCollectionWith id: Collection.ID) async -> CollaboratorListResult
-	func expandCollections(_ expanded: Bool) async -> CollectionExpansionCollapseResult
-	func unshareLeaveCollection() async -> CollectionUnshareLeaveResult
+	func expandCollections(_ excpanded: Bool) async -> CollectionExpansionCollapseResult
+	func unshareLeaveCollection(with id: Collection.ID) async -> CollectionUnshareLeaveResult
+	func deleteCollaborator(with id: User.ID, fromCollectionWith collectionID: Collection.ID) async -> CollaboratorDeletionResult
 	func removeCollection(with id: Collection.ID) async -> CollectionRemovalResult
 	func removeEmptyCollections() async -> EmptyCollectionsRemovalResult
 	func emptyTrash() async -> CollectionRemovalResult
