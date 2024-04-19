@@ -18,4 +18,5 @@ public protocol RaindropSpec {
 //	func listSuggestionsForNewRaindrop() async -> RaindropSuggestionsResult	
 	func downloadPermanentCopy(ofRaindropWith id: Raindrop.ID) async -> RaindropCopyDownloadResult
 	func removeRaindrop(with id: Raindrop.ID) async -> RaindropRemovalResult
+	func removeRaindrops(fromCollectionWith id: Collection.ID?, matching ids: [Raindrop.ID]?, searchingFor search: String?) async -> RaindropRemovalResult
 }

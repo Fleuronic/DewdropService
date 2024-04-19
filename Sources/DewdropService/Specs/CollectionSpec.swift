@@ -22,8 +22,9 @@ public protocol CollectionSpec {
 	func listCollaborators(ofCollectionWith id: Collection.ID) async -> CollaboratorListResult
 	func expandCollections(_ excpanded: Bool) async -> CollectionExpansionCollapseResult
 	func unshareLeaveCollection(with id: Collection.ID) async -> CollectionUnshareLeaveResult
-	func deleteCollaborator(with id: User.ID, fromCollectionWith collectionID: Collection.ID) async -> CollaboratorDeletionResult
+	func removeCollaborator(with id: User.ID, fromCollectionWith collectionID: Collection.ID) async -> CollaboratorDeletionResult
 	func removeCollection(with id: Collection.ID) async -> CollectionRemovalResult
+	func removeCollections(with ids: [Collection.ID]) async -> CollectionRemovalResult
 	func removeEmptyCollections() async -> EmptyCollectionsRemovalResult
 	func emptyTrash() async -> CollectionRemovalResult
 	func searchForCovers(with text: String) async -> CoverListResult

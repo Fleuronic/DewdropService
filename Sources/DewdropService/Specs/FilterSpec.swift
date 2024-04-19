@@ -6,5 +6,5 @@ import struct Dewdrop.Collection
 public protocol FilterSpec {
 	associatedtype FilterListResult
 
-	func listFilters(forCollectionWith id: Collection.ID, search: String?, sortingTagsBy tagSort: Tag.Sort?) async -> FilterListResult
+	func listFilters(forCollectionWith id: Collection.ID, searchingFor search: String?, sortingTagsBy tagSort: Tag.Sort?) async -> FilterListResult
 }
