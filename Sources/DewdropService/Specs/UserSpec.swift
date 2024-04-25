@@ -8,4 +8,11 @@ public protocol UserSpec {
 
 	func fetchUserAuthenticatedDetails() async -> UserAuthenticatedDetailsResult
 	func fetchUserDetails(with id: User.ID) async -> UserDetailsResult
+	
+	func updateUser(
+		email: String?,
+		fullName: String?,
+		oldPassword: String?,
+		newPassword: String?
+	) async -> UserAuthenticatedDetailsResult
 }

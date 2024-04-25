@@ -2,6 +2,7 @@
 
 import struct Dewdrop.Raindrop
 import struct Dewdrop.Collection
+import struct Foundation.URL
 
 public protocol RaindropSpec {
 	associatedtype RaindropListResult
@@ -15,7 +16,7 @@ public protocol RaindropSpec {
 	func fetchRaindropDetails(with id: Raindrop.ID) async -> RaindropDetailsResult
 	func fetchRaindropHighlights(with id: Raindrop.ID) async -> RaindropHighlightsResult
 	func listSuggestions(forRaindropWith id: Raindrop.ID) async -> RaindropSuggestionsResult
-//	func listSuggestionsForNewRaindrop() async -> RaindropSuggestionsResult	
+	func listSuggestionsForNewRaindrop(with url: URL) async -> RaindropSuggestionsResult
 	func downloadPermanentCopy(ofRaindropWith id: Raindrop.ID) async -> RaindropCopyDownloadResult
 	func removeRaindrop(with id: Raindrop.ID) async -> RaindropRemovalResult
 	func removeRaindrops(fromCollectionWith id: Collection.ID?, matching ids: [Raindrop.ID]?, searchingFor search: String?) async -> RaindropRemovalResult
