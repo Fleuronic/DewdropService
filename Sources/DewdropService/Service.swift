@@ -2,9 +2,9 @@
 
 import InitMacro
 
-import protocol Catenary.API
+import protocol Catena.API
 
-@Init public struct Service<API: Catenary.API> {
+@Init public struct Service<API: Catena.API> {
 	let api: API
 }
 
