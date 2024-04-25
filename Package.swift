@@ -17,9 +17,8 @@ let package = Package(
 	],
 	dependencies: [
 		.package(path: "../.."),
-		.package(url: "https://github.com/JohnSundell/Identity", from: "0.1.0"),
-		.package(url: "https://github.com/Fleuronic/Catenary", branch: "main"),
-		.package(url: "https://github.com/Fleuronic/Catenoid", branch: "main"),
+		.package(url: "https://github.com/Fleuronic/Catena", branch: "main"),
+		.package(url: "https://github.com/JohnSundell/Identity", from: "0.1.0")
 	],
 	targets: [
 		.target(
@@ -27,8 +26,7 @@ let package = Package(
 			dependencies: [
 				"Dewdrop",
 				"Identity",
-				"Catenary",
-				"Catenoid",
+				"Catena"
 			]
 		),
 	]

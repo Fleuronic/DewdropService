@@ -1,5 +1,5 @@
 {
-  "originHash" : "c45f8dbea62938039f202a023384c00c8f59ab1430b61c23877ab2a8e9b9f61f",
+  "originHash" : "e0b871770f15d456955c8ad1686649e406c313b6e9c4892796891d5343a643b7",
   "pins" : [
     {
       "identity" : "catena",
@@ -7,43 +7,16 @@
       "location" : "https://github.com/Fleuronic/Catena",
       "state" : {
         "branch" : "main",
-        "revision" : "9cdc370faefd9671e71fa081ad96e5c4a0fb52a2"
+        "revision" : "d815def53fc3b884fdda9b55f0fd6a775792529c"
       }
     },
     {
-      "identity" : "catenary",
+      "identity" : "dictionarycoder",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/Fleuronic/Catenary",
+      "location" : "https://github.com/almazrafi/DictionaryCoder.git",
       "state" : {
-        "branch" : "main",
-        "revision" : "0fdcf56492235eb2bff2e03ecf1ac878b7e93b7a"
-      }
-    },
-    {
-      "identity" : "catenoid",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/Fleuronic/Catenoid",
-      "state" : {
-        "branch" : "main",
-        "revision" : "31968132870b9aad38243ec7d44d686e887a9fed"
-      }
-    },
-    {
-      "identity" : "collectionconcurrencykit",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/JohnSundell/CollectionConcurrencyKit.git",
-      "state" : {
-        "revision" : "b4f23e24b5a1bff301efc5e70871083ca029ff95",
-        "version" : "0.2.0"
-      }
-    },
-    {
-      "identity" : "differ",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/tonyarnold/Differ.git",
-      "state" : {
-        "revision" : "5520fda947f1f9777a806389c2ba587219bc0538",
-        "version" : "1.4.6"
+        "revision" : "ebcbaeb20ca5f62ed0365fa7f0473e0d480b931e",
+        "version" : "1.2.0"
       }
     },
     {
@@ -62,42 +35,6 @@
       "state" : {
         "branch" : "main",
         "revision" : "41beaa5cc3f8884385df6d0acf49f79821ab2496"
-      }
-    },
-    {
-      "identity" : "persistdb",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/Fleuronic/PersistDB",
-      "state" : {
-        "branch" : "master",
-        "revision" : "fd3eec2673993bee5682d5fade7b2a2654dff4cb"
-      }
-    },
-    {
-      "identity" : "reactiveswift",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/ReactiveCocoa/ReactiveSwift.git",
-      "state" : {
-        "branch" : "swift-concurrency",
-        "revision" : "3d40187c982346352d0adbe6b38e0e3d53fddc95"
-      }
-    },
-    {
-      "identity" : "schemata",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/Fleuronic/Schemata",
-      "state" : {
-        "branch" : "master",
-        "revision" : "0f0669c9f8bab8769c2710f5d3a91de95a2533d6"
-      }
-    },
-    {
-      "identity" : "sociableweaver",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/NicholasBellucci/SociableWeaver.git",
-      "state" : {
-        "revision" : "dd8368fcf1f8fef5d672ea64775dc6f7b02d7a92",
-        "version" : "0.1.12"
       }
     },
     {
