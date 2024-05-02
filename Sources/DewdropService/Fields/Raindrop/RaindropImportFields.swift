@@ -4,5 +4,5 @@ import InitMacro
 
 @Init public struct RaindropImportFields {
 	public let tags: [TagNameFields]
-	public let highlights: [HighlightInRaindropFields]
+	public let highlights: [HighlightImportFields]?
 }
