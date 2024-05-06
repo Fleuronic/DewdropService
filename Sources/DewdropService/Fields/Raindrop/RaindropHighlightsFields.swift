@@ -8,6 +8,6 @@ public struct RaindropHighlightsFields {
 
 	public init(detailsFields: RaindropDetailsFields) {
 		id = detailsFields.id
-		highlights = detailsFields.highlights
+		highlights = detailsFields.highlights ?? []
 	}
 }

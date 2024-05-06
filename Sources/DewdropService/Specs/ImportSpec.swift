@@ -8,6 +8,6 @@ public protocol ImportSpec {
 	associatedtype URLCheckResult
 
 	func parseInfo(from url: URL) async -> InfoResult
-	func parseImport(of file: URL, withName filename: String) async -> ImportResult
+	func parseImport(ofFileAt url: URL, withName filename: String) async -> ImportResult
 	func checkExistence(of urls: [URL]) async -> URLCheckResult
 }

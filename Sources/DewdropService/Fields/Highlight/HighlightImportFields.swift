@@ -10,11 +10,11 @@ public struct HighlightImportFields {
 	private let content: Highlight.Content
 	
 	public init(
-		creationDate: Date,
-		content: Highlight.Content
+		content: Highlight.Content,
+		creationDate: Date
 	) {
-		self.creationDate = creationDate
 		self.content = content
+		self.creationDate = creationDate
 	}
 }
 

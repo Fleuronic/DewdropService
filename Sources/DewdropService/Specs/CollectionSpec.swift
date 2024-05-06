@@ -3,31 +3,34 @@
 import struct Dewdrop.Collection
 import struct Dewdrop.Collaborator
 import struct Dewdrop.User
+import struct Foundation.URL
 
 public protocol CollectionSpec {
 	associatedtype CollectionListResult
+	associatedtype SystemCollectionListResult
+	associatedtype CollaboratorListResult
+	associatedtype CoverListResult
 	associatedtype CollectionDetailsResult
+	associatedtype CollectionCoverUploadResult
 	associatedtype CollectionShareResult
+	associatedtype CollectionJoinResult
 	associatedtype CollectionMergeResult
 	associatedtype CollectionReorderResult
 	associatedtype CollectionExpansionCollapseResult
-	associatedtype CollectionJoinResult
-	associatedtype CollectionRemovalResult
-	associatedtype CollectionUnshareLeaveResult
-	associatedtype SystemCollectionListResult
-	associatedtype EmptyCollectionsRemovalResult
-	associatedtype CollaboratorListResult
 	associatedtype CollaboratorUpdateResult
 	associatedtype CollaboratorDeletionResult
-	associatedtype CoverListResult
+	associatedtype CollectionRemovalResult
+	associatedtype CollectionUnshareLeaveResult
+	associatedtype EmptyCollectionsRemovalResult
 
-	func fetchCollectionDetails(with id: Collection.ID) async -> CollectionDetailsResult
 	func listRootCollections() async -> CollectionListResult
 	func listChildCollections() async -> CollectionListResult
 	func listSystemCollections() async -> SystemCollectionListResult
 	func listCollaborators(ofCollectionWith id: Collection.ID) async -> CollaboratorListResult
 	func listFeaturedCovers() async -> CoverListResult
 	func searchForCovers(with text: String) async -> CoverListResult
+	func fetchDetails(forCollectionWith id: Collection.ID) async -> CollectionDetailsResult
+	func uploadCover(forCollectionWith id: Collection.ID, usingFileAt url: URL, withName filename: String) async -> CollectionCoverUploadResult
 	func shareCollection(with id: Collection.ID, toUsersWithEmails emails: [String], as role: Collaborator.Role) async -> CollectionShareResult
 	func acceptInvitation(toJoinCollectionWith id: Collection.ID, viaEmailWithToken token: String) async -> CollectionJoinResult
 	func mergeCollections(with ids: [Collection.ID], intoCollectionWith id: Collection.ID) async -> CollectionMergeResult
