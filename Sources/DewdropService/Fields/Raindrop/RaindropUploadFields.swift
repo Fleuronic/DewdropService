@@ -5,9 +5,9 @@ import struct Dewdrop.User
 import struct Dewdrop.Collection
 
 @dynamicMemberLookup
-public struct RaindropUploadFields {
+public struct RaindropCreationFields {
 	public let id: Raindrop.ID
-	public let user: IDFields<User.Identified>
+	public let owner: IDFields<User.Identified>
 	public let creator: IDFields<User.Identified>
 	public let collection: IDFields<Collection.Identified>
 	public let tags: [TagNameFields]
@@ -17,14 +17,14 @@ public struct RaindropUploadFields {
 	public init(
 		id: Raindrop.ID,
 		raindrop: Raindrop,
-		user: IDFields<User.Identified>,
+		owner: IDFields<User.Identified>,
 		creator: IDFields<User.Identified>,
 		collection: IDFields<Collection.Identified>,
 		tags: [TagNameFields]
 	) {
 		self.id = id
 		self.raindrop = raindrop
-		self.user = user
+		self.owner = owner
 		self.creator = creator
 		self.collection = collection
 		self.tags = tags
@@ -32,7 +32,7 @@ public struct RaindropUploadFields {
 }
 
 // MARK -
-public extension RaindropUploadFields {
+public extension RaindropCreationFields {
 	subscript<T>(dynamicMember keyPath: KeyPath<Raindrop, T>) -> T {
 		raindrop[keyPath: keyPath]
 	}
