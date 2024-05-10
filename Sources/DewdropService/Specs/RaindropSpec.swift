@@ -1,8 +1,12 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
+import enum Dewdrop.ItemType
 import struct Dewdrop.Raindrop
 import struct Dewdrop.Collection
+import struct Dewdrop.Media
+import struct Dewdrop.Highlight
 import struct Foundation.URL
+import struct Foundation.Date
 
 public protocol RaindropSpec {
 	associatedtype RaindropDetailsResult
@@ -16,10 +20,45 @@ public protocol RaindropSpec {
 	associatedtype RaindropRemovalResult
 	
 	func createRaindrop(
-		url: URL
+		url: URL,
+		title: String?,
+		itemType: ItemType?,
+		excerpt: String?,
+		coverURL: URL?,
+		order: Int?,
+		collectionID: Collection.ID?,
+		tagNames: [String]?,
+		media: [Media]?,
+		highlightContents: [Highlight.Content]?,
+		isFavorite: Bool?,
+		isBroken: Bool?,
+		creationDate: Date?,
+		updateDate: Date?,
+		shouldParse: Bool
 	) async -> RaindropCreationResult
 	
-	func createRaindrops(data: [URL]) async -> RaindropCreationListResult
+	func createRaindrops(
+		data: [
+			(
+				url: URL,
+				title: String?,
+				itemType: ItemType?,
+				excerpt: String?,
+				coverURL: URL?,
+				order: Int?,
+				collectionID: Collection.ID?,
+				tagNames: [String]?,
+				media: [Media]?,
+				highlightContents: [Highlight.Content]?,
+				isFavorite: Bool?,
+				isBroken: Bool?,
+				creationDate: Date?,
+				updateDate: Date?,
+				shouldParse: Bool
+			)
+		]
+	) async -> RaindropCreationListResult
+
 	func fetchDetails(forRaindropWith id: Raindrop.ID) async -> RaindropDetailsResult
 	func fetchHighlights(forRaindropWith id: Raindrop.ID) async -> RaindropHighlightsResult
 	func downloadPermanentCopy(ofRaindropWith id: Raindrop.ID) async -> RaindropCopyDownloadResult
