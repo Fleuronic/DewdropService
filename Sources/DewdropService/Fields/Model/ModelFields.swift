@@ -1,20 +1,15 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
+import InitMacro
+
 import protocol Identity.Identifiable
 
+@Init
 @dynamicMemberLookup
-public struct ModelFields<Model, ID> {
+public struct ModelFields<Model, ID>: Fields {
 	public let id: ID
 
 	private let model: Model
-
-	public init(
-		id: ID,
-		model: Model
-	) {
-		self.id = id
-		self.model = model
-	}
 }
 
 // MARK -

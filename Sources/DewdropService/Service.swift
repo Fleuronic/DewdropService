@@ -2,13 +2,13 @@
 
 import InitMacro
 
-import protocol Catena.API
+//import protocol Catena.API
 
-@Init public struct Service<API: Catena.API> {
+@Init public struct Service<API> {
 	let api: API
 }
 
 // MARK: -
-public extension Service {
-	typealias APIResult<Resource> = API.Result<Resource>
-}
+//public extension Service {
+//	typealias APIResult<Resource> = API.Result<Resource>
+//}

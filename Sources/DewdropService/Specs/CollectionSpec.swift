@@ -48,7 +48,7 @@ public protocol CollectionSpec {
 	func listRootCollections() async -> CollectionListResult
 	func listChildCollections() async -> CollectionListResult
 	func listSystemCollections() async -> SystemCollectionListResult
-	func expandCollections(_ excpanded: Bool) async -> CollectionExpansionCollapseResult
+	func expandCollections(_ expanded: Bool) async -> CollectionExpansionCollapseResult
 	func reorderCollections(by sort: Collection.Sort) async -> CollectionReorderResult
 	func mergeCollections(with ids: [Collection.ID], intoCollectionWith id: Collection.ID) async -> CollectionMergeResult
 	func removeCollection(with id: Collection.ID) async -> CollectionRemovalResult

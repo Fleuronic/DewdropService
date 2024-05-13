@@ -2,13 +2,14 @@
 
 import enum Dewdrop.FileFormat
 import struct Dewdrop.Backup
+import struct Foundation.Data
 
 public protocol BackupSpec {
-	associatedtype BackupListResult
-	associatedtype BackupGenerationResult
-	associatedtype BackupFileDownloadResult
+	associatedtype BackupList
+	associatedtype BackupCreationResult
+	associatedtype BackupData
 
-	func listBackups() async -> BackupListResult
-	func generateNewBackup() async -> BackupGenerationResult
-	func downloadFile(forBackupWith id: Backup.ID, as format: FileFormat) async -> BackupFileDownloadResult
+	func listBackups() async -> BackupList
+	func createBackup() async -> BackupCreationResult
+	func downloadBackup(with id: Backup.ID, as format: FileFormat) async -> BackupData
 }

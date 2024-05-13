@@ -2,4 +2,6 @@
 
 import struct Dewdrop.Backup
 
-public typealias BackupFields = ModelFields<Backup, Backup.ID>
+public protocol BackupFields: Fields {}
+
+extension ModelFields: BackupFields where Model == Backup {}

@@ -3,11 +3,11 @@
 import struct Foundation.URL
 
 public protocol ImportSpec {
-	associatedtype InfoResult
-	associatedtype ImportResult
-	associatedtype URLCheckResult
+	associatedtype URLInfo
+	associatedtype URLExistence
+	associatedtype FileImport
 
-	func parseInfo(from url: URL) async -> InfoResult
-	func parseImport(ofFileAt url: URL, withName filename: String) async -> ImportResult
-	func checkExistence(of urls: [URL]) async -> URLCheckResult
+	func parse(url: URL) async -> URLInfo
+	func checkExistence(of urls: [URL]) async -> URLExistence
+	func importFile(at url: URL, withName filename: String) async -> FileImport
 }
