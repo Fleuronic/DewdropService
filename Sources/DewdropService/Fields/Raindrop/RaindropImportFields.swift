@@ -11,8 +11,8 @@ import struct Foundation.Date
 	public let title: String
 	public let excerpt: String?
 	public let coverURL: URL?
-	public let media: [Media]
 	public let note: String?
+	public let media: [Media]
 	public let isFavorite: Bool
 	public let creationDate: Date
 	public let updateDate: Date
