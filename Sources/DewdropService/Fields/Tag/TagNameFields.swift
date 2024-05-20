@@ -2,6 +2,8 @@
 
 import InitMacro
 
-@Init public struct TagNameFields {
+import struct Dewdrop.Tag
+
+@Init public struct TagNameFields: TagFields {
 	public let name: String
 }

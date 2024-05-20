@@ -1,11 +1,8 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-import InitMacro
-
 import struct Dewdrop.Folder
+import protocol Catena.Fields
 
-@Init public struct FolderFields {
-	public let title: String
-	public let bookmarks: [RaindropImportFields]
-	public let folders: [FolderFields]
-}
+public protocol FolderFields: Fields {}
+
+// extension Result: FolderFields where Success: Collection, Success.Element: FolderFields {}

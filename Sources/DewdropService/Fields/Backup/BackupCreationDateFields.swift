@@ -2,4 +2,4 @@
 
 import struct Dewdrop.Backup
 
-public typealias BackupListFields = ModelFields<Backup, Backup.ID>
+public typealias BackupCreationDateFields = ModelFields<Backup, Backup.ID>
