@@ -4,7 +4,8 @@ import InitMacro
 
 import struct Dewdrop.Raindrop
 
-@Init @dynamicMemberLookup public struct InfoParseFields: InfoFields {
+@dynamicMemberLookup
+@Init public struct InfoParseFields: InfoFields {
 	public let meta: Meta
 	
 	private let info: Raindrop.Info

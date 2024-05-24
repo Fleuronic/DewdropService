@@ -4,6 +4,6 @@ import enum Dewdrop.Import
 import protocol Catena.Fields
 
 public protocol ImportFields: Fields where Model == Import {
-	init(fields: ImportFolderAndCountFields)
+	init(fields: ImportFolderCountFields)
 }
 

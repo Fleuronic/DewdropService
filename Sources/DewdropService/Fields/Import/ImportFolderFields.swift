@@ -1,8 +1,10 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
+import InitMacro
+
 import enum Dewdrop.Import
 
-public struct ImportFolderFields {
+@Init public struct ImportFolderFields {
 	public let folders: [FolderImportFields]
 }
 
@@ -10,7 +12,7 @@ public struct ImportFolderFields {
 extension ImportFolderFields: ImportFields {
 	public typealias Model = Import
 	
-	public init(fields: ImportFolderAndCountFields) {
+	public init(fields: ImportFolderCountFields) {
 		folders = fields.folders
 	}
 }
