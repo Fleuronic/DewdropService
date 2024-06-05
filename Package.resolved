@@ -1,24 +1,6 @@
 {
-  "originHash" : "e0b871770f15d456955c8ad1686649e406c313b6e9c4892796891d5343a643b7",
+  "originHash" : "0e510547927af5eeb4bbc4907c0723ccc3b5c53c564614840d0f376ef967192e",
   "pins" : [
-    {
-      "identity" : "catena",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/Fleuronic/Catena",
-      "state" : {
-        "branch" : "main",
-        "revision" : "d815def53fc3b884fdda9b55f0fd6a775792529c"
-      }
-    },
-    {
-      "identity" : "dictionarycoder",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/almazrafi/DictionaryCoder.git",
-      "state" : {
-        "revision" : "ebcbaeb20ca5f62ed0365fa7f0473e0d480b931e",
-        "version" : "1.2.0"
-      }
-    },
     {
       "identity" : "identity",
       "kind" : "remoteSourceControl",
