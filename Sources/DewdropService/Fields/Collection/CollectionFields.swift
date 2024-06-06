@@ -1,19 +1,8 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
 import struct Dewdrop.Collection
+import protocol Catena.Fields
 
-@dynamicMemberLookup
-public struct CollectionFields {
-	private let detailsFields: CollectionDetailsFields
+public protocol CollectionFields: Fields where Model == Collection {}
 
-	public init(_ detailsFields: CollectionDetailsFields) {
-		self.detailsFields = detailsFields
-	}
-}
-
-// MARK -
-public extension CollectionFields {
-	subscript<T>(dynamicMember keyPath: KeyPath<CollectionDetailsFields, T>) -> T {
-		detailsFields[keyPath: keyPath]
-	}
-}
+extension ModelFields: CollectionFields where Model == Collection {}

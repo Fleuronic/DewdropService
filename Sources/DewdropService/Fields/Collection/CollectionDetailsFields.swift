@@ -4,7 +4,7 @@ import struct Dewdrop.Collection
 import struct Dewdrop.User
 
 @dynamicMemberLookup
-public struct CollectionDetailsFields {
+public struct CollectionDetailsFields: CollectionFields {
 	public let id: Collection.ID
 	public let owner: IDFields<User.Identified>
 	public let parent: IDFields<Collection.Identified>?
