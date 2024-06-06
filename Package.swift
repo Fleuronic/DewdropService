@@ -16,7 +16,8 @@ let package = Package(
 		),
 	],
 	dependencies: [
-		.package(path: "../.."),
+		.package(name: "Dewdrop", path: "../.."),
+		.package(url: "https://github.com/Fleuronic/Catena", branch: "main"),
 		.package(url: "https://github.com/JohnSundell/Identity", from: "0.1.0")
 	],
 	targets: [
@@ -24,7 +25,8 @@ let package = Package(
 			name: "DewdropService",
 			dependencies: [
 				"Dewdrop",
-				"Identity"
+				"Identity",
+				"Catena"
 			]
 		),
 	]

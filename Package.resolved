@@ -1,6 +1,15 @@
 {
-  "originHash" : "0e510547927af5eeb4bbc4907c0723ccc3b5c53c564614840d0f376ef967192e",
+  "originHash" : "0fa5f83cdfad254bd16a7ceb9e4ae29a5062a79d887199e8826ac39363780df7",
   "pins" : [
+    {
+      "identity" : "catena",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Fleuronic/Catena",
+      "state" : {
+        "branch" : "main",
+        "revision" : "30e1abce5d551c102777eb8e24e74870a363273c"
+      }
+    },
     {
       "identity" : "identity",
       "kind" : "remoteSourceControl",
@@ -13,10 +22,10 @@
     {
       "identity" : "initmacro",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/LeonardoCardoso/InitMacro.git",
+      "location" : "https://github.com/Fleuronic/InitMacro.git",
       "state" : {
-        "branch" : "main",
-        "revision" : "41beaa5cc3f8884385df6d0acf49f79821ab2496"
+        "branch" : "update-swift-syntax",
+        "revision" : "d7010e57d835c41bd75fcb6a7553f3faad9384f0"
       }
     },
     {
@@ -24,8 +33,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/apple/swift-syntax",
       "state" : {
-        "revision" : "74203046135342e4a4a627476dd6caf8b28fe11b",
-        "version" : "509.0.0"
+        "revision" : "08a2f0a9a30e0f705f79c9cfaca1f68b71bdc775",
+        "version" : "510.0.0"
       }
     }
   ],
