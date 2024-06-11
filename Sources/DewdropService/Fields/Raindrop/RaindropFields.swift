@@ -1,19 +1,8 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
 import struct Dewdrop.Raindrop
+import protocol Catena.Fields
 
-@dynamicMemberLookup
-public struct RaindropFields {
-	private let detailsFields: RaindropDetailsFields
+public protocol RaindropFields: Fields where Model == Raindrop {}
 
-	public init(_ detailsFields: RaindropDetailsFields) {
-		self.detailsFields = detailsFields
-	}
-}
-
-// MARK -
-public extension RaindropFields {
-	subscript<T>(dynamicMember keyPath: KeyPath<RaindropDetailsFields, T>) -> T {
-		detailsFields[keyPath: keyPath]
-	}
-}
+extension ModelFields: RaindropFields where Model == Raindrop {}

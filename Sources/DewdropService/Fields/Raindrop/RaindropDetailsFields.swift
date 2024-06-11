@@ -5,7 +5,7 @@ import struct Dewdrop.User
 import struct Dewdrop.Collection
 
 @dynamicMemberLookup
-public struct RaindropDetailsFields {
+public struct RaindropDetailsFields: RaindropFields {
 	public let id: Raindrop.ID
 	public let owner: IDFields<User.Identified>
 	public let creator: UserNameFields
