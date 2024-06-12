@@ -64,7 +64,7 @@ public protocol RaindropSpec {
 //	func downloadPermanentCopy(ofRaindropWith id: Raindrop.ID) async -> RaindropCopyDownloadResult
 //	func listSuggestions(forRaindropWith id: Raindrop.ID) async -> RaindropSuggestionsResult
 //	func listSuggestionsForNewRaindrop(with url: URL) async -> RaindropSuggestionsResult
-	func listRaindrops(inCollectionWith id: Collection.ID, searchingFor search: String?/*, sortedBy sort: Raindrop.Sort?, onPage page: Int?, listing raindropsPerPage: Int?*/) async -> RaindropListResult
+	func listRaindrops(inCollectionWith id: Collection.ID, searchingFor search: String?/*, sortedBy sort: Raindrop.Sort?*/, onPage page: Int?, listing raindropsPerPage: Int?) async -> RaindropListResult
 //	func uploadCover(forRaindropWith id: Raindrop.ID, usingFileAt url: URL, withName filename: String) async -> RaindropCoverUploadResult
 //	func uploadFile(at url: URL, withName filename: String, toCollectionWith id: Collection.ID?) async -> RaindropCreationResult
 //	func removeRaindrop(with id: Raindrop.ID) async -> RaindropRemovalResult
