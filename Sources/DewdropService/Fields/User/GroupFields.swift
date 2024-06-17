@@ -4,7 +4,7 @@ import struct Dewdrop.Group
 import struct Dewdrop.Collection
 
 @dynamicMemberLookup
-public struct GroupFields {
+public struct GroupFields: Sendable /* TODO */ {
 	public let collections: [IDFields<Collection.Identified>]
 
 	private let group: Group

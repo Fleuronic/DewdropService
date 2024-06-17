@@ -5,7 +5,7 @@ import InitMacro
 import struct Dewdrop.Highlight
 import struct Foundation.Date
 
-@Init public struct HighlightInRaindropFields {
+@Init public struct HighlightInRaindropFields: Sendable /* TODO */ {
 	public let id: Highlight.ID
 	public let text: String
 	public let color: Highlight.Color

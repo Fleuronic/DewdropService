@@ -8,6 +8,7 @@ import struct Dewdrop.Filter
 	public let filters: [FilterCountFields]
 	public let tags: [TagCountFields]
 	public let favorited: Filter?
+	public let highlighted: Filter?
 	public let duplicate: Filter?
 	public let untagged: Filter?
 	public let broken: Filter?

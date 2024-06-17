@@ -6,7 +6,7 @@ import struct Dewdrop.Media
 import struct Foundation.URL
 import struct Foundation.Date
 
-@Init public struct RaindropImportFields {
+@Init public struct RaindropImportFields: RaindropFields {
 	public let url: URL
 	public let title: String
 	public let excerpt: String?

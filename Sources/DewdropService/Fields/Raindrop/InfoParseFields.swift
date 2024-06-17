@@ -19,7 +19,7 @@ public extension InfoParseFields {
 
 // MARK -
 extension InfoParseFields {
-	@Init public struct Meta {
+	@Init public struct Meta: Sendable {
 		public let text: String
 		public let tags: [TagNameFields]
 	}

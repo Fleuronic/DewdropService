@@ -4,7 +4,7 @@ import struct Dewdrop.Highlight
 import struct Foundation.Date
 
 @dynamicMemberLookup
-public struct HighlightImportFields {
+public struct HighlightImportFields: Sendable /* TODO */ {
 	public let creationDate: Date
 
 	private let content: Highlight.Content

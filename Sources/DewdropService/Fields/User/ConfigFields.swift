@@ -4,7 +4,7 @@ import struct Dewdrop.User
 import struct Dewdrop.Collection
 
 @dynamicMemberLookup
-public struct ConfigFields {
+public struct ConfigFields: Sendable /* TODO */ {
 	public let lastViewedCollection: IDFields<Collection.Identified>
 
 	private let config: User.Config

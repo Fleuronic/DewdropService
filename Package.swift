@@ -1,10 +1,10 @@
-// swift-tools-version:5.10
+// swift-tools-version:6.0
 import PackageDescription
 
 let package = Package(
 	name: "DewdropService",
 	platforms: [
-		.iOS(.v13),
+		.iOS(.v15),
 		.macOS(.v12),
 		.tvOS(.v13),
 		.watchOS(.v6),
@@ -18,7 +18,7 @@ let package = Package(
 	dependencies: [
 		.package(path: "../.."),
 		.package(url: "https://github.com/Fleuronic/Catena", branch: "main"),
-		.package(url: "https://github.com/JohnSundell/Identity", from: "0.1.0")
+		.package(url: "https://github.com/Fleuronic/Identity", branch: "master")
 	],
 	targets: [
 		.target(
@@ -27,7 +27,8 @@ let package = Package(
 				"Dewdrop",
 				"Identity",
 				"Catena"
-			]
-		),
+			],
+			swiftSettings: [.swiftLanguageVersion(.v6)]
+		)
 	]
 )
