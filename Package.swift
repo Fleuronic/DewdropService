@@ -27,8 +27,8 @@ let package = Package(
 				"Dewdrop",
 				"Identity",
 				"Catena"
-			],
-			swiftSettings: [.swiftLanguageVersion(.v6)]
+			]
 		)
-	]
+	],
+	swiftLanguageVersions: [.v6]
 )
