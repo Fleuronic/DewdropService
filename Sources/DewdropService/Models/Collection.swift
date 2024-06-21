@@ -2,29 +2,16 @@
 
 import struct Dewdrop.Collection
 import struct Identity.Identifier
-import protocol Identity.Identifiable
-
-public struct IdentifiedCollection {
-	public let id: ID
-
-	let value: Collection
-}
 
 // MARK: -
 public extension Collection {
 	typealias ID = Identified.ID
-	typealias Identified = IdentifiedCollection
+	typealias Identified = DewdropService.Identified<Self, Int>
 }
 
 // MARK: -
-public extension Identifier<Collection.Identified> {
+public extension Identifier<Identified<Collection, Int>> {
 	static let all: Self = 0
 	static let unsorted: Self = -1
 	static let trash: Self = -99
-}
-
-// MARK: -
-extension Collection.Identified: Identifiable {
-	// MARK: Identifiable
-	public typealias RawIdentifier = Int
 }

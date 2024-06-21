@@ -1,9 +1,10 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
 import struct Dewdrop.Filter
-import protocol Identity.Identifiable
+import struct Identity.Identifier
 
 // MARK: -
 public extension Filter {
-	typealias ID = Identified<Self, String>.ID
+	typealias ID = Identified.ID
+	typealias Identified = DewdropService.Identified<Self, String>
 }

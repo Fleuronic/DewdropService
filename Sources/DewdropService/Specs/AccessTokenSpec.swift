@@ -3,7 +3,7 @@
 import struct Dewdrop.AccessToken
 import struct Foundation.URL
 
-public protocol TokenSpec {
+public protocol AccessTokenSpec {
 	associatedtype ExchangedToken
 	associatedtype RefreshedToken
 
