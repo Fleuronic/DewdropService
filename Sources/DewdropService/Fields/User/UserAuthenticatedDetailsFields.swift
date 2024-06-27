@@ -4,17 +4,17 @@ import struct Dewdrop.User
 import struct Dewdrop.Account
 
 @dynamicMemberLookup
-public struct UserAuthenticatedDetailsFields: UserFields {
+public struct UserAuthenticatedDetailsFields: UserFields { // TODO
 	public let id: User.ID
 	public let config: ConfigFields
-	public let groups: [GroupFields]
+	public let groups: [GroupDetailsFields]
 
 	private let account: Account
 
 	public init(
 		id: User.ID,
 		config: ConfigFields,
-		groups: [GroupFields],
+		groups: [GroupDetailsFields],
 		account: Account
 	) {
 		self.id = id

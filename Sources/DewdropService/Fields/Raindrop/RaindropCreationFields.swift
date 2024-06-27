@@ -3,6 +3,7 @@
 import struct Dewdrop.Raindrop
 import struct Dewdrop.User
 import struct Dewdrop.Collection
+import struct Catena.IDFields
 
 @dynamicMemberLookup
 public struct RaindropCreationFields {

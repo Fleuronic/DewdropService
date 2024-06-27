@@ -2,9 +2,10 @@
 
 import struct Dewdrop.Collection
 import struct Dewdrop.User
+import struct Catena.IDFields
 
 @dynamicMemberLookup
-public struct CollectionDetailsFields: CollectionFields {
+public struct CollectionDetailsFields {
 	public let id: Collection.ID
 	public let owner: IDFields<User.Identified>
 	public let parent: IDFields<Collection.Identified>?
@@ -29,4 +30,8 @@ public extension CollectionDetailsFields {
 	subscript<T>(dynamicMember keyPath: KeyPath<Collection, T>) -> T {
 		collection[keyPath: keyPath]
 	}
+}
+
+extension CollectionDetailsFields: CollectionFields {
+	public typealias Model = Collection
 }

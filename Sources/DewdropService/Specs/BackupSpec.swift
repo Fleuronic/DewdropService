@@ -8,7 +8,7 @@ import protocol Catena.Scoped
 public protocol BackupSpec {
 	associatedtype BackupData
 	associatedtype BackupCreation
-	associatedtype BackupListFields
+	associatedtype BackupListFields: BackupFields
 	associatedtype BackupList: Scoped<BackupListFields>
 
 	func listBackups() async -> BackupList

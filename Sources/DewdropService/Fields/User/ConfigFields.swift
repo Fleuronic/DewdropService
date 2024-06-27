@@ -2,6 +2,7 @@
 
 import struct Dewdrop.User
 import struct Dewdrop.Collection
+import struct Catena.IDFields
 
 @dynamicMemberLookup
 public struct ConfigFields: Sendable /* TODO */ {
@@ -14,7 +15,7 @@ public struct ConfigFields: Sendable /* TODO */ {
 		lastViewedCollectionID: Collection.ID
 	) {
 		self.config = config
-		self.lastViewedCollection = IDFields(id: lastViewedCollectionID)
+		lastViewedCollection = .init(id: lastViewedCollectionID)
 	}
 }
 

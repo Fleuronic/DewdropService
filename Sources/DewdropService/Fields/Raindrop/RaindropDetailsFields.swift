@@ -3,9 +3,11 @@
 import struct Dewdrop.Raindrop
 import struct Dewdrop.User
 import struct Dewdrop.Collection
+import struct Catena.IDFields
+import protocol Catena.Valued
 
 @dynamicMemberLookup
-public struct RaindropDetailsFields: RaindropFields {
+public struct RaindropDetailsFields {
 	public let id: Raindrop.ID
 	public let owner: IDFields<User.Identified>
 	public let creator: UserNameFields
@@ -34,7 +36,12 @@ public struct RaindropDetailsFields: RaindropFields {
 	}
 }
 
-// MARK -
+// MARK: -
+extension RaindropDetailsFields: RaindropFields {
+	public typealias Model = Raindrop
+}
+
+// MARK: -
 public extension RaindropDetailsFields {
 	subscript<T>(dynamicMember keyPath: KeyPath<Raindrop, T>) -> T {
 		raindrop[keyPath: keyPath]

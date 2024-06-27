@@ -17,15 +17,13 @@ let package = Package(
 	],
 	dependencies: [
 		.package(path: "../.."),
-		.package(url: "https://github.com/Fleuronic/Catena", branch: "main"),
-		.package(url: "https://github.com/Fleuronic/Identity", branch: "master")
+		.package(path: "../../../Catena")
 	],
 	targets: [
 		.target(
 			name: "DewdropService",
 			dependencies: [
 				"Dewdrop",
-				"Identity",
 				"Catena"
 			]
 		)

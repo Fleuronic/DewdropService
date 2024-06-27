@@ -4,10 +4,13 @@ import struct Dewdrop.Collection
 import struct Dewdrop.Collaborator
 import struct Dewdrop.User
 import struct Foundation.URL
+import protocol Catena.Scoped
 
 public protocol CollectionSpec {
-	associatedtype CollectionListResult
-	// associatedtype SystemCollectionListResult
+	associatedtype CollectionListFields: CollectionFields
+	associatedtype CollectionList: Scoped<CollectionListFields>
+	associatedtype SystemCollectionListFields: CollectionFields
+	associatedtype SystemCollectionList: Scoped<SystemCollectionListFields>
 	// associatedtype CollaboratorListResult
 	// associatedtype CoverListResult
 	// associatedtype CollectionDetailsResult
@@ -45,9 +48,9 @@ public protocol CollectionSpec {
 
 	// func fetchDetails(forCollectionWith id: Collection.ID) async -> CollectionDetailsResult
 	// func listCollaborators(ofCollectionWith id: Collection.ID) async -> CollaboratorListResult
-	func listRootCollections() async -> CollectionListResult
-	func listChildCollections() async -> CollectionListResult
-	// 	func listSystemCollections() async -> SystemCollectionListResult
+	func listRootCollections() async -> CollectionList
+	func listChildCollections() async -> CollectionList
+	func listSystemCollections() async -> SystemCollectionList
 	// 	func expandCollections(_ expanded: Bool) async -> CollectionExpansionCollapseResult
 	// 	func reorderCollections(by sort: Collection.Sort) async -> CollectionReorderResult
 	// 	func mergeCollections(with ids: [Collection.ID], intoCollectionWith id: Collection.ID) async -> CollectionMergeResult

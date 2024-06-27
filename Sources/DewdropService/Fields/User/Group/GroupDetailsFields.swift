@@ -2,9 +2,10 @@
 
 import struct Dewdrop.Group
 import struct Dewdrop.Collection
+import struct Catena.IDFields
 
 @dynamicMemberLookup
-public struct GroupFields: Sendable /* TODO */ {
+public struct GroupDetailsFields {
 	public let collections: [IDFields<Collection.Identified>]
 
 	private let group: Group
@@ -18,8 +19,13 @@ public struct GroupFields: Sendable /* TODO */ {
 	}
 }
 
+// MARK: -
+extension GroupDetailsFields: GroupFields {
+	public typealias Model = Group
+}
+
 // MARK -
-public extension GroupFields {
+public extension GroupDetailsFields {
 	subscript<T>(dynamicMember keyPath: KeyPath<Group, T>) -> T {
 		group[keyPath: keyPath]
 	}

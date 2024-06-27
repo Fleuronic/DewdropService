@@ -7,19 +7,21 @@ import struct Dewdrop.Media
 import struct Dewdrop.Highlight
 import struct Foundation.URL
 import struct Foundation.Date
+import protocol Catena.Scoped
 
 public protocol RaindropSpec {
 //	associatedtype RaindropDetailsResult
 //	associatedtype RaindropHighlightsResult
 //	associatedtype RaindropCopyDownloadResult
 //	associatedtype RaindropSuggestionsResult
-	associatedtype RaindropListResult
-//	associatedtype RaindropCreationResult
+	associatedtype RaindropListFields: RaindropFields
+	associatedtype RaindropList: Scoped<RaindropListFields>
+//	associatedtype RaindropSaveResult
 //	associatedtype RaindropCreationListResult
 //	associatedtype RaindropCoverUploadResult
 //	associatedtype RaindropRemovalResult
 //	
-//	func createRaindrop(
+//	func saveRaindrop(
 //		url: URL,
 //		title: String?,
 //		itemType: ItemType?,
@@ -35,9 +37,9 @@ public protocol RaindropSpec {
 //		creationDate: Date?,
 //		updateDate: Date?,
 //		shouldParse: Bool
-//	) async -> RaindropCreationResult
+//	) async -> RaindropSaveResult
 //	
-//	func createRaindrops(
+//	func saveRaindrops(
 //		data: [
 //			(
 //				url: URL,
@@ -64,9 +66,9 @@ public protocol RaindropSpec {
 //	func downloadPermanentCopy(ofRaindropWith id: Raindrop.ID) async -> RaindropCopyDownloadResult
 //	func listSuggestions(forRaindropWith id: Raindrop.ID) async -> RaindropSuggestionsResult
 //	func listSuggestionsForNewRaindrop(with url: URL) async -> RaindropSuggestionsResult
-	func listRaindrops(inCollectionWith id: Collection.ID, searchingFor search: String?/*, sortedBy sort: Raindrop.Sort?*/, onPage page: Int?, listing raindropsPerPage: Int?) async -> RaindropListResult
+	func listRaindrops(inCollectionWith id: Collection.ID, searchingFor search: String?/*, sortedBy sort: Raindrop.Sort?*/, onPage page: Int?, listing raindropsPerPage: Int?) async -> RaindropList
 //	func uploadCover(forRaindropWith id: Raindrop.ID, usingFileAt url: URL, withName filename: String) async -> RaindropCoverUploadResult
-//	func uploadFile(at url: URL, withName filename: String, toCollectionWith id: Collection.ID?) async -> RaindropCreationResult
+//	func uploadFile(at url: URL, withName filename: String, toCollectionWith id: Collection.ID?) async -> RaindropSaveResult
 //	func removeRaindrop(with id: Raindrop.ID) async -> RaindropRemovalResult
 //	func removeRaindrops(fromCollectionWith id: Collection.ID?, matching ids: [Raindrop.ID]?, searchingFor search: String?) async -> RaindropRemovalResult
 }

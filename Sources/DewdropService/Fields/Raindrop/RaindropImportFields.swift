@@ -2,11 +2,12 @@
 
 import InitMacro
 
+import struct Dewdrop.Raindrop
 import struct Dewdrop.Media
 import struct Foundation.URL
 import struct Foundation.Date
 
-@Init public struct RaindropImportFields: RaindropFields {
+@Init public struct RaindropImportFields {
 	public let url: URL
 	public let title: String
 	public let excerpt: String?
@@ -18,4 +19,8 @@ import struct Foundation.Date
 	public let updateDate: Date
 	public let tags: [TagNameFields]
 	public let highlights: [HighlightImportFields]?
+}
+
+extension RaindropImportFields: RaindropFields {
+	public typealias Model = Raindrop
 }

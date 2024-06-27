@@ -2,15 +2,64 @@
 
 import struct Dewdrop.Collection
 import struct Identity.Identifier
+import protocol Identity.Identifiable
+import protocol Catena.Valued
 
-// MARK: -
 public extension Collection {
 	typealias ID = Identified.ID
-	typealias Identified = DewdropService.Identified<Self, Int>
+	typealias Identified = IdentifiedCollection
 }
 
 // MARK: -
-public extension Identifier<Identified<Collection, Int>> {
+extension Collection: Valued {
+	public typealias Value = Self
+}
+
+// MARK: -
+// TODO
+public extension Collection.Identified {
+	init(
+		id: ID,
+		title: String,
+		count: Int
+	) {
+		self.id = id
+
+		value = .init(
+			title: title,
+			count: count,
+			coverURL: nil,
+			colorString: nil,
+			view: .masonry,
+			access: .init(level: .owner, isDraggable: true),
+			sortIndex: nil,
+			isPublic: false,
+			isShared: false,
+			isExpanded: false,
+			creationDate: .init(),
+			updateDate: .init()
+		)
+	}
+}
+
+@dynamicMemberLookup
+public struct IdentifiedCollection: Valued, Identifiable {
+	public typealias Value = Collection
+	public typealias RawIdentifier = Int
+
+	public let id: ID
+
+	private let value: Value
+}
+
+public extension IdentifiedCollection {
+	subscript<T>(dynamicMember keyPath: KeyPath<Collection, T>) -> T {
+		value[keyPath: keyPath]
+	}
+}
+
+// MARK: -
+public extension Identifier<Collection.Identified> {
 	static let all: Self = 0
 	static let unsorted: Self = -1
 	static let trash: Self = -99
