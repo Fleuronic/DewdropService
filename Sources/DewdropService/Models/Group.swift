@@ -18,11 +18,11 @@ extension Group: Valued {
 // TODO
 public extension Group.Identified {
 	init(
-		title: String
+		id: ID
 	) {
 		value = .init(
-			title: title,
-			isHidden: false, 
+			title: id.rawValue,
+			isHidden: false,
 			sortIndex: 0
 		)
 	}

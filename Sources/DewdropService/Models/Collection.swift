@@ -1,6 +1,7 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
 import struct Dewdrop.Collection
+import struct Dewdrop.Group
 import struct Identity.Identifier
 import protocol Identity.Identifiable
 import protocol Catena.Valued
@@ -21,9 +22,11 @@ public extension Collection.Identified {
 	init(
 		id: ID,
 		title: String,
-		count: Int
+		count: Int,
+		group: Group.Identified?
 	) {
 		self.id = id
+		self.group = group
 
 		value = .init(
 			title: title,
@@ -48,6 +51,7 @@ public struct IdentifiedCollection: Valued, Identifiable {
 	public typealias RawIdentifier = Int
 
 	public let id: ID
+	public let group: Group.Identified!
 
 	private let value: Value
 }

@@ -1,6 +1,7 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
 import struct Dewdrop.Raindrop
+import struct Dewdrop.Collection
 import struct Foundation.URL
 import protocol Catena.Valued
 import protocol Identity.Identifiable
@@ -22,7 +23,7 @@ public extension Raindrop.Identified {
 		id: ID,
 		title: String,
 		url: URL,
-		collection: IdentifiedCollection
+		collection: Collection.Identified
 	) {
 		self.id = id
 		self.collection = collection
@@ -51,7 +52,7 @@ public struct IdentifiedRaindrop: Valued, Identifiable {
 	public typealias RawIdentifier = Int
 	
 	public let id: ID
-	public let collection: IdentifiedCollection
+	public let collection: Collection.Identified
 
 	private let value: Value
 }
