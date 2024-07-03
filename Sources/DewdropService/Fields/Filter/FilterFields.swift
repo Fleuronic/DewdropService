@@ -2,7 +2,9 @@
 
 import struct Dewdrop.Filter
 import protocol Catena.Fields
+import protocol Catena.Valued
 
-public protocol FilterFields: Fields where Model == Filter {}
+public protocol FilterFields: Fields, Sendable where Model: Valued<Filter> {}
 
+// MARK: -
 extension ModelFields: FilterFields where Model == Filter {}

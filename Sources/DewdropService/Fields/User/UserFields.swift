@@ -2,7 +2,9 @@
 
 import struct Dewdrop.User
 import protocol Catena.Fields
+import protocol Catena.Valued
 
-public protocol UserFields: Fields where Model == User {}
+public protocol UserFields: Fields, Sendable where Model: Valued<User> {}
 
+// MARK: -
 extension ModelFields: UserFields where Model == User {}
