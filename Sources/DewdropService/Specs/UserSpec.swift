@@ -16,13 +16,4 @@ public protocol UserSpec {
 	func fetchUserPublicDetails(with id: User.ID) async -> UserPublicDetails
 	func connectSocialNetworkAccount(from provider: Network.Provider) async -> NetworkConnection
 	func disconnectSocialNetworkAccount(from provider: Network.Provider) async -> NetworkDisconnection
-	
-	// func updateUser(
-	// 	email: String?,
-	// 	fullName: String?,
-	// 	oldPassword: String?,
-	// 	newPassword: String?,
-	// 	config: User.Config?,
-	// 	groups: [(Group, [Collection.ID])]?
-	// ) async -> UserAuthenticatedDetailsResult
 }
