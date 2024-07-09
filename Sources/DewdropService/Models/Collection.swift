@@ -22,7 +22,8 @@ public struct IdentifiedCollection {
 	public let id: ID
 	public let value: Value
 	public let group: Group.Identified
-	public let collections: [Self]
+
+	public var parent: Collection.Identified { fatalError() }
 }
 
 // MARK: -
@@ -31,7 +32,8 @@ public extension Collection.Identified {
 		id: ID,
 		title: String,
 		count: Int,
-		group: Group.Identified
+		group: Group.Identified,
+		parent: Collection.Identified
 	) {
 		self.id = id
 		self.group = group
