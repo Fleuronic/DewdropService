@@ -22,6 +22,7 @@ public struct IdentifiedCollection {
 	public let id: ID
 	public let value: Value
 	public let group: Group.Identified
+	public let collections: [Self]
 }
 
 // MARK: -
