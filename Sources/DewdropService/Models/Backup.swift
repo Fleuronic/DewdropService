@@ -10,17 +10,20 @@ public extension Backup {
 	typealias Identified = IdentifiedBackup
 }
 
-@dynamicMemberLookup
-public struct IdentifiedBackup: Valued, Identifiable {
-	public typealias Value = Backup
-
-	public let id: Self.ID
-
-	let value: Value
+// MARK: -
+extension Backup: Valued {
+	// MARK: Valued
+	public typealias Value = Self
 }
 
-public extension IdentifiedBackup {
-	subscript<T>(dynamicMember keyPath: KeyPath<Backup, T>) -> T {
-		value[keyPath: keyPath]
-	}
+// MARK: -
+public struct IdentifiedBackup: Identifiable {
+	public let id: Self.ID
+	public let value: Value
+}
+
+// MARK: -
+extension Backup.Identified: Valued {
+	// MARK: Valued
+	public typealias Value = Backup
 }

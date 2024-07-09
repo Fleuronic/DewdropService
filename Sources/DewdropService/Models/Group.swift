@@ -1,6 +1,7 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
 import struct Dewdrop.Group
+import struct Dewdrop.Collection
 import protocol Catena.Valued
 import protocol Identity.Identifiable
 
@@ -15,11 +16,19 @@ extension Group: Valued {
 }
 
 // MARK: -
-// TODO
+public struct IdentifiedGroup {
+	public let value: Value
+	public let collections: [Collection.Identified]
+}
+
+// MARK: -
 public extension Group.Identified {
 	init(
-		id: ID
+		id: ID,
+		collections: [Collection.Identified]
 	) {
+		self.collections = collections
+	
 		value = .init(
 			title: id.rawValue,
 			isHidden: false,
@@ -28,20 +37,13 @@ public extension Group.Identified {
 	}
 }
 
-@dynamicMemberLookup
-public struct IdentifiedGroup: Valued, Identifiable {
-	public typealias Value = Group // TODO
-	public typealias RawIdentifier = String
-
-	private let value: Value
+// MARK: -
+extension Group.Identified: Valued {
+	// MARK: Valued
+	public typealias Value = Group
 }
 
-public extension IdentifiedGroup {
-	var id: ID {
-		.init(rawValue: value.title)
-	}
-
-	subscript<T>(dynamicMember keyPath: KeyPath<Group, T>) -> T {
-		value[keyPath: keyPath]
-	}
+extension Group.Identified: Identifiable {
+	// MARK: Identifiable
+	public var id: ID { .init(rawValue: value.title) }
 }

@@ -4,23 +4,25 @@ import struct Dewdrop.Tag
 import protocol Catena.Valued
 import protocol Identity.Identifiable
 
-// MARK: -
 public extension Tag {
 	typealias ID = Identified.ID
 	typealias Identified = IdentifiedTag
 }
 
-@dynamicMemberLookup
-public struct IdentifiedTag: Valued, Identifiable {
-	public typealias Value = Tag
-
-	public let id: Self.ID
-
-	let value: Value
+// MARK: -
+extension Tag: Valued {
+	// MARK: Valued
+	public typealias Value = Self
 }
 
-public extension IdentifiedTag {
-	subscript<T>(dynamicMember keyPath: KeyPath<Tag, T>) -> T {
-		value[keyPath: keyPath]
-	}
+// MARK: -
+public struct IdentifiedTag: Identifiable {
+	public let id: Self.ID
+	public let value: Value
+}
+
+// MARK: -
+extension Tag.Identified: Valued {
+	// MARK: Valued
+	public typealias Value = Tag
 }

@@ -13,52 +13,61 @@ public extension Collection {
 
 // MARK: -
 extension Collection: Valued {
+	// MARK: Valued
 	public typealias Value = Self
 }
 
 // MARK: -
-// TODO
+public struct IdentifiedCollection {
+	public let id: ID
+	public let value: Value
+	public let group: Group.Identified
+}
+
+// MARK: -
 public extension Collection.Identified {
 	init(
 		id: ID,
 		title: String,
 		count: Int,
-		group: Group.Identified?
+		group: Group.Identified
 	) {
 		self.id = id
 		self.group = group
 
-		value = .init(
-			title: title,
-			count: count,
-			coverURL: nil,
-			colorString: nil,
-			view: .masonry,
-			access: .init(level: .owner, isDraggable: true),
-			sortIndex: nil,
-			isPublic: false,
-			isShared: false,
-			isExpanded: false,
-			creationDate: .init(),
-			updateDate: .init()
-		)
+		// TODO
+		fatalError()
 	}
 }
 
-@dynamicMemberLookup
-public struct IdentifiedCollection: Valued, Identifiable {
-	public typealias Value = Collection
+// MARK: -
+extension Collection.Identified: Identifiable {
+	// MARK: Identifiable
 	public typealias RawIdentifier = Int
-
-	public let id: ID
-	public let group: Group.Identified!
-
-	private let value: Value
 }
 
-public extension IdentifiedCollection {
-	subscript<T>(dynamicMember keyPath: KeyPath<Collection, T>) -> T {
-		value[keyPath: keyPath]
+extension Collection.Identified: Valued {
+	// MARK: Valued
+	public typealias Value = Collection
+}
+
+// MARK: -
+public extension [Collection] {
+	var title: [String] { map(\.title) }
+	var count: [Int] { map(\.count) }
+}
+
+// MARK: -
+public extension [Collection.Identified] {
+	var id: [Collection.ID] { map(\.id) }
+	var value: [Collection] { map(\.value) }
+
+	init(
+		ids: [Collection.ID],
+		titles: [String],
+		counts: [Int]
+	) {
+		fatalError()
 	}
 }
 

@@ -10,17 +10,14 @@ public extension Highlight {
 	typealias Identified = IdentifiedHighlight
 }
 
-@dynamicMemberLookup
-public struct IdentifiedHighlight: Valued, Identifiable {
-	public typealias Value = Highlight
-
+// MARK: -
+public struct IdentifiedHighlight: Identifiable {
 	public let id: Self.ID
-
-	let value: Value
+	public let value: Value
 }
 
-public extension IdentifiedHighlight {
-	subscript<T>(dynamicMember keyPath: KeyPath<Highlight, T>) -> T {
-		value[keyPath: keyPath]
-	}
+// MARK: -
+extension Highlight.Identified: Valued {
+	// MARK: Valued
+	public typealias Value = Highlight
 }

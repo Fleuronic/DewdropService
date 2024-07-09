@@ -4,23 +4,25 @@ import struct Dewdrop.Filter
 import protocol Catena.Valued
 import protocol Identity.Identifiable
 
-// MARK: -
 public extension Filter {
 	typealias ID = Identified.ID
 	typealias Identified = IdentifiedFilter
 }
 
-@dynamicMemberLookup
-public struct IdentifiedFilter: Valued, Identifiable {
-	public typealias Value = Filter
-
-	public let id: Self.ID
-
-	let value: Value
+// MARK: -
+extension Filter: Valued {
+	// MARK: Valued
+	public typealias Value = Self
 }
 
-public extension IdentifiedFilter {
-	subscript<T>(dynamicMember keyPath: KeyPath<Filter, T>) -> T {
-		value[keyPath: keyPath]
-	}
+// MARK: -
+public struct IdentifiedFilter: Identifiable {
+	public let id: Self.ID
+	public let value: Filter
+}
+
+// MARK: -
+extension Filter.Identified: Valued {
+	// MARK: Valued
+	public typealias Value = Filter
 }

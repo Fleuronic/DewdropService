@@ -17,7 +17,13 @@ extension Raindrop: Valued {
 }
 
 // MARK: -
-// TODO
+public struct IdentifiedRaindrop {
+	public let id: ID
+	public let value: Value
+	public let collection: Collection.Identified
+}
+
+// MARK: -
 public extension Raindrop.Identified {
 	init(
 		id: ID,
@@ -28,37 +34,19 @@ public extension Raindrop.Identified {
 		self.id = id
 		self.collection = collection
 
-		value = .init(
-			url: url,
-			title: title,
-			itemType: .article,
-			excerpt: nil,
-			domain: "beep.com",
-			coverURL: nil,
-			media: [],
-			note: nil,
-			cache: nil,
-			isFavorite: false,
-			isBroken: false,
-			creationDate: .init(),
-			updateDate: .init()
-		)
+		// TODO
+		fatalError()
 	}
 }
 
-@dynamicMemberLookup
-public struct IdentifiedRaindrop: Valued, Identifiable {
-	public typealias Value = Raindrop
+// MARK: -
+extension Raindrop.Identified: Identifiable {
+	// MARK: Identifiable
 	public typealias RawIdentifier = Int
-	
-	public let id: ID
-	public let collection: Collection.Identified
-
-	private let value: Value
 }
 
-public extension IdentifiedRaindrop {
-	subscript<T>(dynamicMember keyPath: KeyPath<Raindrop, T>) -> T {
-		value[keyPath: keyPath]
-	}
+// MARK: -
+extension Raindrop.Identified: Valued {
+	// MARK: Valued
+	public typealias Value = Raindrop
 }
