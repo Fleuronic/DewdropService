@@ -7,21 +7,22 @@ import struct Catena.IDFields
 @dynamicMemberLookup
 public struct CollectionDetailsFields {
 	public let id: Collection.ID
+	public let parentID: Collection.ID?
 	public let owner: IDFields<User.Identified>
-	public let parent: IDFields<Collection.Identified>?
 
 	private let collection: Collection
 
 	public init(
 		id: Collection.ID,
-		owner: IDFields<User.Identified>,
 		parent: IDFields<Collection.Identified>?,
+		owner: IDFields<User.Identified>,
 		collection: Collection
 	) {
 		self.id = id
 		self.owner = owner
-		self.parent = parent
 		self.collection = collection
+
+		parentID = parent?.id
 	}
 }
 
