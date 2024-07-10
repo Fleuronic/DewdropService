@@ -25,14 +25,15 @@ public struct IdentifiedGroup {
 public extension Group.Identified {
 	init(
 		id: ID,
+		sortIndex: Int,
 		collections: [Collection.Identified]
 	) {
 		self.collections = collections
 	
 		value = .init(
 			title: id.rawValue,
-			isHidden: false,
-			sortIndex: 0
+			isHidden: false, // TODO
+			sortIndex: sortIndex
 		)
 	}
 }

@@ -20,22 +20,22 @@ extension Collection: Valued {
 // MARK: -
 public struct IdentifiedCollection {
 	public let id: ID
+	public let parentID: ID?
 	public let value: Value
 	public let group: Group.Identified
-
-	public var parent: Collection.Identified { fatalError() }
 }
 
 // MARK: -
 public extension Collection.Identified {
 	init(
 		id: ID,
+		parentID: ID?,
 		title: String,
 		count: Int,
-		group: Group.Identified,
-		parent: Collection.Identified
+		group: Group.Identified
 	) {
 		self.id = id
+		self.parentID = parentID
 		self.group = group
 
 		// TODO
