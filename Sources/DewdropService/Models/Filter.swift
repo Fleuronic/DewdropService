@@ -22,6 +22,18 @@ public struct IdentifiedFilter: Identifiable {
 }
 
 // MARK: -
+public extension Filter.Identified {
+	init(
+		id: ID,
+		count: Int
+	) {
+		self.id = id
+		
+		value = .init(count: count)
+	}
+}
+
+// MARK: -
 extension Filter.Identified: Valued {
 	// MARK: Valued
 	public typealias Value = Filter
