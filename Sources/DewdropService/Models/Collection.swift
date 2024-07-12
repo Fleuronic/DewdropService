@@ -32,7 +32,8 @@ public extension Collection.Identified {
 		parentID: ID?,
 		title: String,
 		count: Int,
-		isShared: Int,
+		isShared: Bool,
+		sortIndex: Int?,
 		group: Group.Identified
 	) {
 		self.id = id
@@ -60,6 +61,7 @@ public extension [Collection] {
 	var title: [String] { map(\.title) }
 	var count: [Int] { map(\.count) }
 	var isShared: [Bool] { map(\.isShared) }
+	var sortIndex: [Int?] { map(\.sortIndex) }
 }
 
 // MARK: -
@@ -71,8 +73,10 @@ public extension [Collection.Identified] {
 		ids: [Collection.ID],
 		titles: [String],
 		counts: [Int],
-		isShareds: [Bool]
+		isSharedFlags: [Bool],
+		sortIndices: [Int?]
 	) {
+		// TODO
 		fatalError()
 	}
 }
