@@ -27,13 +27,15 @@ public struct IdentifiedCollection {
 
 // MARK: -
 public extension Collection.Identified {
+	static var parentIDKeyPath: KeyPath<Self, ID?> { \.parentID }
+
 	init(
 		id: ID,
 		parentID: ID?,
 		title: String,
 		count: Int,
 		isShared: Bool,
-		sortIndex: Int?,
+		sortIndex: Int,
 		group: Group.Identified
 	) {
 		self.id = id
@@ -61,7 +63,7 @@ public extension [Collection] {
 	var title: [String] { map(\.title) }
 	var count: [Int] { map(\.count) }
 	var isShared: [Bool] { map(\.isShared) }
-	var sortIndex: [Int?] { map(\.sortIndex) }
+	var sortIndex: [Int] { map(\.sortIndex) }
 }
 
 // MARK: -
@@ -74,7 +76,7 @@ public extension [Collection.Identified] {
 		titles: [String],
 		counts: [Int],
 		isSharedFlags: [Bool],
-		sortIndices: [Int?]
+		sortIndices: [Int]
 	) {
 		// TODO
 		fatalError()
