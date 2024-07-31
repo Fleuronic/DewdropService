@@ -12,7 +12,7 @@ public extension Raindrop {
 }
 
 // MARK: -
-extension Raindrop: Valued {
+extension Raindrop: @retroactive Valued {
 	public typealias Value = Self
 }
 

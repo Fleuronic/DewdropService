@@ -10,7 +10,7 @@ public extension Filter {
 }
 
 // MARK: -
-extension Filter: Valued {
+extension Filter: @retroactive Valued {
 	// MARK: Valued
 	public typealias Value = Self
 }

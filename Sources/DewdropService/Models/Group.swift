@@ -11,7 +11,7 @@ public extension Group {
 }
 
 // MARK: -
-extension Group: Valued {
+extension Group: @retroactive Valued {
 	public typealias Value = Self
 }
 

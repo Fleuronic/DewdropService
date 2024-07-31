@@ -12,7 +12,7 @@ public extension Collection {
 }
 
 // MARK: -
-extension Collection: Valued {
+extension Collection: @retroactive Valued {
 	// MARK: Valued
 	public typealias Value = Self
 }
