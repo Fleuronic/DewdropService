@@ -17,7 +17,7 @@ extension Backup: @retroactive Valued {
 }
 
 // MARK: -
-public struct IdentifiedBackup: Identifiable {
+public struct IdentifiedBackup: Identifiable, Sendable {
 	public let id: Self.ID
 	public let value: Value
 }

@@ -16,7 +16,7 @@ extension Tag: @retroactive Valued {
 }
 
 // MARK: -
-public struct IdentifiedTag: Identifiable {
+public struct IdentifiedTag: Identifiable, Sendable {
 	public let id: Self.ID
 	public let value: Value
 }

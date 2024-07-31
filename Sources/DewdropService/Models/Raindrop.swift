@@ -17,7 +17,7 @@ extension Raindrop: @retroactive Valued {
 }
 
 // MARK: -
-public struct IdentifiedRaindrop {
+public struct IdentifiedRaindrop: Sendable {
 	public let id: ID
 	public let value: Value
 	public let collection: Collection.Identified

@@ -18,7 +18,7 @@ extension Collection: @retroactive Valued {
 }
 
 // MARK: -
-public struct IdentifiedCollection {
+public struct IdentifiedCollection: Sendable {
 	public let id: ID
 	public let parentID: ID?
 	public let value: Value

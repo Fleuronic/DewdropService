@@ -16,7 +16,7 @@ extension Group: @retroactive Valued {
 }
 
 // MARK: -
-public struct IdentifiedGroup {
+public struct IdentifiedGroup: Sendable {
 	public let value: Value
 	public let collections: [Collection.Identified]
 }

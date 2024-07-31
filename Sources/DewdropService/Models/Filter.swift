@@ -16,7 +16,7 @@ extension Filter: @retroactive Valued {
 }
 
 // MARK: -
-public struct IdentifiedFilter: Identifiable {
+public struct IdentifiedFilter: Identifiable, Sendable {
 	public let id: Self.ID
 	public let value: Filter
 }

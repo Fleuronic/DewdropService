@@ -16,7 +16,7 @@ extension User: @retroactive Valued {
 }
 
 // MARK: -
-public struct IdentifiedUser {
+public struct IdentifiedUser: Sendable {
 	public let id: Self.ID
 	public let value: Value
 }

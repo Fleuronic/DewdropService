@@ -11,7 +11,7 @@ public extension Highlight {
 }
 
 // MARK: -
-public struct IdentifiedHighlight: Identifiable {
+public struct IdentifiedHighlight: Identifiable, Sendable {
 	public let id: Self.ID
 	public let value: Value
 }
