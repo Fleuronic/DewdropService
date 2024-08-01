@@ -27,8 +27,6 @@ public struct IdentifiedCollection: Sendable {
 
 // MARK: -
 public extension Collection.Identified {
-	static var parentIDKeyPath: KeyPath<Self, ID?> { \.parentID }
-
 	init(
 		id: ID,
 		parentID: ID?,
