@@ -1,5 +1,6 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
+import enum Dewdrop.ItemType
 import struct Dewdrop.Raindrop
 import struct Dewdrop.Collection
 import struct Foundation.URL
@@ -27,8 +28,11 @@ public struct IdentifiedRaindrop: Sendable {
 public extension Raindrop.Identified {
 	init(
 		id: ID,
-		title: String,
 		url: URL,
+		title: String,
+		itemType: ItemType,
+		isFavorite: Bool,
+		isBroken: Bool,
 		collection: Collection.Identified
 	) {
 		self.id = id

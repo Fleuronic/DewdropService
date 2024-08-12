@@ -42,6 +42,20 @@ public extension Collection.Identified {
 
 		// TODO
 		fatalError()
+		/*value = .init(
+			title: title,
+			count: count,
+			coverURL: URL?,
+			colorString: String?,
+			view: Collection.View?,
+			access: Collection.Access,
+			sortIndex: sortIndex,
+			isPublic: Bool,
+			isShared: isShared,
+			isExpanded: Bool,
+			creationDate: Date,
+			updateDate: Date
+		)*/
 	}
 }
 
@@ -67,17 +81,29 @@ public extension [Collection] {
 // MARK: -
 public extension [Collection.Identified] {
 	var id: [Collection.ID] { map(\.id) }
+	var parentID: [Collection.ID?] { map(\.parentID) }
 	var value: [Collection] { map(\.value) }
 
 	init(
 		ids: [Collection.ID],
+		parentIDs: [Collection.ID?],
 		titles: [String],
 		counts: [Int],
 		isSharedFlags: [Bool],
 		sortIndices: [Int]
 	) {
-		// TODO
-		fatalError()
+		let groups: [Group.Identified] = []
+		self = ids.enumerated().map { index, id in
+			.init(
+				id: id,
+				parentID: parentIDs[index],
+				title: titles[index],
+				count: counts[index],
+				isShared: isSharedFlags[index],
+				sortIndex: sortIndices[index],
+				group: groups[index]
+			)
+		}
 	}
 }
 
