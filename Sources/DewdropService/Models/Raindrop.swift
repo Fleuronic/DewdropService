@@ -40,6 +40,21 @@ public extension Raindrop.Identified {
 
 		// TODO
 		fatalError()
+		/*value = .init(
+			url: url,
+			title: title,
+			itemType: itemType,
+			excerpt: String?,
+			domain: String,
+			coverURL: URL?,
+			media: [Media],
+			note: String?,
+			cache: Cache?,
+			isFavorite: isFavorite,
+			isBroken: isBroken,
+			creationDate: Date,
+			updateDate: Date
+		)*/
 	}
 }
 
