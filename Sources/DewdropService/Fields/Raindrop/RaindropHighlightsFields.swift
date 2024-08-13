@@ -5,9 +5,11 @@ import struct Dewdrop.Raindrop
 public struct RaindropHighlightsFields {
 	public let id: Raindrop.ID
 	public let highlights: [HighlightInRaindropFields]
+}
 
-	public init(detailsFields: RaindropDetailsFields) {
-		id = detailsFields.id
-		highlights = detailsFields.highlights ?? []
+extension RaindropHighlightsFields: RaindropFields {
+	public init(fields: RaindropDetailsFields) {
+		id = fields.id
+		highlights = fields.highlights ?? []
 	}
 }

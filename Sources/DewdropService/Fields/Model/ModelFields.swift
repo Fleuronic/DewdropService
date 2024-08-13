@@ -6,7 +6,7 @@ import protocol Catena.Fields
 import protocol Identity.Identifiable
 
 @Init @dynamicMemberLookup
-public struct ModelFields<Model: Sendable, ID: Sendable>: Fields, Sendable {
+public struct ModelFields<Model: Sendable, ID: Sendable>: Fields {
 	public let id: ID
 
 	private let model: Model

@@ -3,4 +3,4 @@
 import struct Dewdrop.Raindrop
 import protocol Catena.Fields
 
-public protocol InfoFields: Fields, Sendable where Model == Raindrop.Info {}
+public protocol InfoFields: Fields where Model == Raindrop.Info {}

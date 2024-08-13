@@ -22,7 +22,9 @@ public struct RaindropDetailsFields {
 
 // MARK: -
 extension RaindropDetailsFields: RaindropFields {
-	public typealias Model = Raindrop
+	public init(fields: RaindropDetailsFields) {
+		self = fields
+	}
 }
 
 // MARK: -

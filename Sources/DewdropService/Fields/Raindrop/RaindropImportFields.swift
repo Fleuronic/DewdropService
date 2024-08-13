@@ -6,6 +6,7 @@ import struct Dewdrop.Raindrop
 import struct Dewdrop.Media
 import struct Foundation.URL
 import struct Foundation.Date
+import protocol Catena.Fields
 
 @Init public struct RaindropImportFields {
 	public let url: URL
@@ -21,6 +22,6 @@ import struct Foundation.Date
 	public let highlights: [HighlightImportFields]?
 }
 
-extension RaindropImportFields: RaindropFields {
+extension RaindropImportFields: Fields {
 	public typealias Model = Raindrop
 }

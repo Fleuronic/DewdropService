@@ -10,7 +10,3 @@ import struct Catena.IDFields
 	public let collections: [IDFields<Collection.Identified>]
 	public let tags: [TagNameFields]
 }
-
-extension RaindropSuggestionListFields: RaindropFields {
-	public typealias Model = Raindrop
-}
