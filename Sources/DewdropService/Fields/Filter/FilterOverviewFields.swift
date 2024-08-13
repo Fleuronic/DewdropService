@@ -16,5 +16,5 @@ import struct Dewdrop.Filter
 
 // MARK: -
 extension FilterOverviewFields: FilterFields {
-	public typealias Model = Filter
+	
 }

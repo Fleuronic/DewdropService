@@ -34,5 +34,5 @@ public extension CollectionDetailsFields {
 }
 
 extension CollectionDetailsFields: CollectionFields {
-	public typealias Model = Collection
+	
 }

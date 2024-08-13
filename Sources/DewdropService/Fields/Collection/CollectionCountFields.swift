@@ -11,5 +11,5 @@ import struct Dewdrop.Collection
 
 // MARK: -
 extension CollectionCountFields: CollectionFields {
-	public typealias Model = Collection
+	
 }

@@ -21,7 +21,7 @@ public struct GroupDetailsFields {
 
 // MARK: -
 extension GroupDetailsFields: GroupFields {
-	public typealias Model = Group
+
 }
 
 // MARK -
