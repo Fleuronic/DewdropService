@@ -38,22 +38,21 @@ public extension Raindrop.Identified {
 		self.id = id
 		self.collection = collection
 
-		// TODO
 		fatalError()
 		/*value = .init(
 			url: url,
 			title: title,
 			itemType: itemType,
-			excerpt: String?,
-			domain: String,
-			coverURL: URL?,
-			media: [Media],
-			note: String?,
-			cache: Cache?,
+			excerpt: String?, // TODO
+			domain: String, // TODO
+			coverURL: URL?, // TODO
+			media: [Media], // TODO
+			note: String?, // TODO
+			cache: Cache?, // TODO
 			isFavorite: isFavorite,
 			isBroken: isBroken,
-			creationDate: Date,
-			updateDate: Date
+			creationDate: Date, // TODO
+			updateDate: Date // TODO
 		)*/
 	}
 }

@@ -40,21 +40,20 @@ public extension Collection.Identified {
 		self.parentID = parentID
 		self.group = group
 
-		// TODO
 		fatalError()
 		/*value = .init(
 			title: title,
 			count: count,
-			coverURL: URL?,
-			colorString: String?,
-			view: Collection.View?,
-			access: Collection.Access,
+			coverURL: URL?, // TODO
+			colorString: String?, // TODO
+			view: Collection.View?, // TODO
+			access: Collection.Access, // TODO
 			sortIndex: sortIndex,
-			isPublic: Bool,
+			isPublic: Bool, // TODO
 			isShared: isShared,
-			isExpanded: Bool,
-			creationDate: Date,
-			updateDate: Date
+			isExpanded: Bool, // TODO
+			creationDate: Date, // TODO
+			updateDate: Date // TODO
 		)*/
 	}
 }
