@@ -7,7 +7,8 @@ import struct Dewdrop.Network
 import protocol Catena.Scoped
 
 public protocol UserSpec {
-	associatedtype UserAuthenticatedDetails: Scoped<UserAuthenticatedDetailsFields>
+	associatedtype UserDetailsFields
+	associatedtype UserAuthenticatedDetails: Scoped<UserDetailsFields>
 	associatedtype UserPublicDetails: Scoped<UserPublicDetailsFields>
 	associatedtype NetworkConnection
 	associatedtype NetworkDisconnection
