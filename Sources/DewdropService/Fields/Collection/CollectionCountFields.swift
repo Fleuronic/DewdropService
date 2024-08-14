@@ -4,12 +4,7 @@ import InitMacro
 
 import struct Dewdrop.Collection
 
-@Init public struct CollectionCountFields {
+@Init public struct CollectionCountFields: CollectionFields {
 	public let id: Collection.ID
 	public let count: Int
-}
-
-// MARK: -
-extension CollectionCountFields: CollectionFields {
-	
 }

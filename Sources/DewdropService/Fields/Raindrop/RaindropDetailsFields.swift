@@ -9,7 +9,7 @@ import struct Catena.IDFields
 import protocol Catena.Valued
 
 @Init @dynamicMemberLookup
-public struct RaindropDetailsFields {
+public struct RaindropDetailsFields: RaindropFields {
 	public let id: Raindrop.ID
 	public let owner: IDFields<User.Identified>
 	public let creator: UserNameFields
@@ -18,13 +18,6 @@ public struct RaindropDetailsFields {
 	public let highlights: [HighlightInRaindropFields]?
 
 	private let raindrop: Raindrop
-}
-
-// MARK: -
-extension RaindropDetailsFields: RaindropFields {
-	public init(fields: RaindropDetailsFields) {
-		self = fields
-	}
 }
 
 // MARK: -

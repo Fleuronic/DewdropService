@@ -5,7 +5,7 @@ import struct Dewdrop.Collection
 import struct Catena.IDFields
 
 @dynamicMemberLookup
-public struct GroupDetailsFields {
+public struct GroupDetailsFields: GroupFields {
 	public let collections: [IDFields<Collection.Identified>]
 
 	private let group: Group
@@ -17,11 +17,6 @@ public struct GroupDetailsFields {
 		self.group = group
 		self.collections = collectionIDs.map(IDFields.init)
 	}
-}
-
-// MARK: -
-extension GroupDetailsFields: GroupFields {
-
 }
 
 // MARK -

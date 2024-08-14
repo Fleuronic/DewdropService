@@ -4,7 +4,7 @@ import InitMacro
 
 import struct Dewdrop.Filter
 
-@Init public struct FilterOverviewFields {
+@Init public struct FilterOverviewFields: FilterFields {
 	public let tags: [TagCountFields]
 	public let typeFilters: [FilterCountFields]
 	public let favorited: Filter?
@@ -12,9 +12,4 @@ import struct Dewdrop.Filter
 	public let duplicate: Filter?
 	public let untagged: Filter?
 	public let broken: Filter?
-}
-
-// MARK: -
-extension FilterOverviewFields: FilterFields {
-	
 }

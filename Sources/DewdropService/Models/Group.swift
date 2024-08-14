@@ -25,6 +25,7 @@ public struct IdentifiedGroup: Sendable {
 public extension Group.Identified {
 	init(
 		id: ID,
+		isHidden: Bool,
 		sortIndex: Int,
 		collections: [Collection.Identified]
 	) {
@@ -32,7 +33,7 @@ public extension Group.Identified {
 	
 		value = .init(
 			title: id.rawValue,
-			isHidden: false, // TODO
+			isHidden: isHidden,
 			sortIndex: sortIndex
 		)
 	}
