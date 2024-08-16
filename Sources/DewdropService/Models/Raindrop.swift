@@ -3,6 +3,7 @@
 import enum Dewdrop.ItemType
 import struct Dewdrop.Raindrop
 import struct Dewdrop.Collection
+import struct Dewdrop.Highlight
 import struct Foundation.URL
 import protocol Catena.Valued
 import protocol Identity.Identifiable
@@ -22,6 +23,7 @@ public struct IdentifiedRaindrop: Sendable {
 	public let id: ID
 	public let value: Value
 	public let collection: Collection.Identified
+//	public let highlights: [Highlight.Identified]
 }
 
 // MARK: -
@@ -34,9 +36,11 @@ public extension Raindrop.Identified {
 		isFavorite: Bool,
 		isBroken: Bool,
 		collection: Collection.Identified
+//		highlights: [Highlight.Identified]
 	) {
 		self.id = id
 		self.collection = collection
+//		self.highlights = highlights
 
 		fatalError()
 		/*value = .init(
