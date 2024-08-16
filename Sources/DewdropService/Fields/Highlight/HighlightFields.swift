@@ -1,29 +1,6 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
 import struct Dewdrop.Highlight
-import struct Dewdrop.Raindrop
+import protocol Catena.Fields
 
-@dynamicMemberLookup
-public struct HighlightFields {
-	public let id: Highlight.ID
-	public let raindropID: Raindrop.ID
-
-	private let highlight: Highlight
-
-	public init(
-		id: Highlight.ID,
-		raindropID: Raindrop.ID,
-		highlight: Highlight
-	) {
-		self.id = id
-		self.raindropID = raindropID
-		self.highlight = highlight
-	}
-}
-
-// MARK -
-public extension HighlightFields {
-	subscript<T>(dynamicMember keyPath: KeyPath<Highlight, T>) -> T {
-		highlight[keyPath: keyPath]
-	}
-}
+public protocol HighlightFields: Fields where Model == Highlight.Identified {}
