@@ -23,7 +23,7 @@ public struct IdentifiedRaindrop: Sendable {
 	public let id: ID
 	public let value: Value
 	public let collection: Collection.Identified
-//	public let highlights: [Highlight.Identified]
+	public let highlights: [Highlight.Identified]
 }
 
 // MARK: -
@@ -36,11 +36,9 @@ public extension Raindrop.Identified {
 		isFavorite: Bool,
 		isBroken: Bool,
 		collection: Collection.Identified
-//		highlights: [Highlight.Identified]
 	) {
 		self.id = id
 		self.collection = collection
-//		self.highlights = highlights
 
 		fatalError()
 		/*value = .init(
