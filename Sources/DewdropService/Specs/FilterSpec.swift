@@ -8,5 +8,5 @@ public protocol FilterSpec {
 	associatedtype FilterListFields: FilterFields
 	associatedtype FilterList: Scoped<FilterListFields>
 
-	func listFilters(forCollectionWith id: Collection.ID, searchingFor search: String?, sortingTagsBy tagSort: Tag.Sort?) async -> FilterList
+	func listFilters(forCollectionWith id: Collection.ID, searchingFor query: String?, sortingTagsBy tagSort: Tag.Sort?) async -> FilterList
 }

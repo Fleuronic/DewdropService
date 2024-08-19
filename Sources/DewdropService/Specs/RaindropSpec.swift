@@ -13,5 +13,5 @@ public protocol RaindropSpec {
 	associatedtype RaindropList: Scoped<RaindropListFields>
 	associatedtype RaindropListFields: RaindropFields
 
-	func listRaindrops(inCollectionWith id: Collection.ID, searchingFor search: String?/*, sortedBy sort: Raindrop.Sort?*/, onPage page: Int?, listing raindropsPerPage: Int?) async -> RaindropList
+	func listRaindrops(inCollectionWith id: Collection.ID, searchingFor query: String?/*, sortedBy sort: Raindrop.Sort?*/, onPage page: Int?, listing raindropsPerPage: Int?) async -> RaindropList
 }
