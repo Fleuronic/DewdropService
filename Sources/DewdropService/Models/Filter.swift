@@ -1,5 +1,6 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
+import enum Dewdrop.ItemType
 import struct Dewdrop.Filter
 import struct Identity.Identifier
 import protocol Identity.Identifiable
@@ -8,6 +9,28 @@ import protocol Catena.Valued
 public extension Filter {
 	typealias ID = Identified.ID
 	typealias Identified = IdentifiedFilter
+
+	static func query(for id: ID) -> String {
+		switch Filter.ID.Name(id: id) {
+		case .favorited: Filter.ID.Name.favorited.rawValue
+		case let name?: "\(name.rawValue):true"
+		case nil: "type:\(id.rawValue)"
+		}
+	}
+
+	static func filterName(forQuery query: String) -> Filter.ID.Name? {
+		guard query.hasSuffix(":true") else { return .init(rawValue: query) }
+
+		let name = query.components(separatedBy: ":").first!
+		return .init(rawValue: name)
+	}
+
+	static func itemType(forQuery query: String) -> ItemType? {
+		guard query.hasPrefix("type:") else { return nil }
+
+		let typeName = query.components(separatedBy: ":").last!
+		return .init(rawValue: typeName)
+	}
 }
 
 // MARK: -
