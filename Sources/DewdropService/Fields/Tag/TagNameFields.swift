@@ -4,12 +4,6 @@ import InitMacro
 
 import struct Dewdrop.Tag
 
-@Init public struct TagNameFields {
+@Init public struct TagNameFields: TagFields {
 	public let name: String
-}
-
-// MARK: -
-extension TagNameFields: TagFields {
-	// MARK: Fields
-	public typealias Model = Tag
 }

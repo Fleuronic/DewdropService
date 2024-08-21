@@ -2,5 +2,8 @@
 
 import struct Dewdrop.Raindrop
 import protocol Catena.Fields
+import protocol Catena.Valued
 
-public protocol InfoFields: Fields where Model == Raindrop.Info {}
+public protocol InfoFields: Fields {
+	typealias Model = Raindrop.Info
+}

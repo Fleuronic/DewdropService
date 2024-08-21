@@ -15,7 +15,7 @@ import struct Catena.IDFields
 	private let collection: Collection
 }
 
-// MARK -
+// MARK: -
 public extension CollectionDetailsFields {
 	subscript<T>(dynamicMember keyPath: KeyPath<Collection, T>) -> T {
 		collection[keyPath: keyPath]

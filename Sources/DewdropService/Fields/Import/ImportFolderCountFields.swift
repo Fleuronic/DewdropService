@@ -30,8 +30,6 @@ public extension ImportFolderCountFields {
 
 // MARK: -
 extension ImportFolderCountFields: ImportFields {
-	public typealias Model = Import
-
 	public var undocumentedFields: [PartialKeyPath<Self>: Bool] {
 		[
 			\.count: undocumentedCount.isMissing

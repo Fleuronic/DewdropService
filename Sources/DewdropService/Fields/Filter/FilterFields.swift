@@ -2,5 +2,8 @@
 
 import struct Dewdrop.Filter
 import protocol Catena.Fields
+import protocol Catena.Valued
 
-public protocol FilterFields: Fields where Model == Filter.Identified {}
+public protocol FilterFields: Fields {
+	associatedtype Model: Valued<Filter> = Filter.Identified
+}

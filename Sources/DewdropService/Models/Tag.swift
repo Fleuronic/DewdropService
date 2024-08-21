@@ -22,6 +22,18 @@ public struct IdentifiedTag: Identifiable, Sendable {
 }
 
 // MARK: -
+public extension Tag.Identified {
+	init(
+		id: ID,
+		count: Int
+	) {
+		self.id = id
+
+		value = .init(count: count)
+	}
+}
+
+// MARK: -
 extension Tag.Identified: Valued {
 	// MARK: Valued
 	public typealias Value = Tag

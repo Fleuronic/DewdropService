@@ -4,4 +4,6 @@ import struct Dewdrop.Group
 import protocol Catena.Fields
 import protocol Catena.Valued
 
-public protocol GroupFields: Fields where Model == Group.Identified {}
+public protocol GroupFields: Fields {
+	associatedtype Model: Valued<Group> = Group.Identified
+}

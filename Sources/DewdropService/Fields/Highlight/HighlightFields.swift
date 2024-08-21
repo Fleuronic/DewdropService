@@ -2,5 +2,8 @@
 
 import struct Dewdrop.Highlight
 import protocol Catena.Fields
+import protocol Catena.Valued
 
-public protocol HighlightFields: Fields where Model == Highlight.Identified {}
+public protocol HighlightFields: Fields {
+	associatedtype Model: Valued<Highlight> = Highlight.Identified
+}
