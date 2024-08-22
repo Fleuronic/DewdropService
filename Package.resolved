@@ -1,5 +1,5 @@
 {
-  "originHash" : "5ce05f465000340769c950093d916f944ae5793621a157e19cb0a5bf8073677f",
+  "originHash" : "1a5c021090c60ab5457ec172fdddfbb7e456cfe3ba76c5649b10efea0ca62bc1",
   "pins" : [
     {
       "identity" : "catena",
@@ -7,7 +7,16 @@
       "location" : "https://github.com/Fleuronic/Catena",
       "state" : {
         "branch" : "main",
-        "revision" : "9c32a0c997cdae2966e3dd7da4064271696dfb06"
+        "revision" : "e01565976a800ef370751b685d4e06a637b352f3"
+      }
+    },
+    {
+      "identity" : "dewdrop",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Fleuronic/Dewdrop",
+      "state" : {
+        "branch" : "main",
+        "revision" : "3c3992e135e254313e60d3d27169b818a7a089a8"
       }
     },
     {
@@ -16,7 +25,7 @@
       "location" : "https://github.com/Fleuronic/Identity",
       "state" : {
         "branch" : "master",
-        "revision" : "e8d3194295dcaefdef948420036f7564808ed308"
+        "revision" : "152f96ff2f828c56363d7ab089b81c80b6cbf1ca"
       }
     },
     {
@@ -25,7 +34,7 @@
       "location" : "https://github.com/Fleuronic/InitMacro.git",
       "state" : {
         "branch" : "main",
-        "revision" : "9b6feb35607a229194a7c28136d020f6b8ba3238"
+        "revision" : "323cda3658117d4c58d597908365ab5dcb939d2e"
       }
     },
     {

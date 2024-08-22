@@ -11,7 +11,7 @@ public extension Backup {
 }
 
 // MARK: -
-extension Backup: @retroactive Valued {
+extension Backup: Valued {
 	// MARK: Valued
 	public typealias Value = Self
 }

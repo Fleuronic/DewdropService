@@ -10,7 +10,7 @@ public extension User {
 }
 
 // MARK: -
-extension User: @retroactive Valued {
+extension User: Valued {
 	// MARK: Valued
 	public typealias Value = Self
 }
