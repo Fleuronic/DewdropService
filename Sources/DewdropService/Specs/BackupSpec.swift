@@ -6,10 +6,11 @@ import struct Foundation.Data
 import protocol Catena.Scoped
 
 public protocol BackupSpec {
-	associatedtype BackupData
-	associatedtype BackupCreation
-	associatedtype BackupListFields: BackupFields
 	associatedtype BackupList: Scoped<BackupListFields>
+	associatedtype BackupListFields: BackupFields
+
+	associatedtype BackupCreation
+	associatedtype BackupData
 
 	func listBackups() async -> BackupList
 	func createBackup() async -> BackupCreation

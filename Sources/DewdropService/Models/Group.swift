@@ -11,7 +11,7 @@ public extension Group {
 }
 
 // MARK: -
-extension Group: Valued {
+extension Group: Catena.Valued {
 	public typealias Value = Self
 }
 

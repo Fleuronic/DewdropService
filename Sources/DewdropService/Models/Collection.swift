@@ -12,7 +12,7 @@ public extension Collection {
 }
 
 // MARK: -
-extension Collection: Valued {
+extension Collection: Catena.Valued {
 	// MARK: Valued
 	public typealias Value = Self
 }

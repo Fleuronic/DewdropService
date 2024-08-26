@@ -7,14 +7,15 @@ import struct Foundation.URL
 import protocol Catena.Scoped
 
 public protocol CollectionSpec {
-	associatedtype CollectionListFields: CollectionFields
-	associatedtype CollectionList: Scoped<CollectionListFields>
-	associatedtype ChildCollectionListFields: CollectionFields
+	associatedtype RootCollectionList: Scoped<RootCollectionListFields>
 	associatedtype ChildCollectionList: Scoped<ChildCollectionListFields>
-	associatedtype SystemCollectionListFields: CollectionFields
 	associatedtype SystemCollectionList: Scoped<SystemCollectionListFields>
 
-	func listRootCollections() async -> CollectionList
+	associatedtype RootCollectionListFields: CollectionFields
+	associatedtype ChildCollectionListFields: CollectionFields
+	associatedtype SystemCollectionListFields: CollectionFields
+
+	func listRootCollections() async -> RootCollectionList
 	func listChildCollections() async -> ChildCollectionList
 	func listSystemCollections() async -> SystemCollectionList
 }

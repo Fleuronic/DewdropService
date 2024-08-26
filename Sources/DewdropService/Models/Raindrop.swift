@@ -14,7 +14,7 @@ public extension Raindrop {
 }
 
 // MARK: -
-extension Raindrop: Valued {
+extension Raindrop: Catena.Valued {
 	public typealias Value = Self
 }
 

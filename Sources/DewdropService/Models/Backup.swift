@@ -11,7 +11,7 @@ public extension Backup {
 }
 
 // MARK: -
-extension Backup: Valued {
+extension Backup: Catena.Valued {
 	// MARK: Valued
 	public typealias Value = Self
 }

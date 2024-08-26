@@ -34,7 +34,7 @@ public extension Filter {
 }
 
 // MARK: -
-extension Filter: Valued {
+extension Filter: Catena.Valued {
 	// MARK: Valued
 	public typealias Value = Self
 }
