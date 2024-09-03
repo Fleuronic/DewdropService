@@ -7,13 +7,13 @@ import struct Dewdrop.User
 import struct Catena.IDFields
 
 @dynamicMemberLookup
-@MemberwiseInit(.public)
+@_UncheckedMemberwiseInit(.public)
 public struct CollectionDetailsFields: CollectionFields {
 	public let id: Collection.ID
 	public let parent: IDFields<Collection.Identified>?
 	public let owner: IDFields<User.Identified>
 
-	@Init(.public) private let collection: Collection
+	private let collection: Collection
 }
 
 // MARK: -

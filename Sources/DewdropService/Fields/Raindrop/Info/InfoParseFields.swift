@@ -5,11 +5,11 @@ import MemberwiseInit
 import struct Dewdrop.Raindrop
 
 @dynamicMemberLookup
-@MemberwiseInit(.public)
+@_UncheckedMemberwiseInit(.public)
 public struct InfoParseFields: InfoFields {
 	public let meta: Meta
 	
-	@Init(.public) private let info: Raindrop.Info
+	private let info: Raindrop.Info
 }
 
 // MARK -

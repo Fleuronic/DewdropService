@@ -1,11 +1,14 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
+import MemberwiseInit
+
 import struct Dewdrop.Raindrop
 import struct Dewdrop.User
 import struct Dewdrop.Collection
 import struct Catena.IDFields
 
 @dynamicMemberLookup
+@_UncheckedMemberwiseInit(.public)
 public struct RaindropCreationFields {
 	public let id: Raindrop.ID
 	public let owner: IDFields<User.Identified>
@@ -14,22 +17,6 @@ public struct RaindropCreationFields {
 	public let tags: [TagNameFields]
 
 	private let raindrop: Raindrop
-
-	public init(
-		id: Raindrop.ID,
-		raindrop: Raindrop,
-		owner: IDFields<User.Identified>,
-		creator: IDFields<User.Identified>,
-		collection: IDFields<Collection.Identified>,
-		tags: [TagNameFields]
-	) {
-		self.id = id
-		self.raindrop = raindrop
-		self.owner = owner
-		self.creator = creator
-		self.collection = collection
-		self.tags = tags
-	}
 }
 
 // MARK -

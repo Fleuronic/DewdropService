@@ -5,12 +5,12 @@ import MemberwiseInit
 import struct Dewdrop.Folder
 
 @dynamicMemberLookup
-@MemberwiseInit(.public)
+@_UncheckedMemberwiseInit(.public)
 public struct FolderImportFields: FolderFields {
 	public let bookmarks: [RaindropImportFields]
 	public let subfolders: [FolderImportFields]
 	
-	@Init(.public) private let folder: Folder
+	private let folder: Folder
 }
 
 public extension FolderImportFields {

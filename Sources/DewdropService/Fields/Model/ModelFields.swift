@@ -6,11 +6,11 @@ import protocol Catena.Fields
 import protocol Identity.Identifiable
 
 @dynamicMemberLookup
-@MemberwiseInit(.public)
+@_UncheckedMemberwiseInit(.public)
 public struct ModelFields<Model: Sendable, ID: Sendable>: Fields {
 	public let id: ID
 
-	@Init(.public) private let model: Model
+	private let model: Model
 }
 
 // MARK: -

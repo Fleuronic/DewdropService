@@ -1,21 +1,16 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
+import MemberwiseInit
+
 import struct Dewdrop.Highlight
 import struct Foundation.Date
 
 @dynamicMemberLookup
+@_UncheckedMemberwiseInit(.public)
 public struct HighlightImportFields: HighlightFields {
 	public let creationDate: Date
 
 	private let content: Highlight.Content
-	
-	public init(
-		content: Highlight.Content,
-		creationDate: Date
-	) {
-		self.content = content
-		self.creationDate = creationDate
-	}
 }
 
 // MARK -

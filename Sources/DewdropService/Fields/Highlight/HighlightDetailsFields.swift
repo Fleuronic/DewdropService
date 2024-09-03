@@ -6,12 +6,12 @@ import struct Dewdrop.Highlight
 import struct Dewdrop.Raindrop
 
 @dynamicMemberLookup
-@MemberwiseInit(.public)
+@_UncheckedMemberwiseInit(.public)
 public struct HighlightDetailsFields: HighlightFields {
 	public let id: Highlight.ID
 	public let raindropID: Raindrop.ID
 
-	@Init(.public) private let highlight: Highlight
+	private let highlight: Highlight
 }
 
 // MARK -

@@ -1,22 +1,17 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
+import MemberwiseInit
+
 import struct Dewdrop.User
 import struct Dewdrop.Collection
 import struct Catena.IDFields
 
 @dynamicMemberLookup
+@_UncheckedMemberwiseInit(.public)
 public struct ConfigFields: Sendable /* TODO */ {
 	public let lastViewedCollection: IDFields<Collection.Identified>
 
 	private let config: User.Config
-
-	public init(
-		config: User.Config,
-		lastViewedCollectionID: Collection.ID
-	) {
-		self.config = config
-		lastViewedCollection = .init(id: lastViewedCollectionID)
-	}
 }
 
 // MARK -
