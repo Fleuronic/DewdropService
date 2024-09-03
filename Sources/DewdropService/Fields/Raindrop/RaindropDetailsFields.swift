@@ -1,6 +1,6 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-import InitMacro
+import MemberwiseInit
 
 import struct Dewdrop.Raindrop
 import struct Dewdrop.User
@@ -8,7 +8,8 @@ import struct Dewdrop.Collection
 import struct Catena.IDFields
 import protocol Catena.Valued
 
-@Init @dynamicMemberLookup
+@dynamicMemberLookup
+@MemberwiseInit(.public)
 public struct RaindropDetailsFields: RaindropFields {
 	public let id: Raindrop.ID
 	public let owner: IDFields<User.Identified>
@@ -17,7 +18,7 @@ public struct RaindropDetailsFields: RaindropFields {
 	public let tags: [TagNameFields]
 	public let highlights: [HighlightInRaindropFields]?
 
-	private let raindrop: Raindrop
+	@Init(.public) private let raindrop: Raindrop
 }
 
 // MARK: -

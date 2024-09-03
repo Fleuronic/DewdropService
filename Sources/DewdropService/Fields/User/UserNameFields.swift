@@ -1,10 +1,11 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-import InitMacro
+import MemberwiseInit
 
 import struct Dewdrop.User
 
-@Init public struct UserNameFields: UserFields {
+@MemberwiseInit(.public)
+public struct UserNameFields: UserFields {
 	public let id: User.ID
 	public let name: String
 }

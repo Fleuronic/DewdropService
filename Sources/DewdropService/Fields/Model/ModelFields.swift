@@ -1,15 +1,16 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-import InitMacro
+import MemberwiseInit
 
 import protocol Catena.Fields
 import protocol Identity.Identifiable
 
-@Init @dynamicMemberLookup
+@dynamicMemberLookup
+@MemberwiseInit(.public)
 public struct ModelFields<Model: Sendable, ID: Sendable>: Fields {
 	public let id: ID
 
-	private let model: Model
+	@Init(.public) private let model: Model
 }
 
 // MARK: -

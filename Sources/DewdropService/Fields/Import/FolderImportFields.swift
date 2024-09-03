@@ -1,15 +1,16 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-import InitMacro
+import MemberwiseInit
 
 import struct Dewdrop.Folder
 
-@Init
-@dynamicMemberLookup public struct FolderImportFields: FolderFields {
+@dynamicMemberLookup
+@MemberwiseInit(.public)
+public struct FolderImportFields: FolderFields {
 	public let bookmarks: [RaindropImportFields]
 	public let subfolders: [FolderImportFields]
 	
-	private let folder: Folder
+	@Init(.public) private let folder: Folder
 }
 
 public extension FolderImportFields {

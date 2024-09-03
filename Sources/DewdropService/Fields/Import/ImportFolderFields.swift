@@ -1,10 +1,11 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-import InitMacro
+import MemberwiseInit
 
 import enum Dewdrop.Import
 
-@Init public struct ImportFolderFields {
+@MemberwiseInit(.public)
+public struct ImportFolderFields {
 	public let folders: [FolderImportFields]
 }
 

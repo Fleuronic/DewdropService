@@ -1,10 +1,11 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-import InitMacro
+import MemberwiseInit
 
 import struct Dewdrop.Filter
 
-@Init public struct FilterOverviewFields: FilterFields {
+@MemberwiseInit(.public)
+public struct FilterOverviewFields: FilterFields {
 	public let tags: [TagCountFields]
 	public let typeFilters: [FilterCountFields]
 	public let favorited: Filter?

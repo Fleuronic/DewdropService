@@ -1,11 +1,12 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-import InitMacro
+import MemberwiseInit
 
 import struct Dewdrop.Highlight
 import struct Foundation.Date
 
-@Init public struct HighlightInRaindropFields: HighlightFields {
+@MemberwiseInit(.public)
+public struct HighlightInRaindropFields: HighlightFields {
 	public let id: Highlight.ID
 	public let text: String
 	public let color: Highlight.Color

@@ -1,6 +1,6 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-import InitMacro
+import MemberwiseInit
 
 import struct Dewdrop.Raindrop
 import struct Dewdrop.Media
@@ -8,7 +8,8 @@ import struct Foundation.URL
 import struct Foundation.Date
 import protocol Catena.Fields
 
-@Init public struct RaindropImportFields {
+@MemberwiseInit(.public)
+public struct RaindropImportFields {
 	public let url: URL
 	public let title: String
 	public let excerpt: String?

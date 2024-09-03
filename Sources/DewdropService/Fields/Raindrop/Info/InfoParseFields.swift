@@ -1,14 +1,15 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-import InitMacro
+import MemberwiseInit
 
 import struct Dewdrop.Raindrop
 
 @dynamicMemberLookup
-@Init public struct InfoParseFields: InfoFields {
+@MemberwiseInit(.public)
+public struct InfoParseFields: InfoFields {
 	public let meta: Meta
 	
-	private let info: Raindrop.Info
+	@Init(.public) private let info: Raindrop.Info
 }
 
 // MARK -
@@ -20,7 +21,8 @@ public extension InfoParseFields {
 
 // MARK -
 extension InfoParseFields {
-	@Init public struct Meta: Sendable {
+	@MemberwiseInit(.public)
+public struct Meta: Sendable {
 		public let tags: [TagNameFields]
 	}
 }

@@ -1,16 +1,17 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-import InitMacro
+import MemberwiseInit
 
 import struct Dewdrop.Highlight
 import struct Dewdrop.Raindrop
 
-@Init @dynamicMemberLookup
+@dynamicMemberLookup
+@MemberwiseInit(.public)
 public struct HighlightDetailsFields: HighlightFields {
 	public let id: Highlight.ID
 	public let raindropID: Raindrop.ID
 
-	private let highlight: Highlight
+	@Init(.public) private let highlight: Highlight
 }
 
 // MARK -

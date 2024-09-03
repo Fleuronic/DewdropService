@@ -1,18 +1,19 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-import InitMacro
+import MemberwiseInit
 
 import struct Dewdrop.Collection
 import struct Dewdrop.User
 import struct Catena.IDFields
 
 @dynamicMemberLookup
-@Init public struct CollectionDetailsFields: CollectionFields {
+@MemberwiseInit(.public)
+public struct CollectionDetailsFields: CollectionFields {
 	public let id: Collection.ID
 	public let parent: IDFields<Collection.Identified>?
 	public let owner: IDFields<User.Identified>
 
-	private let collection: Collection
+	@Init(.public) private let collection: Collection
 }
 
 // MARK: -
