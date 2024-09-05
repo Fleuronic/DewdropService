@@ -10,6 +10,7 @@ public protocol CollectionSpec {
 	associatedtype RootCollectionList: Scoped<RootCollectionListFields>
 	associatedtype ChildCollectionList: Scoped<ChildCollectionListFields>
 	associatedtype SystemCollectionList: Scoped<SystemCollectionListFields>
+	associatedtype CollectionDeletion
 
 	associatedtype RootCollectionListFields: CollectionFields
 	associatedtype ChildCollectionListFields: CollectionFields
@@ -18,4 +19,7 @@ public protocol CollectionSpec {
 	func listRootCollections() async -> RootCollectionList
 	func listChildCollections() async -> ChildCollectionList
 	func listSystemCollections() async -> SystemCollectionList
+
+	func deleteCollection(with id: Collection.ID) async -> CollectionDeletion
+	func deleteCollections(with ids: [Collection.ID]) async -> CollectionDeletion
 }
