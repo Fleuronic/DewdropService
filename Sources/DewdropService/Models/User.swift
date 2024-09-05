@@ -22,6 +22,22 @@ public struct IdentifiedUser: Sendable {
 }
 
 // MARK: -
+public extension User.Identified {
+	init(
+		id: ID,
+		fullName: String,
+		hasProSubscription: Bool
+	) {
+		self.id = id
+
+		value = .init(
+			fullName: fullName,
+			hasProSubscription: hasProSubscription
+		)
+	}
+}
+
+// MARK: -
 extension User.Identified: Identifiable {
 	// MARK: Identifiable
 	public typealias RawIdentifier = Int
