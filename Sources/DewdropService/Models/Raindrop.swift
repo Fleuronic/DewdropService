@@ -39,23 +39,23 @@ public extension Raindrop.Identified {
 	) {
 		self.id = id
 		self.collection = collection
-
+		
 		fatalError()
 		/*value = .init(
-			url: url,
-			title: title,
-			itemType: itemType,
-			excerpt: String?, // TODO
-			domain: String, // TODO
-			coverURL: URL?, // TODO
-			media: [Media], // TODO
-			note: String?, // TODO
-			cache: Cache?, // TODO
-			isFavorite: isFavorite,
-			isBroken: isBroken,
-			creationDate: Date, // TODO
-			updateDate: Date // TODO
-		)*/
+		 	url: url,
+		 	title: title,
+		 	itemType: itemType,
+		 	excerpt: String?, // TODO
+		 	domain: String, // TODO
+		 	coverURL: URL?, // TODO
+		 	media: [Media], // TODO
+		 	note: String?, // TODO
+		 	cache: Cache?, // TODO
+		 	isFavorite: isFavorite,
+		 	isBroken: isBroken,
+		 	creationDate: Date, // TODO
+		 	updateDate: Date // TODO
+		 )*/
 	}
 }
 

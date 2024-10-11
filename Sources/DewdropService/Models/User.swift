@@ -29,7 +29,7 @@ public extension User.Identified {
 		hasProSubscription: Bool
 	) {
 		self.id = id
-
+		
 		value = .init(
 			fullName: fullName,
 			hasProSubscription: hasProSubscription

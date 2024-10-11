@@ -30,7 +30,7 @@ public extension Group.Identified {
 		collections: [Collection.Identified]
 	) {
 		self.collections = collections
-	
+		
 		value = .init(
 			title: id.rawValue,
 			isHidden: isHidden,

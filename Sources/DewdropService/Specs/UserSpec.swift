@@ -10,6 +10,7 @@ public protocol UserSpec {
 	associatedtype UserDetailsFields
 	associatedtype UserAuthenticatedDetails: Scoped<UserDetailsFields>
 	associatedtype UserPublicDetails: Scoped<UserPublicDetailsFields>
+
 	associatedtype NetworkConnection
 	associatedtype NetworkDisconnection
 

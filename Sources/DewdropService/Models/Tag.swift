@@ -28,7 +28,7 @@ public extension Tag.Identified {
 		count: Int
 	) {
 		self.id = id
-
+		
 		value = .init(count: count)
 	}
 }

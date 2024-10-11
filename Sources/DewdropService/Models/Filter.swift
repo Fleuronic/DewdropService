@@ -20,14 +20,14 @@ public extension Filter {
 
 	static func filterName(forQuery query: String) -> Filter.ID.Name? {
 		guard query.hasSuffix(":true") else { return .init(rawValue: query) }
-
+		
 		let name = query.components(separatedBy: ":").first!
 		return .init(rawValue: name)
 	}
 
 	static func itemType(forQuery query: String) -> ItemType? {
 		guard query.hasPrefix("type:") else { return nil }
-
+		
 		let typeName = query.components(separatedBy: ":").last!
 		return .init(rawValue: typeName)
 	}
@@ -55,7 +55,7 @@ public extension Filter.Identified {
 	) {
 		self.id = id
 		self.sortIndex = sortIndex
-
+		
 		value = .init(count: count)
 	}
 }
