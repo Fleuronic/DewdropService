@@ -17,7 +17,7 @@ let package = Package(
 	],
 	dependencies: [
 		.package(url: "https://github.com/Fleuronic/Dewdrop", branch: "main"),
-        .package(url: "https://github.com/Fleuronic/Catena", branch: "main")
+		.package(url: "https://github.com/Fleuronic/Catena", branch: "main")
 	],
 	targets: [
 		.target(
