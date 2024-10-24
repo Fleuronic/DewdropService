@@ -4,10 +4,10 @@ import PackageDescription
 let package = Package(
 	name: "DewdropService",
 	platforms: [
-		.iOS(.v15),
-		.macOS(.v12),
-		.tvOS(.v13),
-		.watchOS(.v6),
+		.iOS(.v14),
+		.macOS(.v11),
+		.tvOS(.v14),
+		.watchOS(.v7)
 	],
 	products: [
 		.library(
@@ -17,7 +17,7 @@ let package = Package(
 	],
 	dependencies: [
 		.package(url: "https://github.com/Fleuronic/Dewdrop", branch: "main"),
-        .package(url: "https://github.com/Fleuronic/Catena", branch: "main")
+		.package(url: "https://github.com/Fleuronic/Catena", branch: "main")
 	],
 	targets: [
 		.target(
