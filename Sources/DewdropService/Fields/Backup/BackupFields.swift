@@ -1,8 +1,8 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-import struct Dewdrop.Backup
-import protocol Catena.Fields
-import protocol Catena.Valued
+public import struct Dewdrop.Backup
+public import protocol Catena.Fields
+public import protocol Catena.Valued
 
 public protocol BackupFields: Fields {
 	associatedtype Model: Valued<Backup> = Backup.Identified

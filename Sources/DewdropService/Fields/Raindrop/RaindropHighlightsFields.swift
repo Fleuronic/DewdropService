@@ -1,6 +1,6 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-import struct Dewdrop.Raindrop
+public import struct Dewdrop.Raindrop
 
 public struct RaindropHighlightsFields: RaindropFields {
 	public let id: Raindrop.ID

@@ -1,8 +1,6 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-import MemberwiseInit
-
-import struct Dewdrop.Collaborator
+public import MemberwiseInit
 
 @MemberwiseInit(.public)
 public struct CollaboratorEmailListFields {

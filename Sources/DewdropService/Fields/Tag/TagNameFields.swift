@@ -1,8 +1,6 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-import MemberwiseInit
-
-import struct Dewdrop.Tag
+public import MemberwiseInit
 
 @MemberwiseInit(.public)
 public struct TagNameFields: TagFields {

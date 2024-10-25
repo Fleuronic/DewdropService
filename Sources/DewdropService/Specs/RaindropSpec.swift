@@ -1,13 +1,11 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-import enum Dewdrop.ItemType
-import struct Dewdrop.Raindrop
-import struct Dewdrop.Collection
-import struct Dewdrop.Media
-import struct Dewdrop.Highlight
-import struct Foundation.URL
-import struct Foundation.Date
-import protocol Catena.Scoped
+public import enum Dewdrop.ItemType
+public import struct Dewdrop.Raindrop
+public import struct Dewdrop.Collection
+public import struct Dewdrop.Media
+public import struct Dewdrop.Highlight
+public import protocol Catena.Scoped
 
 public protocol RaindropSpec {
 	associatedtype RaindropList: Scoped<RaindropListFields>

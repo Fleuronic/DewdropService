@@ -1,12 +1,12 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-import MemberwiseInit
+public import MemberwiseInit
 
-import struct Dewdrop.Raindrop
-import struct Dewdrop.User
-import struct Dewdrop.Collection
-import struct Catena.IDFields
-import protocol Catena.Valued
+public import struct Dewdrop.Raindrop
+public import struct Dewdrop.User
+public import struct Dewdrop.Collection
+public import struct Catena.IDFields
+public import protocol Catena.Valued
 
 @dynamicMemberLookup
 @_UncheckedMemberwiseInit(.public)

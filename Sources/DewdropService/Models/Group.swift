@@ -1,9 +1,9 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-import struct Dewdrop.Group
-import struct Dewdrop.Collection
-import protocol Catena.Valued
-import protocol Identity.Identifiable
+public import struct Dewdrop.Group
+public import struct Dewdrop.Collection
+public import protocol Catena.Valued
+public import protocol Identity.Identifiable
 
 public extension Group {
 	typealias ID = Identified.ID

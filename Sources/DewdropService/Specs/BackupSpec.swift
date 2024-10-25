@@ -1,9 +1,8 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-import enum Dewdrop.FileFormat
-import struct Dewdrop.Backup
-import struct Foundation.Data
-import protocol Catena.Scoped
+public import enum Dewdrop.FileFormat
+public import struct Dewdrop.Backup
+public import protocol Catena.Scoped
 
 public protocol BackupSpec {
 	associatedtype BackupList: Scoped<BackupListFields>

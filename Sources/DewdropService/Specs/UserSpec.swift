@@ -1,10 +1,10 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-import struct Dewdrop.User
-import struct Dewdrop.Group
-import struct Dewdrop.Collection
-import struct Dewdrop.Network
-import protocol Catena.Scoped
+public import struct Dewdrop.User
+public import struct Dewdrop.Group
+public import struct Dewdrop.Collection
+public import struct Dewdrop.Network
+public import protocol Catena.Scoped
 
 public protocol UserSpec {
 	associatedtype UserDetailsFields

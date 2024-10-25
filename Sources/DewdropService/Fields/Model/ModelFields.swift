@@ -1,9 +1,8 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-import MemberwiseInit
+public import MemberwiseInit
 
-import protocol Catena.Fields
-import protocol Identity.Identifiable
+public import protocol Catena.Fields
 
 @dynamicMemberLookup
 @_UncheckedMemberwiseInit(.public)

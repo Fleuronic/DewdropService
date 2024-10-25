@@ -1,8 +1,8 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-import struct Dewdrop.User
-import protocol Catena.Valued
-import protocol Identity.Identifiable
+public import struct Dewdrop.User
+public import protocol Catena.Valued
+public import protocol Identity.Identifiable
 
 public extension User {
 	typealias ID = Identified.ID

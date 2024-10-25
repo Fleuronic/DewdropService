@@ -1,12 +1,12 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-import MemberwiseInit
+public import MemberwiseInit
 
-import struct Dewdrop.Raindrop
-import struct Dewdrop.Media
-import struct Foundation.URL
-import struct Foundation.Date
-import protocol Catena.Fields
+public import struct Dewdrop.Raindrop
+public import struct Dewdrop.Media
+public import struct Foundation.URL
+public import struct Foundation.Date
+public import protocol Catena.Fields
 
 @MemberwiseInit(.public)
 public struct RaindropImportFields {

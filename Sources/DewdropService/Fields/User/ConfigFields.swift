@@ -1,8 +1,8 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-import struct Dewdrop.User
-import struct Dewdrop.Collection
-import struct Catena.IDFields
+public import struct Dewdrop.User
+public import struct Dewdrop.Collection
+public import struct Catena.IDFields
 
 @dynamicMemberLookup
 public struct ConfigFields: Sendable /* TODO */ {

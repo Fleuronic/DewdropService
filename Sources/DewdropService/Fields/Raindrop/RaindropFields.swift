@@ -1,9 +1,8 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-import struct Dewdrop.Raindrop
-import struct Identity.Identifier
-import protocol Catena.Fields
-import protocol Catena.Valued
+public import struct Dewdrop.Raindrop
+public import protocol Catena.Fields
+public import protocol Catena.Valued
 
 public protocol RaindropFields: Fields {
 	associatedtype Model: Valued<Raindrop> = Raindrop.Identified

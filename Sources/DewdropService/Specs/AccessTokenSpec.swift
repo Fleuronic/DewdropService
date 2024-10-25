@@ -1,7 +1,7 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-import struct Dewdrop.AccessToken
-import struct Foundation.URL
+public import struct Dewdrop.AccessToken
+public import struct Foundation.URL
 
 public protocol AccessTokenSpec {
 	associatedtype ExchangedToken

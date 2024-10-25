@@ -1,10 +1,9 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-import struct Dewdrop.Collection
-import struct Dewdrop.Collaborator
-import struct Dewdrop.User
-import struct Foundation.URL
-import protocol Catena.Scoped
+public import struct Dewdrop.Collection
+public import struct Dewdrop.Collaborator
+public import struct Dewdrop.User
+public import protocol Catena.Scoped
 
 public protocol CollectionSpec {
 	associatedtype RootCollectionList: Scoped<RootCollectionListFields>

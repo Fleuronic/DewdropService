@@ -1,10 +1,10 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-import enum Dewdrop.ItemType
-import struct Dewdrop.Filter
-import struct Identity.Identifier
-import protocol Identity.Identifiable
-import protocol Catena.Valued
+public import enum Dewdrop.ItemType
+public import struct Dewdrop.Filter
+public import struct Identity.Identifier
+public import protocol Identity.Identifiable
+public import protocol Catena.Valued
 
 public extension Filter {
 	typealias ID = Identified.ID

@@ -1,8 +1,6 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-import MemberwiseInit
-
-import enum Dewdrop.Import
+public import MemberwiseInit
 
 @MemberwiseInit(.public)
 public struct ImportFolderFields {

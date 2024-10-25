@@ -1,8 +1,8 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-import struct Dewdrop.Tag
-import struct Dewdrop.Collection
-import protocol Catena.Scoped
+public import struct Dewdrop.Tag
+public import struct Dewdrop.Collection
+public import protocol Catena.Scoped
 
 public protocol TagSpec {
 	associatedtype TagListFields: TagFields

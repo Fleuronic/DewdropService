@@ -1,9 +1,9 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-import struct Dewdrop.Tag
-import protocol Catena.Fields
-import protocol Catena.Valued
-import protocol Catena.Fields
+public import struct Dewdrop.Tag
+public import protocol Catena.Fields
+public import protocol Catena.Valued
+public import protocol Catena.Fields
 
 public protocol TagFields: Fields {
 	associatedtype Model: Valued<Tag> = Tag.Identified

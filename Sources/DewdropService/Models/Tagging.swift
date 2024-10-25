@@ -1,9 +1,9 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-import MemberwiseInit
+public import MemberwiseInit
 
-import struct Dewdrop.Raindrop
-import protocol Identity.Identifiable
+public import struct Dewdrop.Raindrop
+public import protocol Identity.Identifiable
 
 @MemberwiseInit(.public)
 public struct Tagging: Identifiable, Sendable {
