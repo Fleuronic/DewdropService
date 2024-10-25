@@ -12,5 +12,5 @@ public protocol ImportSpec {
 
 	func parse(url: URL) async -> URLInfo
 	func checkExistence(of urls: [URL]) async -> URLExistence
-	func ImportFile(at url: URL, withName filename: String) async -> FileImport
+	func importFile(at url: URL, withName filename: String) async -> FileImport
 }
