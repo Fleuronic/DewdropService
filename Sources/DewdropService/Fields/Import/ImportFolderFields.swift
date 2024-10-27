@@ -1,6 +1,6 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-public import MemberwiseInit
+import MemberwiseInit
 
 @MemberwiseInit(.public)
 public struct ImportFolderFields {

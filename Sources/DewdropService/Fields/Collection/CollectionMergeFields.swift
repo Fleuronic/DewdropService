@@ -1,8 +1,8 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-public import MemberwiseInit
+import MemberwiseInit
 
-public import struct Dewdrop.Collection
+import struct Dewdrop.Collection
 
 @MemberwiseInit(.public)
 public struct CollectionMergeFields {

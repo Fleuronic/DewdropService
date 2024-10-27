@@ -1,8 +1,8 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-public import struct Dewdrop.Tag
-public import protocol Catena.Valued
-public import protocol Identity.Identifiable
+import struct Dewdrop.Tag
+import protocol Catena.Valued
+import protocol Identity.Identifiable
 
 public extension Tag {
 	typealias ID = Identified.ID

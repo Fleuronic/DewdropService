@@ -1,8 +1,8 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-public import enum Dewdrop.Import
-public import protocol Catena.UndocumentedFields
-public import protocol Catena.Valued
+import enum Dewdrop.Import
+import protocol Catena.UndocumentedFields
+import protocol Catena.Valued
 
 public protocol ImportFields: UndocumentedFields {
 	typealias Model = Import

@@ -1,8 +1,8 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-public import MemberwiseInit
+import MemberwiseInit
 
-public import struct Dewdrop.Collaborator
+import struct Dewdrop.Collaborator
 
 @MemberwiseInit(.public)
 public struct CollaboratorRoleFields {

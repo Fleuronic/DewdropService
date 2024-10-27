@@ -1,8 +1,8 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-public import struct Dewdrop.Backup
-public import protocol Catena.Valued
-public import protocol Identity.Identifiable
+import struct Dewdrop.Backup
+import protocol Catena.Valued
+import protocol Identity.Identifiable
 
 // MARK: -
 public extension Backup {

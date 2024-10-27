@@ -1,9 +1,9 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-public import MemberwiseInit
+import MemberwiseInit
 
-public import struct Dewdrop.User
-public import struct Dewdrop.Account
+import struct Dewdrop.User
+import struct Dewdrop.Account
 
 @dynamicMemberLookup
 @_UncheckedMemberwiseInit(.public)

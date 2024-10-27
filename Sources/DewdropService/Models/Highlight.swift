@@ -1,9 +1,9 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-public import struct Dewdrop.Highlight
-public import struct Dewdrop.Raindrop
-public import protocol Identity.Identifiable
-public import protocol Catena.Valued
+import struct Dewdrop.Highlight
+import struct Dewdrop.Raindrop
+import protocol Identity.Identifiable
+import protocol Catena.Valued
 
 // MARK: -
 public extension Highlight {

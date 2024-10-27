@@ -1,7 +1,7 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-public import enum Dewdrop.Import
-public import enum Catena.Undocumented
+import enum Dewdrop.Import
+import enum Catena.Undocumented
 
 @dynamicMemberLookup
 public struct ImportFolderCountFields {

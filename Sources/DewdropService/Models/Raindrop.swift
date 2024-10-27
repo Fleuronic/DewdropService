@@ -1,12 +1,12 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-public import enum Dewdrop.ItemType
-public import struct Dewdrop.Raindrop
-public import struct Dewdrop.Collection
-public import struct Dewdrop.Highlight
-public import struct Foundation.URL
-public import protocol Catena.Valued
-public import protocol Identity.Identifiable
+import enum Dewdrop.ItemType
+import struct Dewdrop.Raindrop
+import struct Dewdrop.Collection
+import struct Dewdrop.Highlight
+import struct Foundation.URL
+import protocol Catena.Valued
+import protocol Identity.Identifiable
 
 public extension Raindrop {
 	typealias ID = Identified.ID

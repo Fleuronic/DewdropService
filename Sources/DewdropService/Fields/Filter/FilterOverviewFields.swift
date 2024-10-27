@@ -1,8 +1,8 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-public import MemberwiseInit
+import MemberwiseInit
 
-public import struct Dewdrop.Filter
+import struct Dewdrop.Filter
 
 @MemberwiseInit(.public)
 public struct FilterOverviewFields: FilterFields {

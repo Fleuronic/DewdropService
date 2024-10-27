@@ -1,7 +1,7 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-public import struct Foundation.URL
-public import protocol Catena.Scoped
+import struct Foundation.URL
+import protocol Catena.Scoped
 
 public protocol CreationSpec {
 	associatedtype RaindropCreation: Scoped<RaindropCreationFields>

@@ -1,8 +1,8 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-public import MemberwiseInit
+import MemberwiseInit
 
-public import struct Dewdrop.User
+import struct Dewdrop.User
 
 @MemberwiseInit(.public)
 public struct UserNameFields: UserFields {

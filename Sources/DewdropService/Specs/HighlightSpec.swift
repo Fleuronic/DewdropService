@@ -1,8 +1,8 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-public import struct Dewdrop.Highlight
-public import struct Dewdrop.Raindrop
-public import struct Dewdrop.Collection
+import struct Dewdrop.Highlight
+import struct Dewdrop.Raindrop
+import struct Dewdrop.Collection
 
 public protocol HighlightSpec {
 	associatedtype HighlightListResult

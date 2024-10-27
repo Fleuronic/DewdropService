@@ -1,8 +1,8 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-public import struct Dewdrop.Group
-public import struct Dewdrop.Collection
-public import struct Catena.IDFields
+import struct Dewdrop.Group
+import struct Dewdrop.Collection
+import struct Catena.IDFields
 
 @dynamicMemberLookup
 public struct GroupDetailsFields: GroupFields {

@@ -1,9 +1,9 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-public import MemberwiseInit
+import MemberwiseInit
 
-public import struct Dewdrop.Highlight
-public import struct Foundation.Date
+import struct Dewdrop.Highlight
+import struct Foundation.Date
 
 @MemberwiseInit(.public)
 public struct HighlightInRaindropFields: HighlightFields {
