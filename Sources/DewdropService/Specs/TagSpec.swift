@@ -6,10 +6,10 @@ import protocol Catena.Scoped
 
 public protocol TagSpec {
 	associatedtype TagListFields: TagFields
-	associatedtype TagList: Scoped<TagListFields>
-
 //	associatedtype TagRenaming
 	associatedtype TagRemoval
+
+	associatedtype TagList: Scoped<TagListFields>
 
 	func listTags(inCollectionWith id: Collection.ID?) async -> TagList
 //	func renameTag(withName tagName: String, toName updatedTagName: String, inCollectionWith id: Collection.ID?) async -> TagRenaming
