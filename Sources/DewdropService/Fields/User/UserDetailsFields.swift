@@ -7,7 +7,7 @@ import struct Dewdrop.Account
 
 @dynamicMemberLookup
 @_UncheckedMemberwiseInit(.public)
-public struct UserAuthenticatedDetailsFields: UserFields {
+public struct UserDetailsFields: UserFields {
 	public let id: User.ID
 	public let config: ConfigFields
 	public let groups: [GroupDetailsFields]
@@ -16,7 +16,7 @@ public struct UserAuthenticatedDetailsFields: UserFields {
 }
 
 // MARK -
-public extension UserAuthenticatedDetailsFields {
+public extension UserDetailsFields {
 	subscript<T>(dynamicMember keyPath: KeyPath<Account, T>) -> T {
 		account[keyPath: keyPath]
 	}

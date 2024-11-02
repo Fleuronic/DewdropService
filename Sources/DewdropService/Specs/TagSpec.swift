@@ -5,11 +5,11 @@ import struct Dewdrop.Collection
 import protocol Catena.Scoped
 
 public protocol TagSpec {
-	associatedtype TagListFields: TagFields
+	associatedtype TagList: Scoped<TagListFields>
 //	associatedtype TagRenaming
 	associatedtype TagRemoval
 
-	associatedtype TagList: Scoped<TagListFields>
+	associatedtype TagListFields: TagFields
 
 	func listTags(inCollectionWith id: Collection.ID?) async -> TagList
 //	func renameTag(withName tagName: String, toName updatedTagName: String, inCollectionWith id: Collection.ID?) async -> TagRenaming

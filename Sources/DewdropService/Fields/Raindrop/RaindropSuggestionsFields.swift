@@ -7,7 +7,7 @@ import struct Dewdrop.Collection
 import struct Catena.IDFields
 
 @MemberwiseInit(.public)
-public struct RaindropSuggestionListFields {
+public struct RaindropSuggestionsFields {
 	public let collections: [IDFields<Collection.Identified>]
 	public let tags: [TagNameFields]
 }

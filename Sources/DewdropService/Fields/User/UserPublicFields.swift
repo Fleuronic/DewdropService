@@ -3,4 +3,4 @@
 import struct Dewdrop.User
 import struct Identity.Identifier
 
-public typealias UserPublicDetailsFields = ModelFields<User, User.ID>
+public typealias UserPublicFields = ModelFields<User, User.ID>
