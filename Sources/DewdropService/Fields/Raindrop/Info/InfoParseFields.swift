@@ -14,15 +14,12 @@ public struct InfoParseFields: InfoFields {
 
 // MARK -
 public extension InfoParseFields {
+	@MemberwiseInit(.public)
+	struct Meta: Sendable {
+		public let tags: [TagNameFields]
+	}
+
 	subscript<T>(dynamicMember keyPath: KeyPath<Raindrop.Info, T>) -> T {
 		info[keyPath: keyPath]
-	}
-}
-
-// MARK -
-extension InfoParseFields {
-	@MemberwiseInit(.public)
-public struct Meta: Sendable {
-		public let tags: [TagNameFields]
 	}
 }

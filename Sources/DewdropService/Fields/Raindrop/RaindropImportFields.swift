@@ -6,7 +6,7 @@ import struct Dewdrop.Raindrop
 import struct Dewdrop.Media
 import struct Foundation.URL
 import struct Foundation.Date
-import protocol Catena.Fields
+import protocol Catenary.Fields
 
 @MemberwiseInit(.public)
 public struct RaindropImportFields {

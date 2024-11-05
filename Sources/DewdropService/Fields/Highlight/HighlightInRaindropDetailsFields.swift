@@ -6,7 +6,7 @@ import struct Dewdrop.Highlight
 import struct Foundation.Date
 
 @MemberwiseInit(.public)
-public struct HighlightInRaindropFields: HighlightFields {
+public struct HighlightInRaindropDetailsFields: HighlightFields {
 	public let id: Highlight.ID
 	public let text: String
 	public let color: Highlight.Color

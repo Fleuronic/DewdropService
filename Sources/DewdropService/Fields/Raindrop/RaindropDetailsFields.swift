@@ -16,7 +16,7 @@ public struct RaindropDetailsFields: RaindropFields {
 	public let creator: UserNameFields
 	public let collection: IDFields<Collection.Identified>
 	public let tags: [TagNameFields]
-	public let highlights: [HighlightInRaindropFields]?
+	public let highlights: [HighlightInRaindropDetailsFields]?
 
 	private let raindrop: Raindrop
 }

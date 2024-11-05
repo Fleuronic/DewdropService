@@ -2,7 +2,7 @@
 
 import MemberwiseInit
 
-import protocol Catena.Fields
+import protocol Catenary.Fields
 
 @dynamicMemberLookup
 @_UncheckedMemberwiseInit(.public)
