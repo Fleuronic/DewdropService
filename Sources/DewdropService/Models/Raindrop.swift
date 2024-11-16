@@ -4,12 +4,14 @@ import enum Dewdrop.ItemType
 import struct Dewdrop.Raindrop
 import struct Dewdrop.Collection
 import struct Dewdrop.Highlight
+import struct Catena.IDFields
 import struct Foundation.URL
 import protocol Catena.Valued
 import protocol Identity.Identifiable
 
 public extension Raindrop {
 	typealias ID = Identified.ID
+	typealias IDFields = Catena.IDFields<Identified>
 	typealias Identified = IdentifiedRaindrop
 }
 

@@ -4,10 +4,11 @@ import struct Foundation.URL
 import protocol Catena.Scoped
 
 public protocol ImportSpec {
+	associatedtype URLInfo: Scoped<URLInfoFields>
+	associatedtype URLExistence // TODO
 	associatedtype FileImport: Scoped<FileImportFields>
-	associatedtype URLInfo
-	associatedtype URLExistence
 
+	associatedtype URLInfoFields: InfoFields
 	associatedtype FileImportFields: ImportFields
 
 	func parse(url: URL) async -> URLInfo

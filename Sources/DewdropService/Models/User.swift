@@ -1,11 +1,14 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
 import struct Dewdrop.User
+import struct Foundation.URL
+import struct Catena.IDFields
 import protocol Catena.Valued
 import protocol Identity.Identifiable
 
 public extension User {
 	typealias ID = Identified.ID
+	typealias IDFields = Catena.IDFields<Identified>
 	typealias Identified = IdentifiedUser
 }
 
@@ -26,12 +29,16 @@ public extension User.Identified {
 	init(
 		id: ID,
 		fullName: String,
-		hasProSubscription: Bool
+		email: String?,
+		avatarURL: URL?,
+		hasProSubscription: Bool?
 	) {
 		self.id = id
 		
 		value = .init(
 			fullName: fullName,
+			email: email,
+			avatarURL: avatarURL,
 			hasProSubscription: hasProSubscription
 		)
 	}

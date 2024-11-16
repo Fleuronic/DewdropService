@@ -2,11 +2,13 @@
 
 import struct Dewdrop.Group
 import struct Dewdrop.Collection
+import struct Catena.IDFields
 import protocol Catena.Valued
 import protocol Identity.Identifiable
 
 public extension Group {
 	typealias ID = Identified.ID
+	typealias IDFields = Catena.IDFields<Identified>
 	typealias Identified = IdentifiedGroup
 }
 

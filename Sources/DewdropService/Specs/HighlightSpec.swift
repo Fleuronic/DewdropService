@@ -12,9 +12,9 @@ public protocol HighlightSpec {
 	associatedtype HighlightListFields: HighlightFields
 	associatedtype RaindropHighlightListFields: RaindropFields
 
-	func listHighlights(inCollectionWith id: Collection.ID, onPage page: Int?, listing highlightsPerPage: Int?) async -> HighlightList
 	func listHighlights(ofRaindropWith id: Raindrop.ID) async -> RaindropHighlightList
-//	func addHighlights(with contents: [Highlight.Content], toRaindropWith id: Raindrop.ID) async -> RaindropHighlightsResult
+	func listHighlights(inCollectionWith id: Collection.ID, onPage page: Int?, listing highlightsPerPage: Int?) async -> HighlightList
+	// func addHighlights(with contents: [Highlight.Content], toRaindropWith id: Raindrop.ID) async -> RaindropHighlightsResult
 //	func updateHighlights(with ids: [Highlight.ID], ofRaindropWith id: Raindrop.ID, to contents: [Highlight.Content]) async -> RaindropHighlightsResult
 //	func removeHighlights(with ids: [Highlight.ID], fromRaindropWith id: Raindrop.ID) async -> RaindropHighlightsResult
 }

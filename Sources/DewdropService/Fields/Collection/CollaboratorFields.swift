@@ -1,7 +1,12 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
 import struct Dewdrop.Collaborator
-import struct Dewdrop.User
-import struct Identity.Identifier
+import protocol Catena.Valued
+import protocol Catenary.Fields
 
-public typealias CollaboratorFields = ModelFields<Collaborator, User.ID>
+public protocol CollaboratorFields: Fields {
+	typealias Model = Collaborator
+}
+
+// MARK: -
+extension ModelFields: CollaboratorFields where Model == Collaborator {}

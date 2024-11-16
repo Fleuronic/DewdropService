@@ -1,21 +1,32 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
+import enum Dewdrop.Password
 import struct Dewdrop.User
 import struct Dewdrop.Group
 import struct Dewdrop.Collection
-import struct Dewdrop.Network
 import protocol Catena.Scoped
 
 public protocol UserSpec {
-	associatedtype AuthenticatedUser: Scoped<UserAuthenticatedFields>
-	associatedtype PublicUser: Scoped<UserPublicFields>
-	associatedtype NetworkConnection
-	associatedtype NetworkDisconnection
+	associatedtype PublicUserFetch: Scoped<PublicUserFetchFields>
+//	associatedtype AuthenticatedUserFetch: Scoped<AuthenticatedUserFields>
+//	associatedtype AuthenticatedUserUpdate
+//	associatedtype NetworkConnection
+//	associatedtype NetworkDisconnection
+//
+	associatedtype PublicUserFetchFields: UserFields
+//	associatedtype AuthenticatedUserFields
+//	associatedtype NetworkProvider
 
-	associatedtype UserAuthenticatedFields
+	func fetchUser(with id: User.ID) async -> PublicUserFetch
+//	func fetchAuthenticatedUser() async -> AuthenticatedUserFetch
+//	func connectSocialNetworkAccount(from provider: NetworkProvider) async -> NetworkConnection
+//	func disconnectSocialNetworkAccount(from provider: NetworkProvider) async -> NetworkDisconnection
 
-	func fetchAuthenticatedUser() async -> AuthenticatedUser
-	func fetchUser(with id: User.ID) async -> PublicUser
-	func connectSocialNetworkAccount(from provider: Network.Provider) async -> NetworkConnection
-	func disconnectSocialNetworkAccount(from provider: Network.Provider) async -> NetworkDisconnection
+//	func updateAuthenticatedUser(
+//		fullName: String?,
+//		email: String?,
+//		password: Password?
+//		config: User.Config?,
+//		groups: [Group]?
+//	) async -> AuthenticatedUserUpdate
 }

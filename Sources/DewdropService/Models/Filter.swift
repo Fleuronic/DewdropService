@@ -68,7 +68,7 @@ extension Filter.Identified: Valued {
 
 // MARK: -
 public extension Identifier<Filter.Identified> {
-	enum Name: String {
+	enum Name: String, Sendable {
 		case favorited = "❤️"
 		case highlighted = "highlights"
 		case duplicate = "duplicate"

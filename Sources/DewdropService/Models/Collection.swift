@@ -3,11 +3,13 @@
 import struct Dewdrop.Collection
 import struct Dewdrop.Group
 import struct Identity.Identifier
-import protocol Identity.Identifiable
+import struct Catena.IDFields
 import protocol Catena.Valued
+import protocol Identity.Identifiable
 
 public extension Collection {
 	typealias ID = Identified.ID
+	typealias IDFields = Catena.IDFields<Identified>
 	typealias Identified = IdentifiedCollection
 }
 

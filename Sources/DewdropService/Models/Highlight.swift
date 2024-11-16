@@ -2,12 +2,14 @@
 
 import struct Dewdrop.Highlight
 import struct Dewdrop.Raindrop
+import struct Catena.IDFields
 import protocol Identity.Identifiable
 import protocol Catena.Valued
 
 // MARK: -
 public extension Highlight {
 	typealias ID = Identified.ID
+	typealias IDFields = Catena.IDFields<Identified>
 	typealias Identified = IdentifiedHighlight
 }
 
