@@ -8,25 +8,25 @@ import protocol Catena.Scoped
 
 public protocol UserSpec {
 	associatedtype PublicUserFetch: Scoped<PublicUserFetchFields>
-//	associatedtype AuthenticatedUserFetch: Scoped<AuthenticatedUserFields>
-//	associatedtype AuthenticatedUserUpdate
-//	associatedtype NetworkConnection
-//	associatedtype NetworkDisconnection
-//
+	associatedtype AuthenticatedUserFetch: Scoped<AuthenticatedUserFetchFields>
+	associatedtype AuthenticatedUserUpdate // TODO
+	associatedtype NetworkConnection
+	associatedtype NetworkDisconnection
+
 	associatedtype PublicUserFetchFields: UserFields
-//	associatedtype AuthenticatedUserFields
-//	associatedtype NetworkProvider
+	associatedtype AuthenticatedUserFetchFields: UserAuthenticatedFields
+	associatedtype NetworkProvider
 
 	func fetchUser(with id: User.ID) async -> PublicUserFetch
-//	func fetchAuthenticatedUser() async -> AuthenticatedUserFetch
-//	func connectSocialNetworkAccount(from provider: NetworkProvider) async -> NetworkConnection
-//	func disconnectSocialNetworkAccount(from provider: NetworkProvider) async -> NetworkDisconnection
+	func fetchAuthenticatedUser() async -> AuthenticatedUserFetch
+	func connectSocialNetworkAccount(from provider: NetworkProvider) async -> NetworkConnection
+	func disconnectSocialNetworkAccount(from provider: NetworkProvider) async -> NetworkDisconnection
 
-//	func updateAuthenticatedUser(
-//		fullName: String?,
-//		email: String?,
-//		password: Password?
+	func updateAuthenticatedUser(
+		fullName: String?,
+		email: String?,
+		password: Password?
 //		config: User.Config?,
 //		groups: [Group]?
-//	) async -> AuthenticatedUserUpdate
+	) async -> AuthenticatedUserUpdate
 }

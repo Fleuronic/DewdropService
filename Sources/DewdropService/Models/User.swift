@@ -4,6 +4,7 @@ import struct Dewdrop.User
 import struct Foundation.URL
 import struct Catena.IDFields
 import protocol Catena.Valued
+import protocol Catena.Representable
 import protocol Identity.Identifiable
 
 public extension User {
@@ -19,8 +20,8 @@ extension User: Catena.Valued {
 }
 
 // MARK: -
-public struct IdentifiedUser: Sendable {
-	public let id: Self.ID
+public struct IdentifiedUser {
+	public let id: ID
 	public let value: Value
 }
 
@@ -42,6 +43,13 @@ public extension User.Identified {
 			hasProSubscription: hasProSubscription
 		)
 	}
+
+	init(from representable: some Representable<User, Self>) {
+		self.init(
+			id: representable.id,
+			value: representable.value
+		)
+	}
 }
 
 // MARK: -
@@ -50,7 +58,10 @@ extension User.Identified: Identifiable {
 	public typealias RawIdentifier = Int
 }
 
-extension User.Identified: Valued {
+extension User.Identified: Representable {
 	// MARK: Valued
 	public typealias Value = User
+
+	// MARK: Representable
+	public typealias IdentifiedValue = Self
 }
