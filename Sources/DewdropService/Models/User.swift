@@ -20,9 +20,9 @@ extension User: Catena.Valued {
 }
 
 // MARK: -
-public struct IdentifiedUser {
+public struct IdentifiedUser: Sendable {
 	public let id: ID
-	public let value: Value
+	public let value: User
 }
 
 // MARK: -
@@ -43,13 +43,6 @@ public extension User.Identified {
 			hasProSubscription: hasProSubscription
 		)
 	}
-
-	init(from representable: some Representable<User, Self>) {
-		self.init(
-			id: representable.id,
-			value: representable.value
-		)
-	}
 }
 
 // MARK: -
@@ -58,10 +51,8 @@ extension User.Identified: Identifiable {
 	public typealias RawIdentifier = Int
 }
 
-extension User.Identified: Representable {
+// MARK: -
+extension User.Identified: Valued {
 	// MARK: Valued
 	public typealias Value = User
-
-	// MARK: Representable
-	public typealias IdentifiedValue = Self
 }

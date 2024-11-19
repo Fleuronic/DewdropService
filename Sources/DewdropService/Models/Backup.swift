@@ -1,12 +1,14 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
 import struct Dewdrop.Backup
+import struct Foundation.Date
+import struct Catena.IDFields
 import protocol Catena.Valued
 import protocol Identity.Identifiable
 
-// MARK: -
 public extension Backup {
 	typealias ID = Identified.ID
+	typealias IDFields = Catena.IDFields<Identified>
 	typealias Identified = IdentifiedBackup
 }
 
@@ -18,8 +20,20 @@ extension Backup: Catena.Valued {
 
 // MARK: -
 public struct IdentifiedBackup: Identifiable, Sendable {
-	public let id: Self.ID
-	public let value: Value
+	public let id: ID
+	public let value: Backup
+}
+
+// MARK: -
+public extension Backup.Identified {
+	init(
+		id: ID,
+		creationDate: Date
+	) {
+		self.id = id
+
+		value = .init(creationDate: creationDate)
+	}
 }
 
 // MARK: -

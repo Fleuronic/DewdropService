@@ -9,15 +9,15 @@ public protocol CollectionSpec {
 	associatedtype RootCollectionList: Scoped<RootCollectionListFields>
 	associatedtype ChildCollectionList: Scoped<ChildCollectionListFields>
 	associatedtype SystemCollectionList: Scoped<SystemCollectionListFields>
-	associatedtype CollaboratorList: Scoped<CollaboratorListFields>
-	associatedtype CollectionDeletion
+//	associatedtype CollaboratorList: Scoped<CollaboratorListFields>
+//	associatedtype CollectionDeletion
 	associatedtype TrashRemoval
 
 	associatedtype CollectionFetchFields: CollectionFields
 	associatedtype RootCollectionListFields: CollectionFields
 	associatedtype ChildCollectionListFields: CollectionFields
 	associatedtype SystemCollectionListFields: CollectionFields
-	associatedtype CollaboratorListFields: CollaboratorFields
+//	associatedtype CollaboratorListFields: CollaboratorFields
 
 //	associatedtype CollectionID: Identifying<Dewdrop.Collection.Identified>
 
@@ -25,8 +25,8 @@ public protocol CollectionSpec {
 	func listRootCollections() async -> RootCollectionList
 	func listChildCollections() async -> ChildCollectionList
 	func listSystemCollections() async -> SystemCollectionList
-	func listCollaborators(ofCollectionWith id: Collection.ID) async -> CollaboratorList
-	func removeCollection(with id: Collection.ID) async -> CollectionDeletion
-	func removeCollections(with ids: [Collection.ID]) async -> CollectionDeletion
+//	func listCollaborators(ofCollectionWith id: Collection.ID) async -> CollaboratorList
+//	func removeCollection(with id: Collection.ID) async -> CollectionDeletion
+//	func removeCollections(with ids: [Collection.ID]) async -> CollectionDeletion
 	func emptyTrash() async -> TrashRemoval
 }

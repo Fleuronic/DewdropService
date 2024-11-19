@@ -8,5 +8,3 @@ public protocol CollaboratorFields: Fields {
 	typealias Model = Collaborator
 }
 
-// MARK: -
-extension ModelFields: CollaboratorFields where Model == Collaborator {}
