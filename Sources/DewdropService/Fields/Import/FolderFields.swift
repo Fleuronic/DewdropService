@@ -2,7 +2,7 @@
 
 import struct Dewdrop.Folder
 import protocol Catena.Valued
-import protocol Catenary.Fields
+import protocol Catena.Fields
 
 public protocol FolderFields: Fields {
 	typealias Model = Folder

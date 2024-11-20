@@ -2,7 +2,7 @@
 
 import struct Dewdrop.Raindrop
 import protocol Catena.Valued
-import protocol Catenary.Fields
+import protocol Catena.Fields
 
 public protocol InfoFields: Fields {
 	typealias Model = Raindrop.Info

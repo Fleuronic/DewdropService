@@ -1,5 +1,5 @@
 {
-  "originHash" : "fc49c68556749f18cc54fa04ae7e74a6df68e2d49672fa9f350e64539498cc3d",
+  "originHash" : "f0a95a8358ec6ee6446d5960b0567dafe5ee9800aaa4eb34937d12aa477d2f7e",
   "pins" : [
     {
       "identity" : "catena",
@@ -7,7 +7,7 @@
       "location" : "https://github.com/Fleuronic/Catena",
       "state" : {
         "branch" : "main",
-        "revision" : "0886450dc5cc4d2607cd63ce95772e6fb29d7a9f"
+        "revision" : "82859aae045a5177def6d9e18b1f62b556f3614c"
       }
     },
     {
@@ -16,7 +16,7 @@
       "location" : "https://github.com/Fleuronic/Dewdrop",
       "state" : {
         "branch" : "main",
-        "revision" : "53636a5319785c4c42bbf2cd070f6c4409ed6a1c"
+        "revision" : "37d9acb2284e4e26363f23eab511bf4032ee7df3"
       }
     },
     {
@@ -56,5 +56,5 @@
       }
     }
   ],
-  "version" : 2
+  "version" : 3
 }

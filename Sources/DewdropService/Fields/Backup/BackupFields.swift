@@ -2,7 +2,7 @@
 
 import struct Dewdrop.Backup
 import protocol Catena.Valued
-import protocol Catenary.Fields
+import protocol Catena.Fields
 
 public protocol BackupFields: Fields {
 	associatedtype Model: Valued<Backup> = Backup.Identified

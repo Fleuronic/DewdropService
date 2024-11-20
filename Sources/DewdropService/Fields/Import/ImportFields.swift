@@ -2,7 +2,7 @@
 
 import enum Dewdrop.Import
 import protocol Catena.Valued
-import protocol Catenary.Fields
+import protocol Catena.Fields
 
 public protocol ImportFields: Fields {
 	typealias Model = Import
