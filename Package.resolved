@@ -1,5 +1,4 @@
 {
-  "originHash" : "f0a95a8358ec6ee6446d5960b0567dafe5ee9800aaa4eb34937d12aa477d2f7e",
   "pins" : [
     {
       "identity" : "catena",
@@ -56,5 +55,5 @@
       }
     }
   ],
-  "version" : 3
+  "version" : 2
 }
