@@ -1,6 +1,5 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-import enum Dewdrop.ItemType
 import struct Dewdrop.Raindrop
 import struct Dewdrop.Collection
 import struct Dewdrop.Media
@@ -33,7 +32,7 @@ public protocol RaindropSpec {
 		id: RaindropPendingID,
 		url: URL,
 		title: String?,
-		itemType: ItemType?,
+		itemType: Raindrop.ItemType?,
 		excerpt: String?,
 		coverURL: URL?,
 		order: Int?,

@@ -1,7 +1,7 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-import enum Dewdrop.ItemType
 import struct Dewdrop.Filter
+import struct Dewdrop.Raindrop
 import struct Identity.Identifier
 import protocol Identity.Identifiable
 import protocol Catena.Valued
@@ -25,7 +25,7 @@ public extension Filter {
 		return .init(rawValue: name)
 	}
 
-	static func itemType(forQuery query: String) -> ItemType? {
+	static func itemType(forQuery query: String) -> Raindrop.ItemType? {
 		guard query.hasPrefix("type:") else { return nil }
 		
 		let typeName = query.components(separatedBy: ":").last!

@@ -1,6 +1,5 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-import enum Dewdrop.ItemType
 import struct Dewdrop.Raindrop
 import struct Dewdrop.Collection
 import struct Dewdrop.Highlight
@@ -34,7 +33,7 @@ public extension Raindrop.Identified {
 		id: ID,
 		url: URL,
 		title: String,
-		itemType: ItemType,
+		itemType: Raindrop.ItemType,
 		isFavorite: Bool,
 		isBroken: Bool,
 		collection: Collection.Identified
