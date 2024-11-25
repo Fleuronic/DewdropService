@@ -3,8 +3,10 @@
 import struct Dewdrop.Highlight
 import struct Dewdrop.Raindrop
 import struct Catena.IDFields
-import protocol Identity.Identifiable
 import protocol Catena.Valued
+import protocol Catena.Representable
+import protocol Identity.Identifiable
+
 
 // MARK: -
 public extension Highlight {
@@ -38,7 +40,7 @@ public extension Highlight.Identified {
 }
 
 // MARK: -
-extension Highlight.Identified: Valued {
+extension Highlight.Identified: Representable {
 	// MARK: Valued
 	public typealias Value = Highlight
 }

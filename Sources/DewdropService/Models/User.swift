@@ -7,6 +7,8 @@ import protocol Catena.Valued
 import protocol Catena.Representable
 import protocol Identity.Identifiable
 
+import protocol Catena.Representable
+
 public extension User {
 	typealias ID = Identified.ID
 	typealias IDFields = Catena.IDFields<Identified>

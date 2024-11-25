@@ -3,8 +3,9 @@
 import struct Dewdrop.Filter
 import struct Dewdrop.Raindrop
 import struct Identity.Identifier
-import protocol Identity.Identifiable
 import protocol Catena.Valued
+import protocol Catena.Representable
+import protocol Identity.Identifiable
 
 public extension Filter {
 	typealias ID = Identified.ID
@@ -61,7 +62,7 @@ public extension Filter.Identified {
 }
 
 // MARK: -
-extension Filter.Identified: Valued {
+extension Filter.Identified: Representable {
 	// MARK: Valued
 	public typealias Value = Filter
 }

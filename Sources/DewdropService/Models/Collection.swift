@@ -5,12 +5,22 @@ import struct Dewdrop.Group
 import struct Identity.Identifier
 import struct Catena.IDFields
 import protocol Catena.Valued
+import protocol Catena.Representable
 import protocol Identity.Identifiable
 
 public extension Collection {
 	typealias ID = Identified.ID
 	typealias IDFields = Catena.IDFields<Identified>
 	typealias Identified = IdentifiedCollection
+
+	static func systemTitle(forCollectionWith id: ID) -> String? {
+		switch id {
+		case .all: "All bookmarks"
+		case .unsorted: "Unsorted"
+		case .trash: "Trash"
+		default: nil
+		}
+	}
 }
 
 // MARK: -
@@ -66,8 +76,8 @@ extension Collection.Identified: Identifiable {
 	public typealias RawIdentifier = Int
 }
 
-extension Collection.Identified: Valued {
-	// MARK: Valued
+extension Collection.Identified: Representable {
+	// MARK: Representable
 	public typealias Value = Collection
 }
 

@@ -5,6 +5,6 @@ import protocol Catena.Valued
 import protocol Catena.Fields
 
 public protocol CollaboratorFields: Fields {
-	typealias Model = Collaborator
+	associatedtype Model: Valued<Collaborator> = Collaborator.Identified
 }
 

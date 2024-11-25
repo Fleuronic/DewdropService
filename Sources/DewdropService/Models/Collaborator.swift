@@ -22,19 +22,20 @@ extension Collaborator: Catena.Valued {
 
 // MARK: -
 public struct IdentifiedCollaborator: Sendable {
-	public let userID: User.ID
+	public let id: Collaborator.ID
 	public let value: Collaborator
 }
 
 // MARK: -
 public extension Collaborator.Identified {
 	init(
-		id: User.ID,
+		id: Collaborator.ID,
 		fullName: String,
 		email: String,
 		role: Collaborator.Role
 	) {
-		userID = id
+		self.id = id
+
 		value = .init(
 			fullName: fullName,
 			email: email,
@@ -46,8 +47,6 @@ public extension Collaborator.Identified {
 extension Collaborator.Identified: Identifiable {
 	// MARK: Identifiable
 	public typealias RawIdentifier = Int
-
-	public var id: ID { .init(rawValue: userID.rawValue) }
 }
 
 // MARK: -

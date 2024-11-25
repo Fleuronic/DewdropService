@@ -4,6 +4,7 @@ import struct Dewdrop.Group
 import struct Dewdrop.Collection
 import struct Catena.IDFields
 import protocol Catena.Valued
+import protocol Catena.Representable
 import protocol Identity.Identifiable
 
 public extension Group {
@@ -27,16 +28,16 @@ public struct IdentifiedGroup: Sendable {
 public extension Group.Identified {
 	init(
 		id: ID,
+		title: String,
 		isHidden: Bool,
-		sortIndex: Int,
 		collections: [Collection.Identified]
 	) {
 		self.collections = collections
 		
 		value = .init(
-			title: id.rawValue,
-			isHidden: isHidden,
-			sortIndex: sortIndex
+			title: title,
+			sortIndex: id.rawValue,
+			isHidden: isHidden
 		)
 	}
 }
@@ -49,5 +50,7 @@ extension Group.Identified: Valued {
 
 extension Group.Identified: Identifiable {
 	// MARK: Identifiable
-	public var id: ID { .init(rawValue: value.title) }
+	public typealias RawIdentifier = Int
+
+	public var id: ID { .init(rawValue: value.sortIndex) }
 }

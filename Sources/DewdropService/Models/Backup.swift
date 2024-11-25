@@ -4,6 +4,7 @@ import struct Dewdrop.Backup
 import struct Foundation.Date
 import struct Catena.IDFields
 import protocol Catena.Valued
+import protocol Catena.Representable
 import protocol Identity.Identifiable
 
 public extension Backup {
@@ -37,7 +38,7 @@ public extension Backup.Identified {
 }
 
 // MARK: -
-extension Backup.Identified: Valued {
+extension Backup.Identified: Representable {
 	// MARK: Valued
 	public typealias Value = Backup
 }

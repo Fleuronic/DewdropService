@@ -2,6 +2,7 @@
 
 import struct Dewdrop.Tag
 import protocol Catena.Valued
+import protocol Catena.Representable
 import protocol Identity.Identifiable
 
 public extension Tag {
@@ -34,7 +35,7 @@ public extension Tag.Identified {
 }
 
 // MARK: -
-extension Tag.Identified: Valued {
+extension Tag.Identified: Representable {
 	// MARK: Valued
 	public typealias Value = Tag
 }

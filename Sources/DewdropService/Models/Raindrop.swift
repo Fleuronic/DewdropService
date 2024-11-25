@@ -6,6 +6,7 @@ import struct Dewdrop.Highlight
 import struct Catena.IDFields
 import struct Foundation.URL
 import protocol Catena.Valued
+import protocol Catena.Representable
 import protocol Identity.Identifiable
 
 public extension Raindrop {
@@ -67,7 +68,7 @@ extension Raindrop.Identified: Identifiable {
 }
 
 // MARK: -
-extension Raindrop.Identified: Valued {
+extension Raindrop.Identified: Representable {
 	// MARK: Valued
 	public typealias Value = Raindrop
 }
