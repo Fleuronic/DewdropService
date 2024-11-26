@@ -3,10 +3,10 @@
 import struct Dewdrop.Highlight
 import struct Dewdrop.Raindrop
 import struct Catena.IDFields
+import struct Foundation.Date
 import protocol Catena.Valued
 import protocol Catena.Representable
 import protocol Identity.Identifiable
-
 
 // MARK: -
 public extension Highlight {
@@ -27,15 +27,19 @@ public extension Highlight.Identified {
 	init(
 		id: ID,
 		text: String,
+		creationDate: Date,
+		updateDate: Date,
 		raindrop: Raindrop.Identified
 	) {
 		self.id = id
 		self.raindrop = raindrop
 
-		fatalError()
-//		value = .init(
-//			text: text
-//		)
+		value = .init(
+			content: .init(text: text),
+			title: raindrop.value.title,
+			creationDate: creationDate,
+			updateDate: updateDate
+		)
 	}
 }
 
@@ -43,34 +47,4 @@ public extension Highlight.Identified {
 extension Highlight.Identified: Representable {
 	// MARK: Valued
 	public typealias Value = Highlight
-}
-
-// MARK: -
-public extension [Highlight] {
-	var content: [Highlight.Content] { map(\.content) }
-}
-
-// MARK: -
-public extension [Highlight.Content] {
-	var text: [String] { map(\.text) }
-}
-
-// MARK: -
-public extension [Highlight.Identified] {
-	var id: [Highlight.ID] { map(\.id) }
-	var value: [Highlight] { map(\.value) }
-
-	init(
-		ids: [Highlight.ID],
-		texts: [String]
-	) {
-		let raindrops: [Raindrop.Identified] = []
-		self = ids.enumerated().map { index, id in
-			.init(
-				id: id,
-				text: texts[index],
-				raindrop: raindrops[index]
-			)
-		}
-	}
 }
