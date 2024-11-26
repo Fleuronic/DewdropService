@@ -9,8 +9,6 @@ import struct Dewdrop.Highlight
 import struct Dewdrop.Backup
 import struct Dewdrop.User
 import struct Catena.IDFields
-import struct Identity.Identifier
-import protocol Catenary.Fields
 
 extension IDFields: DewdropService.RaindropFields where Model == Raindrop.Identified {}
 extension IDFields: DewdropService.CollectionFields where Model == Collection.Identified {}
