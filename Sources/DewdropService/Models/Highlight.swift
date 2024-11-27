@@ -2,6 +2,7 @@
 
 import struct Dewdrop.Highlight
 import struct Dewdrop.Raindrop
+import struct Dewdrop.User
 import struct Catena.IDFields
 import struct Foundation.Date
 import protocol Catena.Valued
@@ -20,6 +21,7 @@ public struct IdentifiedHighlight: Identifiable, Sendable {
 	public let id: Self.ID
 	public let value: Value
 	public let raindrop: Raindrop.Identified
+	public let creator: User.Identified
 }
 
 // MARK: -
@@ -27,24 +29,33 @@ public extension Highlight.Identified {
 	init(
 		id: ID,
 		text: String,
+		color: Highlight.Color,
+		note: String?,
 		creationDate: Date,
 		updateDate: Date,
-		raindrop: Raindrop.Identified
+		raindrop: Raindrop.Identified,
+		creator: User.Identified
 	) {
-		self.id = id
-		self.raindrop = raindrop
-
-		value = .init(
-			content: .init(text: text),
-			title: raindrop.value.title,
-			creationDate: creationDate,
-			updateDate: updateDate
+		self.init(
+			id: id,
+			value: .init(
+				content: .init(
+					text: text,
+					color: color,
+					note: note
+				),
+				title: raindrop.value.title,
+				creationDate: creationDate,
+				updateDate: updateDate
+			),
+			raindrop: raindrop,
+			creator: creator
 		)
 	}
 }
 
 // MARK: -
-extension Highlight.Identified: Representable {
+extension Highlight.Identified: Valued {
 	// MARK: Valued
 	public typealias Value = Highlight
 }

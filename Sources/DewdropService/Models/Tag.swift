@@ -28,14 +28,15 @@ public extension Tag.Identified {
 		id: ID,
 		count: Int
 	) {
-		self.id = id
-		
-		value = .init(count: count)
+		self.init(
+			id: id,
+			value: .init(count: count)
+		)
 	}
 }
 
 // MARK: -
-extension Tag.Identified: Representable {
+extension Tag.Identified: Valued {
 	// MARK: Valued
 	public typealias Value = Tag
 }

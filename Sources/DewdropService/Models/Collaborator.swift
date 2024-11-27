@@ -34,12 +34,13 @@ public extension Collaborator.Identified {
 		email: String,
 		role: Collaborator.Role
 	) {
-		self.id = id
-
-		value = .init(
-			fullName: fullName,
-			email: email,
-			role: role
+		self.init(
+			id: id,
+			value: .init(
+				fullName: fullName,
+				email: email,
+				role: role
+			)
 		)
 	}
 }

@@ -51,18 +51,19 @@ public struct IdentifiedFilter: Identifiable, Sendable {
 public extension Filter.Identified {
 	init(
 		id: ID,
-		sortIndex: Int,
-		count: Int
+		count: Int,
+		sortIndex: Int
 	) {
-		self.id = id
-		self.sortIndex = sortIndex
-		
-		value = .init(count: count)
+		self.init(
+			id: id,
+			sortIndex: sortIndex,
+			value: .init(count: count)
+		)
 	}
 }
 
 // MARK: -
-extension Filter.Identified: Representable {
+extension Filter.Identified: Valued {
 	// MARK: Valued
 	public typealias Value = Filter
 }

@@ -2,8 +2,10 @@
 
 import struct Dewdrop.Collection
 import struct Dewdrop.Group
-import struct Identity.Identifier
 import struct Catena.IDFields
+import struct Identity.Identifier
+import struct Foundation.URL
+import struct Foundation.Date
 import protocol Catena.Valued
 import protocol Catena.Representable
 import protocol Identity.Identifiable
@@ -44,29 +46,36 @@ public extension Collection.Identified {
 		parentID: ID?,
 		title: String,
 		count: Int,
-		isShared: Bool,
+		coverURL: URL?,
+		colorString: String?,
+		view: Collection.View,
 		sortIndex: Int,
+		isPublic: Bool,
+		isShared: Bool,
+		isExpanded: Bool,
+		creationDate: Date,
+		updateDate: Date,
 		group: Group.Identified
 	) {
-		self.id = id
-		self.parentID = parentID
-		self.group = group
-
-		fatalError()
-		/*value = .init(
-			title: title,
-			count: count,
-			coverURL: URL?, // TODO
-			colorString: String?, // TODO
-			view: Collection.View?, // TODO
-			access: Collection.Access, // TODO
-			sortIndex: sortIndex,
-			isPublic: Bool, // TODO
-			isShared: isShared,
-			isExpanded: Bool, // TODO
-			creationDate: Date, // TODO
-			updateDate: Date // TODO
-		)*/
+		self.init(
+			id: id,
+			parentID: parentID,
+			value: .init(
+				title: title,
+				count: count,
+				coverURL: coverURL,
+				colorString: colorString,
+				view: view,
+				access: .init(level: .owner, isDraggable: true), // TODO
+				sortIndex: sortIndex,
+				isPublic: isPublic,
+				isShared: isShared,
+				isExpanded: isExpanded,
+				creationDate: creationDate,
+				updateDate: updateDate
+			),
+			group: group
+		)
 	}
 }
 
@@ -76,7 +85,7 @@ extension Collection.Identified: Identifiable {
 	public typealias RawIdentifier = Int
 }
 
-extension Collection.Identified: Representable {
+extension Collection.Identified: Valued {
 	// MARK: Representable
 	public typealias Value = Collection
 }
@@ -85,8 +94,15 @@ extension Collection.Identified: Representable {
 public extension [Collection] {
 	var title: [String] { map(\.title) }
 	var count: [Int] { map(\.count) }
-	var isShared: [Bool] { map(\.isShared) }
+	var coverURL: [URL?] { map(\.coverURL) }
+	var colorString: [String?] { map(\.colorString) }
+	var view: [Collection.View] { map(\.view) }
 	var sortIndex: [Int] { map(\.sortIndex) }
+	var isPublic: [Bool] { map(\.isPublic) }
+	var isShared: [Bool] { map(\.isShared) }
+	var isExpanded: [Bool] { map(\.isExpanded) }
+	var creationDate: [Date] { map(\.creationDate) }
+	var updateDate: [Date] { map(\.updateDate) }
 }
 
 // MARK: -
@@ -100,8 +116,15 @@ public extension [Collection.Identified] {
 		parentIDs: [Collection.ID?],
 		titles: [String],
 		counts: [Int],
+		coverURLs: [URL?],
+		colorStrings: [String?],
+		views: [Collection.View],
+		sortIndices: [Int],
+		isPublicFlags: [Bool],
 		isSharedFlags: [Bool],
-		sortIndices: [Int]
+		isExpandedFlags: [Bool],
+		creationDates: [Date],
+		updateDates: [Date]
 	) {
 		let groups: [Group.Identified] = []
 		self = ids.enumerated().map { index, id in
@@ -110,8 +133,15 @@ public extension [Collection.Identified] {
 				parentID: parentIDs[index],
 				title: titles[index],
 				count: counts[index],
-				isShared: isSharedFlags[index],
+				coverURL: coverURLs[index],
+				colorString: colorStrings[index],
+				view: views[index],
 				sortIndex: sortIndices[index],
+				isPublic: isPublicFlags[index],
+				isShared: isSharedFlags[index],
+				isExpanded: isExpandedFlags[index],
+				creationDate: creationDates[index],
+				updateDate: updateDates[index],
 				group: groups[index]
 			)
 		}

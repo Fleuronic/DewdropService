@@ -4,10 +4,7 @@ import struct Dewdrop.User
 import struct Foundation.URL
 import struct Catena.IDFields
 import protocol Catena.Valued
-import protocol Catena.Representable
 import protocol Identity.Identifiable
-
-import protocol Catena.Representable
 
 public extension User {
 	typealias ID = Identified.ID
@@ -36,13 +33,14 @@ public extension User.Identified {
 		avatarURL: URL?,
 		hasProSubscription: Bool?
 	) {
-		self.id = id
-		
-		value = .init(
-			fullName: fullName,
-			email: email,
-			avatarURL: avatarURL,
-			hasProSubscription: hasProSubscription
+		self.init(
+			id: id,
+			value: .init(
+				fullName: fullName,
+				email: email,
+				avatarURL: avatarURL,
+				hasProSubscription: hasProSubscription
+			)
 		)
 	}
 }

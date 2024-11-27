@@ -25,7 +25,6 @@ public struct IdentifiedRaindrop: Sendable {
 	public let id: ID
 	public let value: Value
 	public let collection: Collection.Identified
-	public let highlights: [Highlight.Identified]
 }
 
 // MARK: -
@@ -68,7 +67,7 @@ extension Raindrop.Identified: Identifiable {
 }
 
 // MARK: -
-extension Raindrop.Identified: Representable {
+extension Raindrop.Identified: Valued {
 	// MARK: Valued
 	public typealias Value = Raindrop
 }

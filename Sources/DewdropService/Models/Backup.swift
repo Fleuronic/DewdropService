@@ -31,14 +31,15 @@ public extension Backup.Identified {
 		id: ID,
 		creationDate: Date
 	) {
-		self.id = id
-
-		value = .init(creationDate: creationDate)
+		self.init(
+			id: id,
+			value: .init(creationDate: creationDate)
+		)
 	}
 }
 
 // MARK: -
-extension Backup.Identified: Representable {
+extension Backup.Identified: Valued {
 	// MARK: Valued
 	public typealias Value = Backup
 }
