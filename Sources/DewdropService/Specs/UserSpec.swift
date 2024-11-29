@@ -9,12 +9,13 @@ import protocol Catena.Scoped
 public protocol UserSpec {
 	associatedtype PublicUserFetch: Scoped<PublicUserFetchFields>
 	associatedtype AuthenticatedUserFetch: Scoped<AuthenticatedUserFetchFields>
-	associatedtype AuthenticatedUserUpdate // TODO
+	associatedtype AuthenticatedUserUpdate: Scoped<AuthenticatedUserUpdateFields>
 	associatedtype NetworkConnection
 	associatedtype NetworkDisconnection
 
 	associatedtype PublicUserFetchFields: UserFields
 	associatedtype AuthenticatedUserFetchFields: UserAuthenticatedFields
+	associatedtype AuthenticatedUserUpdateFields: UserAuthenticatedFields
 	associatedtype NetworkProvider
 
 	func fetchUser(with id: User.ID) async -> PublicUserFetch
