@@ -21,7 +21,6 @@ extension Group: Catena.Valued {
 // MARK: -
 public struct IdentifiedGroup: Sendable {
 	public let value: Value
-	public let collections: [Collection.Identified]
 }
 
 // MARK: -
@@ -29,11 +28,8 @@ public extension Group.Identified {
 	init(
 		id: ID,
 		title: String,
-		isHidden: Bool,
-		collections: [Collection.Identified]
-	) {
-		self.collections = collections
-		
+		isHidden: Bool
+	) {		
 		value = .init(
 			title: title,
 			sortIndex: id.rawValue,

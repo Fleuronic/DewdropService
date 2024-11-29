@@ -48,13 +48,15 @@ public extension Collection.Identified {
 		count: Int,
 		coverURL: URL?,
 		colorString: String?,
-		view: Collection.View,
+		view: Collection.View?,
+		accessLevel: Collection.Access.Level,
+		isDraggable: Bool,
 		sortIndex: Int,
 		isPublic: Bool,
 		isShared: Bool,
 		isExpanded: Bool,
-		creationDate: Date,
-		updateDate: Date,
+		creationDate: Date?,
+		updateDate: Date?,
 		group: Group.Identified
 	) {
 		self.init(
@@ -66,7 +68,7 @@ public extension Collection.Identified {
 				coverURL: coverURL,
 				colorString: colorString,
 				view: view,
-				access: .init(level: .owner, isDraggable: true), // TODO
+				access: .init(level: accessLevel, isDraggable: isDraggable),
 				sortIndex: sortIndex,
 				isPublic: isPublic,
 				isShared: isShared,
@@ -88,64 +90,6 @@ extension Collection.Identified: Identifiable {
 extension Collection.Identified: Valued {
 	// MARK: Representable
 	public typealias Value = Collection
-}
-
-// MARK: -
-public extension [Collection] {
-	var title: [String] { map(\.title) }
-	var count: [Int] { map(\.count) }
-	var coverURL: [URL?] { map(\.coverURL) }
-	var colorString: [String?] { map(\.colorString) }
-	var view: [Collection.View] { map(\.view) }
-	var sortIndex: [Int] { map(\.sortIndex) }
-	var isPublic: [Bool] { map(\.isPublic) }
-	var isShared: [Bool] { map(\.isShared) }
-	var isExpanded: [Bool] { map(\.isExpanded) }
-	var creationDate: [Date] { map(\.creationDate) }
-	var updateDate: [Date] { map(\.updateDate) }
-}
-
-// MARK: -
-public extension [Collection.Identified] {
-	var id: [Collection.ID] { map(\.id) }
-	var parentID: [Collection.ID?] { map(\.parentID) }
-	var value: [Collection] { map(\.value) }
-
-	init(
-		ids: [Collection.ID],
-		parentIDs: [Collection.ID?],
-		titles: [String],
-		counts: [Int],
-		coverURLs: [URL?],
-		colorStrings: [String?],
-		views: [Collection.View],
-		sortIndices: [Int],
-		isPublicFlags: [Bool],
-		isSharedFlags: [Bool],
-		isExpandedFlags: [Bool],
-		creationDates: [Date],
-		updateDates: [Date]
-	) {
-		let groups: [Group.Identified] = []
-		self = ids.enumerated().map { index, id in
-			.init(
-				id: id,
-				parentID: parentIDs[index],
-				title: titles[index],
-				count: counts[index],
-				coverURL: coverURLs[index],
-				colorString: colorStrings[index],
-				view: views[index],
-				sortIndex: sortIndices[index],
-				isPublic: isPublicFlags[index],
-				isShared: isSharedFlags[index],
-				isExpanded: isExpandedFlags[index],
-				creationDate: creationDates[index],
-				updateDate: updateDates[index],
-				group: groups[index]
-			)
-		}
-	}
 }
 
 // MARK: -

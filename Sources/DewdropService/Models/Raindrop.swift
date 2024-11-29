@@ -5,6 +5,7 @@ import struct Dewdrop.Collection
 import struct Dewdrop.Highlight
 import struct Catena.IDFields
 import struct Foundation.URL
+import struct Foundation.Date
 import protocol Catena.Valued
 import protocol Catena.Representable
 import protocol Identity.Identifiable
@@ -34,29 +35,35 @@ public extension Raindrop.Identified {
 		url: URL,
 		title: String,
 		itemType: Raindrop.ItemType,
+		excerpt: String?,
+		domain: String,
+		coverURL: URL?,
+		note: String?,
 		isFavorite: Bool,
 		isBroken: Bool,
+		creationDate: Date,
+		updateDate: Date,
 		collection: Collection.Identified
 	) {
-		self.id = id
-		self.collection = collection
-		
-		fatalError()
-		/*value = .init(
-		 	url: url,
-		 	title: title,
-		 	itemType: itemType,
-		 	excerpt: String?, // TODO
-		 	domain: String, // TODO
-		 	coverURL: URL?, // TODO
-		 	media: [Media], // TODO
-		 	note: String?, // TODO
-		 	cache: Cache?, // TODO
-		 	isFavorite: isFavorite,
-		 	isBroken: isBroken,
-		 	creationDate: Date, // TODO
-		 	updateDate: Date // TODO
-		 )*/
+		self.init(
+			id: id,
+			value: .init(
+				url: url,
+				title: title,
+				itemType: itemType,
+				excerpt: excerpt,
+				domain: domain,
+				coverURL: coverURL,
+				media: [], // TODO
+				note: note,
+				cache: nil, // TODO
+				isFavorite: isFavorite,
+				isBroken: isBroken,
+				creationDate: creationDate,
+				updateDate: updateDate
+			),
+			collection: collection
+		)
 	}
 }
 
