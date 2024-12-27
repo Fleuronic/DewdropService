@@ -2,7 +2,6 @@
 
 import enum Dewdrop.Password
 import struct Dewdrop.User
-import struct Dewdrop.Group
 import struct Dewdrop.Collection
 import protocol Catena.Scoped
 
@@ -16,6 +15,7 @@ public protocol UserSpec {
 	associatedtype PublicUserFetchFields: UserFields
 	associatedtype AuthenticatedUserFetchFields: UserAuthenticatedFields
 	associatedtype AuthenticatedUserUpdateFields: UserAuthenticatedFields
+	associatedtype GroupUpdateFields: GroupFields
 	associatedtype NetworkProvider
 
 	func fetchUser(with id: User.ID) async -> PublicUserFetch
@@ -26,8 +26,8 @@ public protocol UserSpec {
 	func updateAuthenticatedUser(
 		fullName: String?,
 		email: String?,
-		password: Password?
-//		config: User.Config?,
-//		groups: [Group]?
+		password: Password?,
+		config: User.Config?,
+		groups: [GroupUpdateFields]?
 	) async -> AuthenticatedUserUpdate
 }

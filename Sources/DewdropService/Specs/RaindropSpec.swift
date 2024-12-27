@@ -40,11 +40,12 @@ public protocol RaindropSpec {
 		order: Int?,
 		collectionID: Collection.ID?,
 		tagNames: [String]?,
-//		media: [Media]?,
-//		highlightContents: [Highlight.Content]?,
-		isFavorite: Bool?
-//		creationDate: Date?,
-//		updateDate: Date?,
-//		shouldParse: Bool
+		media: [Media]?,
+		highlightContents: [Highlight.Content]?,
+		reminder: Raindrop.Reminder?,
+		isFavorite: Bool?,
+		creationDate: Date?,
+		updateDate: Date?,
+		shouldParse: Bool
 	) async -> RaindropCreation
 }

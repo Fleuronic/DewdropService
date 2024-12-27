@@ -68,7 +68,10 @@ public extension Collection.Identified {
 				coverURL: coverURL,
 				colorString: colorString,
 				view: view,
-				access: .init(level: accessLevel, isDraggable: isDraggable),
+				access: .init(
+					level: accessLevel,
+					isDraggable: isDraggable
+				),
 				sortIndex: sortIndex,
 				isPublic: isPublic,
 				isShared: isShared,

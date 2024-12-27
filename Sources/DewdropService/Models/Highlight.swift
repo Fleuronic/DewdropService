@@ -44,7 +44,7 @@ public extension Highlight.Identified {
 					color: color,
 					note: note
 				),
-				title: raindrop.value.title,
+				title: raindrop.value.info.title,
 				creationDate: creationDate,
 				updateDate: updateDate
 			),

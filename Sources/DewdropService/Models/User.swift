@@ -51,7 +51,6 @@ extension User.Identified: Identifiable {
 	public typealias RawIdentifier = Int
 }
 
-// MARK: -
 extension User.Identified: Valued {
 	// MARK: Valued
 	public typealias Value = User

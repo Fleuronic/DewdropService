@@ -2,6 +2,8 @@
 
 import struct Dewdrop.Raindrop
 import struct Dewdrop.Collection
+import struct Dewdrop.Media
+import struct Dewdrop.Cache
 import struct Dewdrop.Highlight
 import struct Catena.IDFields
 import struct Foundation.URL
@@ -26,6 +28,7 @@ public struct IdentifiedRaindrop: Sendable {
 	public let id: ID
 	public let value: Value
 	public let collection: Collection.Identified
+	public let media: [Media.Identified]
 }
 
 // MARK: -
@@ -39,30 +42,45 @@ public extension Raindrop.Identified {
 		domain: String,
 		coverURL: URL?,
 		note: String?,
+		cacheStatus: Cache.Status?,
+		cacheSize: Int?,
+		cacheCreationDate: Date?,
+		reminderDate: Date?,
 		isFavorite: Bool,
 		isBroken: Bool,
 		creationDate: Date,
 		updateDate: Date,
-		collection: Collection.Identified
+		collection: Collection.Identified,
+		media: [Media.Identified]
 	) {
 		self.init(
 			id: id,
 			value: .init(
 				url: url,
-				title: title,
-				itemType: itemType,
-				excerpt: excerpt,
 				domain: domain,
-				coverURL: coverURL,
-				media: [], // TODO
+				info: .init(
+					title: title,
+					itemType: itemType,
+					excerpt: excerpt,
+					coverURL: coverURL
+				),
 				note: note,
-				cache: nil, // TODO
+				media: [],
+				cache: cacheStatus.map { status in
+					.init(
+						status: status,
+						size: cacheSize,
+						creationDate: cacheCreationDate
+					)
+				},
+				reminder: reminderDate.map(Raindrop.Reminder.init),
 				isFavorite: isFavorite,
 				isBroken: isBroken,
 				creationDate: creationDate,
 				updateDate: updateDate
 			),
-			collection: collection
+			collection: collection,
+			media: media
 		)
 	}
 }
