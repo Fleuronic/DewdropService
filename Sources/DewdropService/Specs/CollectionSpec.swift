@@ -9,6 +9,7 @@ public protocol CollectionSpec {
 	associatedtype RootCollectionList: Scoped<RootCollectionListFields>
 	associatedtype ChildCollectionList: Scoped<ChildCollectionListFields>
 	associatedtype SystemCollectionList: Scoped<SystemCollectionListFields>
+	associatedtype CoverList
 	associatedtype CollectionRemoval
 	associatedtype EmptyCollectionRemoval
 	associatedtype TrashRemoval
@@ -22,6 +23,7 @@ public protocol CollectionSpec {
 	func listRootCollections() async -> RootCollectionList
 	func listChildCollections() async -> ChildCollectionList
 	func listSystemCollections() async -> SystemCollectionList
+	func listCovers(searchingFor query: String) -> CoverList
 	func removeCollection(with id: Collection.ID) async -> CollectionRemoval
 	func removeCollections(with ids: [Collection.ID]) async -> CollectionRemoval
 	func removeEmptyCollections() async -> EmptyCollectionRemoval

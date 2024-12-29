@@ -6,6 +6,7 @@ import struct Dewdrop.Media
 import struct Dewdrop.Cache
 import struct Dewdrop.Highlight
 import struct Catena.IDFields
+import struct Catena.IDListFields
 import struct Foundation.URL
 import struct Foundation.Date
 import protocol Catena.Valued
@@ -15,6 +16,7 @@ import protocol Identity.Identifiable
 public extension Raindrop {
 	typealias ID = Identified.ID
 	typealias IDFields = Catena.IDFields<Identified>
+	typealias IDListFields = Catena.IDListFields<Identified>
 	typealias Identified = IdentifiedRaindrop
 }
 
