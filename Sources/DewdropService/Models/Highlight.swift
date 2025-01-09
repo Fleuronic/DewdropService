@@ -1,5 +1,7 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
+import MemberwiseInit
+
 import struct Dewdrop.Highlight
 import struct Dewdrop.Raindrop
 import struct Dewdrop.User
@@ -58,4 +60,16 @@ public extension Highlight.Identified {
 extension Highlight.Identified: Valued {
 	// MARK: Valued
 	public typealias Value = Highlight
+}
+
+// MARK: -
+public extension Highlight.Content {
+	typealias Identified = IdentifiedHighlightContent
+}
+
+// MARK: -
+@MemberwiseInit(.public)
+public struct IdentifiedHighlightContent: Sendable {
+	public let id: Highlight.ID
+	public let content: Highlight.Content
 }

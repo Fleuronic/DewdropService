@@ -23,7 +23,8 @@ public protocol CollectionSpec {
 	func listRootCollections() async -> RootCollectionList
 	func listChildCollections() async -> ChildCollectionList
 	func listSystemCollections() async -> SystemCollectionList
-	func listCovers(searchingFor query: String) -> CoverList
+	func listCovers(searchingFor query: String) async -> CoverList
+	func listFeaturedCovers() async -> CoverList
 	func removeCollection(with id: Collection.ID) async -> CollectionRemoval
 	func removeCollections(with ids: [Collection.ID]) async -> CollectionRemoval
 	func removeEmptyCollections() async -> EmptyCollectionRemoval

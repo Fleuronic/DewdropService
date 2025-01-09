@@ -1,6 +1,5 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-import enum Dewdrop.FileFormat
 import struct Dewdrop.Backup
 import protocol Catena.Identifying
 import protocol Catena.Scoped
@@ -17,5 +16,5 @@ public protocol BackupSpec {
 
 	func listBackups() async -> BackupList
 	func createBackup(using method: BackupCreationMethod) async -> BackupCreation
-	func downloadBackup(with id: BackupID, as format: FileFormat) async -> BackupData
+	func downloadBackup(with id: BackupID, as format: Backup.FileFormat) async -> BackupData
 }

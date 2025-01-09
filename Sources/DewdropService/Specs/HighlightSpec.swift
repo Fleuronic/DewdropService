@@ -14,7 +14,7 @@ public protocol HighlightSpec {
 
 	func listHighlights(inCollectionWith id: Collection.ID, onPage page: Int?, listing highlightsPerPage: Int?) async -> HighlightList
 	func listHighlights(ofRaindropWith id: Raindrop.ID) async -> HighlightInRaindropList
-	// func addHighlights(with contents: [Highlight.Content], toRaindropWith id: Raindrop.ID) async -> RaindropHighlightsResult
-//	func updateHighlights(with ids: [Highlight.ID], ofRaindropWith id: Raindrop.ID, to contents: [Highlight.Content]) async -> RaindropHighlightsResult
-//	func removeHighlights(with ids: [Highlight.ID], fromRaindropWith id: Raindrop.ID) async -> RaindropHighlightsResult
+	func addHighlights(with contents: [Highlight.Content], toRaindropWith id: Raindrop.ID) async -> HighlightInRaindropList
+	func updateHighlights(with ids: [Highlight.ID], ofRaindropWith id: Raindrop.ID, to contents: [Highlight.Content]) async -> HighlightInRaindropList
+	func removeHighlights(with ids: [Highlight.ID], fromRaindropWith id: Raindrop.ID) async -> HighlightInRaindropList
 }
