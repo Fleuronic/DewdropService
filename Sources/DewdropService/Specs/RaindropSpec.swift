@@ -29,6 +29,7 @@ public protocol RaindropSpec {
 	func fetchContents(ofRaindropWith id: Raindrop.ID) async -> RaindropContents
 	func listRaindrops(inCollectionWith id: Collection.ID, searchingFor query: String?, sortedBy sort: Raindrop.Sort?, onPage page: Int?, listing raindropsPerPage: Int?) async -> RaindropList
 	func findSuggestions(forRaindropWith id: RaindropID) async -> RaindropSuggestions
+	func findSuggestions(forRaindropCreatedFor url: URL) async -> RaindropSuggestions
 	func removeRaindrop(with id: Raindrop.ID) async -> RaindropRemoval
 	func removeRaindrops(fromCollectionWith collectionID: Collection.ID, matching ids: [Raindrop.ID]?, searchingFor search: String?) async -> RaindropsRemoval
 
