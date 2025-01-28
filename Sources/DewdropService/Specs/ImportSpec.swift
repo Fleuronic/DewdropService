@@ -4,13 +4,12 @@ import struct Foundation.URL
 import protocol Catena.Scoped
 
 public protocol ImportSpec {
-	associatedtype URLInfo: Scoped<URLInfoFields>
-	associatedtype URLExistence: Scoped<URLExistenceFields>
 	associatedtype FileImport: Scoped<FileImportFields>
+	associatedtype URLInfo: Scoped<URLInfoFields>
+	associatedtype URLExistence
 
-	associatedtype URLInfoFields: InfoFields
-	associatedtype URLExistenceFields: RaindropFields
 	associatedtype FileImportFields: ImportFields
+	associatedtype URLInfoFields: InfoFields
 
 	func parse(url: URL) async -> URLInfo
 	func checkExistence(of urls: [URL]) async -> URLExistence
