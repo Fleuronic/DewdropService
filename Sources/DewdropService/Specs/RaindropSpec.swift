@@ -29,18 +29,20 @@ public protocol RaindropSpec {
 	associatedtype RaindropCreationFields: RaindropFields
 	associatedtype RaindropUpdateFields: RaindropFields
 
+	associatedtype RaindropID: Identifying<Raindrop.Identified>
 	associatedtype RaindropPendingID: Identifying<Raindrop.Identified>
+	associatedtype RaindropPendingIDs: Identifying<Raindrop.Identified>
 
 	func fetchRaindrop(with id: Raindrop.ID) async -> RaindropFetch
-	func fetchContents(ofRaindropWith id: Raindrop.ID) async -> RaindropContents
+	func fetchContents(ofRaindropWith id: RaindropID) async -> RaindropContents
 	func listRaindrops(inCollectionWith id: Collection.ID, searchingFor query: String?, sortedBy sort: Raindrop.Sort?, onPage page: Int?, listing raindropsPerPage: Int?) async -> RaindropList
 	func createRaindrop(_ id: RaindropPendingID, for url: URL, with parameters: Raindrop.CreationParameters) async -> RaindropCreation
-	func createRaindrops(_ ids: [RaindropPendingID], for urls: [URL], with parameters: [Raindrop.CreationParameters]) async -> RaindropsCreation
+	func createRaindrops(_ ids: RaindropPendingIDs, for urls: [URL], with parameters: [Raindrop.CreationParameters]) async -> RaindropsCreation
 	func updateRaindrop(with id: Raindrop.ID, to url: URL?, updating parameters: Raindrop.CreationParameters) async -> RaindropUpdate
 	func updateRaindrops(with ids: [Raindrop.ID], inCollectionWith collectionID: Collection.ID, searchingFor query: String?, updating parameters: Raindrop.UpdateParameters) async -> RaindropsUpdate
-	func uploadCover(forRaindropWith id: Raindrop.ID, usingFileAt url: URL) async -> RaindropCoverUpload
-	func findSuggestions(forRaindropWith id: Raindrop.ID) async -> RaindropSuggestions
-	func findSuggestions(forRaindropCreatedFor url: URL) async -> RaindropSuggestions
+	func uploadCover(forRaindropWith id: RaindropID, usingFileAt url: URL) async -> RaindropCoverUpload
+	func findSuggestions(forRaindropWith id: RaindropID) async -> RaindropSuggestions
+	func findSuggestions(forRaindropWith id: RaindropPendingID, createdFor url: URL) async -> RaindropSuggestions
 	func removeRaindrop(with id: Raindrop.ID) async -> RaindropRemoval
 	func removeRaindrops(fromCollectionWith collectionID: Collection.ID, matching ids: [Raindrop.ID]?, searchingFor search: String?) async -> RaindropsRemoval
 }

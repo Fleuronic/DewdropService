@@ -30,6 +30,7 @@ public protocol CollectionSpec {
 	associatedtype CollectionCreationFields: CollectionFields
 	associatedtype CollectionUpdateFields: CollectionFields
 
+	associatedtype CollectionID: Identifying<Collection.Identified>
 	associatedtype CollectionPendingID: Identifying<Collection.Identified>
 
 	func fetchCollection(with id: Collection.ID) async -> CollectionFetch
@@ -40,7 +41,7 @@ public protocol CollectionSpec {
 	func listFeaturedCovers() async -> CollectionCoverList
 	func createCollection(_ id: CollectionPendingID, titled title: String, with parameters: Collection.Parameters) async -> CollectionCreation
 	func updateCollection(with id: Collection.ID, toTitle title: String?, expanding: Bool?, updating parameters: Collection.Parameters) async -> CollectionUpdate
-	func uploadCover(forCollectionWith id: Collection.ID, usingFileAt url: URL) async -> CollectionCoverUpload
+	func uploadCover(forCollectionWith id: CollectionID, usingFileAt url: URL) async -> CollectionCoverUpload
 	func expandCollections(_ expanded: Bool) async -> CollectionExpansion
 	func sortCollections(by sort: Collection.Sort) async -> CollectionSort
 	func mergeCollections(with ids: [Collection.ID], intoCollectionWith id: Collection.ID) async -> CollectionMerge

@@ -1,5 +1,7 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
+import MemberwiseInit
+
 import enum Dewdrop.Password
 import struct Dewdrop.User
 import struct Dewdrop.Collection
@@ -20,14 +22,19 @@ public protocol UserSpec {
 
 	func fetchUser(with id: User.ID) async -> PublicUserFetch
 	func fetchAuthenticatedUser() async -> AuthenticatedUserFetch
+	func updateAuthenticatedUser(with parameters: User.UpdateParameters<GroupUpdateFields>) async -> AuthenticatedUserUpdate
 	func connectSocialNetworkAccount(from provider: NetworkProvider) async -> NetworkConnection
 	func disconnectSocialNetworkAccount(from provider: NetworkProvider) async -> NetworkDisconnection
+}
 
-	func updateAuthenticatedUser(
-		fullName: String?,
-		email: String?,
-		password: Password?,
-		config: User.Config?,
-		groups: [GroupUpdateFields]?
-	) async -> AuthenticatedUserUpdate
+// MARK: -
+public extension User {
+	@MemberwiseInit(.public)
+	struct UpdateParameters<Group> {
+		@Init(default: nil) public let fullName: String?
+		@Init(default: nil) public let email: String?
+		@Init(default: nil) public let password: Password?
+		@Init(default: nil) public let config: User.Config?
+		@Init(default: nil) public let groups: [Group]?
+	}
 }
