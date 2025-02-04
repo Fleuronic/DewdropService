@@ -28,16 +28,16 @@ public struct IdentifiedUser: Sendable {
 public extension User.Identified {
 	init(
 		id: ID,
+		username: String,
 		fullName: String,
-		email: String?,
 		avatarURL: URL?,
-		hasProSubscription: Bool?
+		hasProSubscription: Bool
 	) {
 		self.init(
 			id: id,
 			value: .init(
+				username: username,
 				fullName: fullName,
-				email: email,
 				avatarURL: avatarURL,
 				hasProSubscription: hasProSubscription
 			)

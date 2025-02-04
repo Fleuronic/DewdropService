@@ -60,12 +60,10 @@ public extension Raindrop.Identified {
 			value: .init(
 				url: url,
 				domain: domain,
-				info: .init(
-					title: title,
-					itemType: itemType,
-					excerpt: excerpt,
-					coverURL: coverURL
-				),
+				title: title,
+				itemType: itemType,
+				excerpt: excerpt,
+				coverURL: coverURL,
 				note: note,
 				media: [],
 				cache: cacheStatus.map { status in

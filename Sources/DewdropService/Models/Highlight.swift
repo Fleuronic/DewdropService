@@ -41,12 +41,10 @@ public extension Highlight.Identified {
 		self.init(
 			id: id,
 			value: .init(
-				content: .init(
-					text: text,
-					color: color,
-					note: note
-				),
-				title: raindrop.value.info.title,
+				text: text,
+				color: color,
+				note: note,
+				title: raindrop.value.title,
 				creationDate: creationDate,
 				updateDate: updateDate
 			),
