@@ -8,19 +8,19 @@ import struct Dewdrop.Collection
 import protocol Catena.Scoped
 
 public protocol UserSpec {
-	associatedtype PublicUserFetch: Scoped<PublicUserFetchFields>
+	associatedtype UserFetch: Scoped<UserFetchFields>
 	associatedtype AuthenticatedUserFetch: Scoped<AuthenticatedUserFetchFields>
 	associatedtype AuthenticatedUserUpdate: Scoped<AuthenticatedUserUpdateFields>
 	associatedtype NetworkConnection
 	associatedtype NetworkDisconnection
 
-	associatedtype PublicUserFetchFields: UserFields
+	associatedtype UserFetchFields: UserFields
 	associatedtype AuthenticatedUserFetchFields: UserAuthenticatedFields
 	associatedtype AuthenticatedUserUpdateFields: UserAuthenticatedFields
 	associatedtype GroupUpdateFields: GroupFields
 	associatedtype NetworkProvider
 
-	func fetchUser(with id: User.ID) async -> PublicUserFetch
+	func fetchUser(with id: User.ID) async -> UserFetch
 	func fetchAuthenticatedUser() async -> AuthenticatedUserFetch
 	func updateAuthenticatedUser(with parameters: User.UpdateParameters<GroupUpdateFields>) async -> AuthenticatedUserUpdate
 	func connectSocialNetworkAccount(from provider: NetworkProvider) async -> NetworkConnection
