@@ -1,4 +1,5 @@
 {
+  "originHash" : "b8b2a5739c97a93eb1c01a0800bfa4d621c76cfa197be0fcdab2e8ae8a945a89",
   "pins" : [
     {
       "identity" : "catena",
@@ -6,16 +7,7 @@
       "location" : "https://github.com/Fleuronic/Catena",
       "state" : {
         "branch" : "main",
-        "revision" : "1d3a71c6636ecd31d5490f9f7ed931a3b2abb70e"
-      }
-    },
-    {
-      "identity" : "dewdrop",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/Fleuronic/Dewdrop",
-      "state" : {
-        "branch" : "main",
-        "revision" : "9b5b69e2e9dcf5ceb1cd96c75e58b6988908757d"
+        "revision" : "d34d1fbc9e174317cbbde7dd07e87c134a5dc065"
       }
     },
     {
@@ -55,5 +47,5 @@
       }
     }
   ],
-  "version" : 2
+  "version" : 3
 }
