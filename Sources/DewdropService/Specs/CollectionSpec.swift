@@ -20,6 +20,7 @@ public protocol CollectionSpec {
 	associatedtype CollectionSort
 	associatedtype CollectionMerge
 	associatedtype CollectionRemoval
+	associatedtype CollectionsRemoval
 	associatedtype EmptyCollectionRemoval
 	associatedtype TrashRemoval
 
@@ -46,7 +47,7 @@ public protocol CollectionSpec {
 	func sortCollections(by sort: Collection.Sort) async -> CollectionSort
 	func mergeCollections(with ids: [Collection.ID], intoCollectionWith id: Collection.ID) async -> CollectionMerge
 	func removeCollection(with id: Collection.ID) async -> CollectionRemoval
-	func removeCollections(with ids: [Collection.ID]) async -> CollectionRemoval
+	func removeCollections(with ids: [Collection.ID]) async -> CollectionsRemoval
 	func removeEmptyCollections() async -> EmptyCollectionRemoval
 	func emptyTrash() async -> TrashRemoval
 }
